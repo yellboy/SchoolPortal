@@ -18,7 +18,11 @@
 			<div class="row">
 				<div class="col-md-7">
 					<img src="styles/img/rss.png" alt="RSS" />
-					<ul><li><a href="login.html" title="Prijava na sistem">пријава</a></li></ul>
+					<ul>
+						<li><a href="login.html" title="Prijava na sistem">пријави ме</a></li>
+						<li class="auth-only">Marin Markic - </li>
+						<li class="auth-only"><a href="login.html" title="Odjava sa sistema">одјави ме</a></li>
+					</ul>
 				</div>
 				<div class="col-md-5">
 					<form id="searchbox">
@@ -32,11 +36,7 @@
 			<div class="static-content">
 				<img src="styles/img/header.jpg" alt="Peta beogradska gimnazija"/>
 			</div>
-			<nav>
-				<?php // render html content body
-					echo "Render category menu widget";
-				?>
-			</nav>	
+			<nav><?php include 'views/category_menu.php'; ?></nav>	
 		</header>
 
 		<main class="main container" role="main">
@@ -46,14 +46,17 @@
 						<?php include 'views/home_carousel.php'; // render only if its home page ?>
 					</div>
 					<div class="clear"></div>
-						<?php include 'views/news-details.php'; // idk render news foreach on here? ?>
+						<?php 
+						 	include 'views/news-details.php'; // idk render news foreach on here? 
+						?>
 				</div>
 				<aside class="col-md-3">
-					<h2>Пријатељи школе</h2>
 					<div class="right-sidebar-content-holder">
-						<p>Bacon ipsum dolor amet boudin sausage pork, sirloin frankfurter jerky pig bresaola jowl beef venison ground round short loin. Turkey frankfurter landjaeger prosciutto. Leberkas brisket ground round pork, cow capicola spare ribs rump. Beef bacon kevin tenderloin pig, biltong ribeye tri-tip frankfurter. Swine leberkas turducken ham beef ribs boudin t-bone jowl cow pancetta tail flank sirloin tenderloin.</p>
+						<h2>Пријатељи школе</h2>
 						<?php // render html content sidebar
-							echo "Render widget placeholder";
+							for ($i=0; $i < 20; $i++) { 
+								echo "Bacon ipsum dolor amet boudin sausage pork ";
+							}
 						?>
 					</div>
 				</aside>
@@ -61,7 +64,12 @@
 
 		</main>
 		<footer class="zone footer container">
-			© <a href="marinmarkic@mail.com"></a> emails, by who, . Sva prava zadržana. Celokupan sadržaj web sajta http://www.vbeogradska.edu.rs.
+		<ul>
+			<li>© <a href="mailto:da" title="123">Бојан Јелача</a>,</li>
+			<li><a href="mailto:marinmarkic@mail.com" title="marinmarkic@mail.com">Марин Маркић</a>.</li>
+			<li> Сва права задржана. </li>
+			<li><a href="http://www.vbeogradska.edu.rs">www.vbeogradska.edu.rs</a>.</li>
+		</ul>
 		</footer>
 	</body>
 </html>
