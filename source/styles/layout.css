@@ -1,4 +1,46 @@
-﻿body {
+﻿.news-details-template {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 12px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #d8d8d8;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #DBDBDB;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
+  .news-details-template .date-image {
+    float: left;
+    padding-right: 10px; }
+    .news-details-template .date-image div.box {
+      background-image: url('img/date-cover.png');
+      width: 40px; }
+      .news-details-template .date-image div.box div.day {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        color: white; }
+      .news-details-template .date-image div.box .month {
+        color: white;
+        text-align: center;
+        padding-top: 2px;
+        font-size: 8px; }
+    .news-details-template .date-image div.year {
+      font-size: 11px;
+      text-align: center;
+      font-weight: 600; }
+  .news-details-template .news-headline {
+    float: left;
+    width: 90%; }
+    .news-details-template .news-headline h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 26px; }
+      .news-details-template .news-headline h2 a {
+        color: #BF251C; }
+        .news-details-template .news-headline h2 a:hover {
+          color: #BF251C; }
+
+body {
   background: url('img/background.jpg'); }
 
 .container {
@@ -164,31 +206,6 @@
 
 .clear {
   clear: both; }
-
-.news-details-template {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding: 12px;
-  background-color: white;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #d8d8d8;
-  border-right: 1px solid #ccc;
-  border-left: 1px solid #DBDBDB;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
-  .news-details-template .date-image {
-    float: left;
-    padding-right: 10px; }
-  .news-details-template .news-headline {
-    float: left;
-    width: 90%; }
-    .news-details-template .news-headline h2 {
-      margin-top: 0;
-      margin-bottom: 25px;
-      font-size: 26px; }
-      .news-details-template .news-headline h2 a {
-        color: #BF251C; }
-        .news-details-template .news-headline h2 a:hover {
-          color: #BF251C; }
 
 .dropdown-submenu {
   position: relative; }

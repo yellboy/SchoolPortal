@@ -1,3 +1,5 @@
+@import 'news_details';
+
 $linkColor: #BF251C;
 $grayButton: #2D2D2D;
 $borderColor: #bbb;
@@ -220,41 +222,6 @@ body {
 
 
 // news content
-
-.news-details-template {
-	margin-top: 25px;
-	margin-bottom: 25px;
-	padding:12px;
-	background-color:white;
-	border-bottom: 1px solid #ccc;
-	border-top: 1px solid #d8d8d8;
-	border-right: 1px solid #ccc;
-	border-left: 1px solid #DBDBDB;
-	box-shadow: 0 0 5px rgba(0,0,0,0.15);
-
-	.date-image {
-		float: left;
-		padding-right: 10px;
-	}
-
-	.news-headline {
-		float: left;
-		width: 90%;
-		h2{
-			margin-top: 0;
-			margin-bottom: 25px;
-			font-size: 26px;
-			a{
-				color:$linkColor;
-				&:hover{
-					color:$linkColor;
-				}
-			}
-		}
-	}
-}
-
-
 
 .dropdown-submenu {
     position: relative;
