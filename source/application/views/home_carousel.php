@@ -19,7 +19,7 @@
                 $isActive = $i == 0 ? "active" : "";               
                 echo "
                     <div class='item " . $isActive . "'>
-                      <img src='../styles/img/slider0" . ($i + 1) . ".jpg' alt='Slika gimnazije'>
+                      <img src='assets/styles/img/slider0" . ($i + 1) . ".jpg' alt='Slika gimnazije'>
                     </div>
                 ";
             }
