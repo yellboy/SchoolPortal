@@ -19,7 +19,7 @@ class LoginController extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('login.html'); //send data to render slides here
+		$this->load->view('layouts/loginLayout'); //send data to render slides here
 	}
 }
 

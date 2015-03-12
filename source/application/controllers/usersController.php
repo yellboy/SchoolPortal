@@ -19,7 +19,7 @@ class UsersController extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('users.php'); //send data to render slides here
+		$this->load->view('layouts/usersLayout'); //send data to render slides here
 	}
 }
 

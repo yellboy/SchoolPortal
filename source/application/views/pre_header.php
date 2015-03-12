@@ -4,8 +4,8 @@
 			<img src="assets/styles/img/rss.png" alt="RSS" />
 			<ul>
 				<li><a href="/" title="Prijava na sistem">Pocetna</a></li>
-				<li><a href="login.html" title="Prijava na sistem">Пријави ме</a></li>
-				<li><a href="users.html" title="Pretraga korisnika">Претрага корисника</a></li>
+				<li><a href="/login" title="Prijava na sistem">Пријави ме</a></li>
+				<li><a href="/administration/users" title="Pretraga korisnika">Претрага корисника</a></li>
 				<li><a href="/administration/category" title="Pretraga korisnika">Category admin temp</a></li>
 				<li><a href="/administration/article" title="Pretraga korisnika">Article admin temp</a></li>
 				<li class="auth-only">Marin Markic - </li>

@@ -40,7 +40,10 @@
 
 $route['default_controller'] = "homeController";
 $route['login'] = "loginController";
-$route['users'] = "usersController";
+$route['administration/users'] = "usersController";
+$route['administration/register'] = "registerController";
+$route['administration/category'] = "categoryController";
+$route['administration/article'] = "articleEditController";
 $route['404_override'] = '';
 
 
