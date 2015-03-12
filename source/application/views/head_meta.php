@@ -6,7 +6,7 @@
 	// render meta tags and title that dependes on current page route here - use meta helper
 	$this->load->helper('html');
 	$this->load->helper('url');
-	echo link_tag('assets/styles/layout.css'); // use min for production
+	echo link_tag('assets/styles/layout.css'); // MM4MM use min for production
 	echo link_tag('assets/styles/img/favicon.ico', 'shortcut icon', 'image/ico');
 	$homepage = base_url() . "assets/scripts/homepage.js";
 ?>

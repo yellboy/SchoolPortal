@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class HomeController extends CI_Controller {
+class ArticleEditController extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,14 +19,7 @@ class HomeController extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['title'] = $this::loadCategories();
-		$this->load->view('layouts/homeLayout', $data);
-	}
-
-	private function loadCategories()
-	{
-		$this->load->model('Categories_model');
-		return $categories = $this->Categories_model->loadCategories();
+		$this->load->view('layouts/articleEditLayout'); //send data to render slides here
 	}
 }
 
