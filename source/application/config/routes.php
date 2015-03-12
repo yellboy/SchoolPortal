@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "homeController";
 $route['login'] = "loginController";
+$route['administration/category'] = "categoryController";
+$route['administration/article'] = "articleEditController";
 $route['404_override'] = '';
 
 
