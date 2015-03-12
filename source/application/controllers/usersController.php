@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class LoginController extends CI_Controller {
+class UsersController extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,7 +19,7 @@ class LoginController extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('login.html'); //send data to render slides here
+		$this->load->view('users.php'); //send data to render slides here
 	}
 }
 
