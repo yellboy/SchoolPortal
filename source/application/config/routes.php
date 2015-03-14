@@ -43,6 +43,7 @@ $route['login'] = "loginController";
 $route['administration/users'] = "usersController";
 $route['administration/register'] = "registerController";
 $route['administration/category'] = "categoryController";
+$route['administration/profile'] = "userProfileController";
 $route['administration/article'] = "articleEditController";
 $route['404_override'] = '';
 

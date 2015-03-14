@@ -3,11 +3,12 @@
 		<div class="col-md-7">
 			<img src="assets/styles/img/rss.png" alt="RSS" />
 			<ul>
-				<li><a href="/" title="Prijava na sistem">Pocetna</a></li>
+				<li><a href="/" title="Pocetna stranica">Почетна</a></li>
 				<li><a href="/login" title="Prijava na sistem">Пријави ме</a></li>
-				<li><a href="/administration/users" title="Pretraga korisnika">Претрага корисника</a></li>
-				<li><a href="/administration/category" title="Pretraga korisnika">Category admin temp</a></li>
-				<li><a href="/administration/article" title="Pretraga korisnika">Article admin temp</a></li>
+				<li><a href="/administration/users" title="Pretraga korisnika">Корисници</a></li>
+				<li><a href="/administration/category" title="Administracija kategorija">Категорије</a></li>
+				<li><a href="/administration/article" title="Administracija clanaka">Чланци</a></li>
+				<li><a href="/administration/profile" title="Profil">Мој профил</a></li>
 				<li class="auth-only">Marin Markic - </li>
 				<li class="auth-only"><a href="login.html" title="Odjava sa sistema">одјави ме</a></li>
 			</ul>

@@ -11,8 +11,8 @@
 				<a href="index.php" class="text-muted">Повратак на главну страницу</a>
 			</div>
 		</div>
-		<div class="col-md-4 col-md-offset-4" align="right">
-			<button class="btn btn-danger" onclick="location.href='<?php echo base_url();?>administration/register'">Регистрација</button>
+		<div class="col-md-4">
+			<button class="btn btn-danger" onclick="redirectToRegister();">Регистрација</button>
 		</div>
 	</form>
 	<table border="1" style="width:100%" class="table-striped">
