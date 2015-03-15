@@ -15,7 +15,7 @@
 			</div>
 			<div class="modal-footer" class="container-fluid" align="center">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">
-					Сачувај
+					У реду
 				</button>
 				<button type="button" class="btn btn-danger" data-dismiss="modal">
 					Одустани
