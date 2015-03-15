@@ -10,7 +10,7 @@
 		
 		<main class="main container" role="main">
 			<?php $this->load->view('users'); ?>
-
+			<?php $this->load->view('confirm_modal'); ?>
 		</main>
 		<?php $this->load->view('footer'); ?>
 	</body>

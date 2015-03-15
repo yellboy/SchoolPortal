@@ -21,40 +21,18 @@
 			<th class="container-fluid"><b>Име</b></th>
 			<th class="container-fluid"><b>Презиме</b></th>
 			<th class="container-fluid"><b>Предмети</b></th>
-			<th class="container-fluid"><b>&nbsp</b></th>
-			<th class="container-fluid"><b>&nbsp</b></th>
 		</tr>
 		<tr>
-			<td class="container-fluid">года</td>
+			<td class="container-fluid"><a href="/administration/profile">года</a></td>
 			<td class="container-fluid">Гордана</td>
 			<td class="container-fluid">Давидовић</td>
 			<td class="container-fluid">Математика</td>
-			<td class="container-fluid">
-				<div align="center">
-					<button type="submit" class="btn btn-danger">Измени</button>
-				</div>
-			</td class="container-fluid">
-			<td>
-				<div align="center">
-					<button type="submit" class="btn btn-danger" onclick="document.getElemntById('confirm_modal').showModal();">Обриши</button>
-				</div>
-			</td>
 		</tr>
 		<tr>
-			<td class="container-fluid">дијо</td>
+			<td class="container-fluid"><a href="/administration/profile">дијо</a></td>
 			<td class="container-fluid">Дивна</td>
 			<td class="container-fluid">Јовановић</td>
 			<td class="container-fluid">Физика</td>
-			<td class="container-fluid">
-				<div class="container-fluied" align="center">
-					<button type="submit" class="btn btn-danger">Измени</button>
-				</div>
-			</td>
-			<td class="container-fluid">
-				<div class="container-fluied" align="center">
-					<button type="submit" class="btn btn-danger">Обриши</button>
-				</div>
-			</td>
 		</tr>
 	</table>
 </div>
