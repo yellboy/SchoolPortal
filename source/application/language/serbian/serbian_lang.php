@@ -3,4 +3,5 @@
 	$lang['Content'] = "Садржај";
 	$lang['Save'] = "Сачувај";
 	$lang['Cancel'] = "Поништи";
+	$lang['SchoolFriends'] = "Пријатељи школе";
 ?>

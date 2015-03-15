@@ -187,6 +187,9 @@ body {
       margin-top: -2%;
       margin-left: -5%;
       margin-right: -5%; }
+    .main .right-sidebar-content-holder div.content-holder {
+      margin: 0 auto;
+      width: 80%; }
 
 .footer {
   background: #111;
@@ -251,4 +254,4 @@ body {
 .dropdown:hover > .dropdown-menu {
   display: block; }
 
-/*# sourceMappingURL=../../../Program Files (x86)/Microsoft Visual Studio 12.0/Common7/IDE/layout.css.map */
+/*# sourceMappingURL=../../../../Program Files (x86)/Microsoft Visual Studio 12.0/Common7/IDE/layout.css.map */

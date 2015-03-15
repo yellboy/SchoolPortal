@@ -35,7 +35,6 @@
 
         function loadCategories()
         {
-            $result = array();
             $this->load->model('Category_model');
 
             $query = $this->db->get('category');
