@@ -1,17 +1,15 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-<?php
-    $numOfSlides = 5;
+    <?php
+        $numOfSlides = 5;
 
-    echo "<ol class='carousel-indicators'>";
-    for ($i = 0; $i < $numOfSlides; $i++) { 
-        $isActive = $i == 0 ? "active" : "";
-        echo "<li data-target='#carousel" . $i . "' data-slide-to='" . $i . "' class='" . $isActive ."'></li>";
-    }
-    echo "</ol>";
-?>
-
-    <!-- Wrapper for slides -->
+        echo "<ol class='carousel-indicators'>";
+        for ($i = 0; $i < $numOfSlides; $i++) { 
+            $isActive = $i == 0 ? "active" : "";
+            echo "<li data-target='#carousel" . $i . "' data-slide-to='" . $i . "' class='" . $isActive ."'></li>";
+        }
+        echo "</ol>";
+    ?>
 
     <div class="carousel-inner" role="listbox">
         <?php 
@@ -26,15 +24,14 @@
         ?>
     </div>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Sledeći</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Prethodni</span>
-    </a>
+	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Sledeći</span>
+	</a>
+	<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Prethodni</span>
+	</a>
 </div>
 
 

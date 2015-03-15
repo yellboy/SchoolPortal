@@ -13,8 +13,8 @@
 	<div class="clear"></div>
 
 	<div class="news-content">
-		<?php for ($i=0; $i < 150; $i++) { 
-			echo "ne ws co nt ent";
+		<?php for ($i=0; $i < 120; $i++) { 
+			echo "Hello dear viewer";
 		}
 		?>
 	</div>
