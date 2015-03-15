@@ -14,7 +14,7 @@
 		<div class="row article-list" style="margin-top:30px;margin-bottom:15px;display:none"; >
 			<div class="col-md-6">
 				<h3>
-					<span class="section-title">Вести</span> у категорији '<span class="category-name"></span>':
+					<span class="section-title">Чланци</span> у категорији '<span class="category-name"></span>':
 				</h3>
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 				</td>
 				<td class="container-fluid">
 					<div class="container-fluied">
-						<button type="submit" class="btn btn-danger delete-article">Обриши</button>
+						<button type="submit" class="btn btn-danger delete-article" data-toggle="modal" data-target="#confirm_modal">Обриши</button>
 					</div>
 				</td>
 			</tr>
@@ -55,7 +55,7 @@
 
 		<div class="row article-list" style="margin-bottom:30px;border-bottom: 1px solid #ccc;padding-bottom:15px;display:none;">
 			<div class="col-md-12">
-				<div class="container-fluied">
+				<div>
 					<button type="submit" class="btn btn-success add-article">Додај</button>
 				</div>
 			</div>
@@ -63,6 +63,7 @@
 		<div class="article-details" style="display:none;">
 			<?php $this->load->view('editor');?>
 		</div>
+		<?php $this->load->view('confirm_modal'); ?>
 	</div>
 </div>
 

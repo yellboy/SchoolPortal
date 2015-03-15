@@ -6,10 +6,11 @@
 	
 	<body>
 		
-		<?php $this->load->view('admin_header'); ?>
+		<?php $this->load->view('pre_header'); ?>
 		
 		<main class="main container" role="main">
-			<?php $this->load->view('users'); ?>
+			<?php $this->load->view('view_profile'); ?>
+
 		</main>
 		<?php $this->load->view('footer'); ?>
 	</body>

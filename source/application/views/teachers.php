@@ -8,11 +8,8 @@
 			<input type="text" class="form-control" placeholder="е-пошта"/>
 			<input type="text" class="form-control" placeholder="Предмети"/>
 			<div>
-				<a href="index.php" class="text-muted">Повратак на главну страницу</a>
+				<a href="/default_controller" class="text-muted">Повратак на главну страницу</a>
 			</div>
-		</div>
-		<div class="col-md-4">
-			<button class="btn btn-danger" onclick="window.location.href='register.php'">Регистрација</button>
 		</div>
 	</form>
 	<table border="1" style="width:100%" class="table-striped">
@@ -20,18 +17,21 @@
 			<th class="container-fluid"><b>Корисничко име</b></th>
 			<th class="container-fluid"><b>Име</b></th>
 			<th class="container-fluid"><b>Презиме</b></th>
+			<th class="container-fluid"><b>е-пошта</b></th>
 			<th class="container-fluid"><b>Предмети</b></th>
 		</tr>
 		<tr>
-			<td class="container-fluid"><a href="/administration/profile">года</a></td>
+			<td class="container-fluid"><a href="/view_profile" class="text-muted">года</a></td>
 			<td class="container-fluid">Гордана</td>
 			<td class="container-fluid">Давидовић</td>
+			<td class="container-fluid">gdavidovic@yahoo.com</td>
 			<td class="container-fluid">Математика</td>
 		</tr>
 		<tr>
-			<td class="container-fluid"><a href="/administration/profile">дијо</a></td>
+			<td class="container-fluid"><a href="/view_profile" class="text-muted">дијо</a></td>
 			<td class="container-fluid">Дивна</td>
 			<td class="container-fluid">Јовановић</td>
+			<td class="container-fluid">divna@yahoo.com</td>
 			<td class="container-fluid">Физика</td>
 		</tr>
 	</table>

@@ -45,6 +45,9 @@ $route['administration/register'] = "registerController";
 $route['administration/category'] = "categoryController";
 $route['administration/profile'] = "userProfileController";
 $route['administration/article'] = "articleEditController";
+$route['add-to-alumni'] = "addToAlumniController";
+$route['teachers'] = "teachersController";
+$route['view_profile'] = "viewProfileController";
 $route['404_override'] = '';
 
 

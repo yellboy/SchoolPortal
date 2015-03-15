@@ -4,7 +4,7 @@
 		<div>
 			<img class="img-circle" style="width:200px" src="https://cdn0.iconfinder.com/data/icons/people-groups/512/User_Female-512.png">
 		</div>
-		<div class="btn btn-danger">Промени слику</div>
+		<div class="btn btn-danger" data-toggle="modal" data-target="#photo_modal">Промени слику</div>
 	</div>
 	<div class="col-md-5 form-group">
 		<input type="text" class="form-control" placeholder="Име" value="Гордана">
@@ -17,6 +17,8 @@
 		</textarea>
 	</div>
 	<div class="col-md-1" align="center">
-		<button type="button" class="btn btn-danger">Промени лозинку</button>
+		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#password_modal">Промени лозинку</button>
 	</div>
+	<?php $this->load->view('password_modal'); ?>
+	<?php $this->load->view('photo_modal'); ?>
 </div>
