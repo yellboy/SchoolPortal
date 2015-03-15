@@ -13,7 +13,7 @@
 				<div class="col-md-9">
 					<div class="home-carousel">
 						<?php $this->load->view('home_carousel'); 
-							echo $title; // echo test
+							// echo $title;
 						?>
 					</div>
 					<div class="clear"></div>

@@ -1,6 +1,6 @@
 
 function demo_create() {
-	var ref = $('#jstree_demo').jstree(true),
+	var ref = $('#jstree-holder').jstree(true),
 		sel = ref.get_selected();
 	if(!sel.length) { return false; }
 	sel = sel[0];
@@ -10,14 +10,14 @@ function demo_create() {
 	}
 };
 function demo_rename() {
-	var ref = $('#jstree_demo').jstree(true),
+	var ref = $('#jstree-holder').jstree(true),
 		sel = ref.get_selected();
 	if(!sel.length) { return false; }
 	sel = sel[0];
 	ref.edit(sel);
 };
 function demo_delete() {
-	var ref = $('#jstree_demo').jstree(true),
+	var ref = $('#jstree-holder').jstree(true),
 		sel = ref.get_selected();
 	if(!sel.length) { return false; }
 	ref.delete_node(sel);
@@ -29,11 +29,11 @@ $(function() {
 			if(to) { clearTimeout(to); }
 			to = setTimeout(function () {
 				var v = $('#demo_q').val();
-				$('#jstree_demo').jstree(true).search(v);
+				$('#jstree-holder').jstree(true).search(v);
 			}, 250);
 		});
 
-		var $jsTree = $('#jstree_demo')
+		var $jsTree = $('#jstree-holder')
 			.jstree({
 				"core" : {
 					"animation" : 0,
@@ -57,7 +57,7 @@ $(function() {
 				"plugins" : [ "contextmenu", "dnd", "search", "state", "types", "wholerow" ],
 				"contextmenu": {
 			        "items": function ($node) {
-			        	var tree = $("#jstree_demo").jstree(true);
+			        	var tree = $("#jstree-holder").jstree(true);
 			            return {
 			                "Create": {
 			                    "label": "Додај подкатегорију",
