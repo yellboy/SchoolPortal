@@ -12,9 +12,7 @@
 			<div class="row">
 				<div class="col-md-9">
 					<div class="home-carousel">
-						<?php $this->load->view('home_carousel'); 
-							// echo $title;
-						?>
+						<?php $this->load->view('home_carousel'); ?>
 					</div>
 					<div class="clear"></div>
 					<?php $this->load->view('news_details'); ?>

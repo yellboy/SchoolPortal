@@ -116,6 +116,7 @@ body {
 				padding: 0;
 
 				&.level1{
+					height:25px;
 					> li {
 						display:inline;
 						float:left;
@@ -123,7 +124,7 @@ body {
 						> div > a{
 							background-color:$grayButton;
 							color: white;
-							padding: 6px 12px;
+							padding: 6px 16px;
 							margin-bottom: 0;
 							font-size: 14px;
 							font-weight: 400;

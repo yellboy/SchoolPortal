@@ -4,7 +4,7 @@ class HomeController extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = $this::loadCategories();
+		$data['categories'] = $this::loadCategories();
 		$this->load->view('layouts/homeLayout', $data);
 	}
 
@@ -14,6 +14,3 @@ class HomeController extends CI_Controller {
 		return $this->Categories_model->loadCategories();
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
