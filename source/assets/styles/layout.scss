@@ -122,8 +122,12 @@ body {
 						float:left;
 						padding-right:5px;
 						> div > a{
-							background-color:$grayButton;
-							color: white;
+							background-color: white;
+							color:$grayButton;
+							&.selected{
+								background-color:$grayButton;
+								color: white;
+							}
 							padding: 6px 16px;
 							margin-bottom: 0;
 							font-size: 14px;
@@ -133,6 +137,7 @@ body {
 							width: auto;
 							&:hover{
 								background-color:$grayButton;
+								color: white;
 							}
 						}
 					}

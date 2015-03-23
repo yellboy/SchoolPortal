@@ -16,7 +16,7 @@
 		<?php $this->load->view('admin_header'); ?>
 		<main class="container" role="main">
 			<div class="row">
-				<?php $this->load->view('category_admin'); ?>
+				<?php $this->load->view('category_admin', $categories); ?>
 			</div>
 
 		</main>

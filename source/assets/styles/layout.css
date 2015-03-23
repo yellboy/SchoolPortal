@@ -140,8 +140,8 @@ body {
       float: left;
       padding-right: 5px; }
       .header nav ul.level1 > li > div > a {
-        background-color: #2D2D2D;
-        color: white;
+        background-color: white;
+        color: #2D2D2D;
         padding: 6px 16px;
         margin-bottom: 0;
         font-size: 14px;
@@ -149,8 +149,12 @@ body {
         border: 1px solid transparent;
         border-radius: 4px;
         width: auto; }
+        .header nav ul.level1 > li > div > a.selected {
+          background-color: #2D2D2D;
+          color: white; }
         .header nav ul.level1 > li > div > a:hover {
-          background-color: #2D2D2D; }
+          background-color: #2D2D2D;
+          color: white; }
   .header nav ul.level2 li {
     background-color: #dfdfdf; }
     .header nav ul.level2 li a {

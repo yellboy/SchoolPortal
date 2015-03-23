@@ -1,14 +1,14 @@
-$(function() {
-  	setTimeout(function(){
-  		$('.carousel a.right').click();
-  	}, 4000)
+$(function () {
+	setTimeout(function () {
+		$('.carousel a.right').click();
+	}, 4000)
 
-  	$('ul.level1 > li > div > a').on('click', function(e){
-  		// prevent if there are no kids
-  		e.stopPropagation();
+	$('ul.level1 > li > div > a').on('click', function (e) {
+		// prevent if there are no kids
+		e.stopPropagation();
 		e.preventDefault();
-  	});
+	});
 
-  	$('.auth-only').hide(); // TEMP
-
+	$('.auth-only').hide(); // TEMP
+	$('nav .level1 li a').first().addClass('selected');
 });

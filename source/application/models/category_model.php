@@ -1,15 +1,14 @@
 <?php
-    class Category_model extends CI_Model {
-
-        var $title = 'test12131';
-        var $children = array();
-
-        function getCategory()
-        {
-            // make object here..
-            return $title;
-        }
-
-    }
+class Category_model extends CI_Model {
+	/**
+	 * Unused
+	 * @var mixed
+	 */
+	var $Id;
+	var $Title;
+	var $Route;
+	var $Children = array();
+	var $ChildrenCount;
+}
 ?>
 
