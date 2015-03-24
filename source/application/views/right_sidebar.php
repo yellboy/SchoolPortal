@@ -8,9 +8,9 @@
 	<h2><?php echo $this->lang->line('SchoolFriends'); ?></h2>
 	<div class="content-holder">
 		<?php
-            for ($i=0; $i < count($data); $i++) { 
-                echo '<div class="content"><a href="' . $data[$i] . '" target="_blank"><img src="' . $url . $i .'.png"></a></div>';
-            }
+			for ($i=0; $i < count($data); $i++) { 
+				echo '<div class="content"><a href="' . $data[$i] . '" target="_blank"><img src="' . $url . $i .'.png"></a></div>';
+			}
 		?>
 	</div>
 </div>
