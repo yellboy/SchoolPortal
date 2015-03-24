@@ -1,3 +1,5 @@
+<script>var SPV = {};</script>
+
 <section class="zone pre-header container">
 	<div class="row">
 		<div class="col-md-7">
@@ -13,8 +15,8 @@
 		</div>
 		<div class="col-md-5">
 			<form id="searchbox">
-			    <input id="search" type="text" placeholder="Унесите текст">
-			    <input id="submit" type="submit" value="Претражи">
+				<input id="search" type="text" placeholder="Унесите текст">
+				<input id="submit" type="submit" value="Претражи">
 			</form>
 		</div>
 	</div>

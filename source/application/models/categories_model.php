@@ -8,19 +8,14 @@ class Categories_model extends CI_Model {
 		parent::__construct();
 	}
 	
-	function get_last_ten_entries()
+	public function save_category($obj)
 	{
-		//$query = $this->db->get('entries', 10);
-		//return $query->result();
-	}
-
-	function insert_entry()
-	{
-		//$this->title   = $_POST['title']; // please read the below note
-		//$this->content = $_POST['content'];
-		//$this->date    = time();
-
-		//$this->db->insert('entries', $this);
+		$obj->IsDeleted = 0;
+		$obj->IsHidden = 0;
+		$obj->Version = 1;
+		$obj->Guid = uniqid();
+		$this->db->insert('category', (array) $obj);
+		return $this->db->insert_id(); // returns new inserted id
 	}
 
 	function update_entry()
@@ -30,6 +25,13 @@ class Categories_model extends CI_Model {
 		//$this->date    = time();
 
 		//$this->db->update('entries', $this, array('id' => $_POST['id']));
+	}
+	
+	function rename_category($id, $title)
+	{
+		$data = array('Title' => $title);
+		$this->db->where('id', $id);
+		$this->db->update('category', $data); 
 	}
 	
 	function delete_categories($ids)
