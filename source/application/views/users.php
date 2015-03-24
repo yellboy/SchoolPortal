@@ -15,16 +15,40 @@
 		</div>
 	</form>
 	<table border="1" style="width:100%" class="table-striped">
+		
 		<tr>
 			<th class="container-fluid"><b>Корисничко име</b></th>
 			<th class="container-fluid"><b>Име</b></th>
 			<th class="container-fluid"><b>Презиме</b></th>
 			<th class="container-fluid"><b>е-пошта</b></th>
-			<th class="container-fluid"><b>Предмети</b></th>
+			<!-- <th class="container-fluid"><b>Предмети</b></th> -->
 			<th class="container-fluid"><b>&nbsp</b></th>
 			<th class="container-fluid"><b>&nbsp</b></th>
 		</tr>
+		<?php 
+			foreach ($users as $user)
+			{
+		?>
 		<tr>
+			<td class="container-fluid"><?php echo $user->username?></td>
+			<td class="container-fluid"><?php echo $user->firstName?></td>
+			<td class="container-fluid"><?php echo $user->lastName?></td>
+			<td class="container-fluid"><?php echo $user->email?></td>
+			<td class="container-fluid">
+				<div align="center">
+					<a type="submit" class="btn btn-danger" href="/administration/profile">Измени</a>
+				</div>
+			</td>
+			<td class="container-fluid">
+				<div class="container-fluid" align="center">
+					<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#confirm_modal">Обриши</button>
+				</div>
+			</td>
+		</tr>
+		<?php 
+			}
+		?>
+		<!-- <tr>
 			<td class="container-fluid">года</td>
 			<td class="container-fluid">Гордана</td>
 			<td class="container-fluid">Давидовић</td>
@@ -57,7 +81,7 @@
 					<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#confirm_modal">Обриши</button>
 				</div>
 			</td>
-		</tr>
+		</tr> -->
 	</table>
 	
 	<?php $this->load->view('confirm_modal');?>

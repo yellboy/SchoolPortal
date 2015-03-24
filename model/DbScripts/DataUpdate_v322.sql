@@ -26,10 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `category`
 --
 
-DROP TABLE 'category'
-
 CREATE TABLE IF NOT EXISTS `category` (
-`Id` bigint(20) NOT NULL,
+  `Id` bigint(20) NOT NULL,
   `Version` int(11) NOT NULL,
   `Guid` varchar(50) COLLATE cp1251_bin NOT NULL,
   `Title` varchar(100) COLLATE cp1251_bin NOT NULL COMMENT 'Category title visible on website.',
