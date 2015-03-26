@@ -30,10 +30,10 @@
 			{
 		?>
 		<tr>
-			<td class="container-fluid"><?php echo $user->username?></td>
-			<td class="container-fluid"><?php echo $user->firstName?></td>
-			<td class="container-fluid"><?php echo $user->lastName?></td>
-			<td class="container-fluid"><?php echo $user->email?></td>
+			<td class="container-fluid"><?php echo $user->UserName?></td>
+			<td class="container-fluid"><?php echo $user->FirstName?></td>
+			<td class="container-fluid"><?php echo $user->LastName?></td>
+			<td class="container-fluid"><?php echo $user->Email?></td>
 			<td class="container-fluid">
 				<div align="center">
 					<a type="submit" class="btn btn-danger" href="/administration/profile">Измени</a>
