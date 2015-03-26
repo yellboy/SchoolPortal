@@ -1,4 +1,4 @@
-<script>var SPV = {};</script>
+<script>var SPV = SPV || {};</script>
 
 <section class="zone pre-header container">
 	<div class="row">

@@ -4,11 +4,10 @@
 		<?php
 			$this->load->helper('url');
 			$this->load->view('head_meta'); 
-			echo link_tag('assets/plugins/vakata-jstree/dist/themes/default/style.min.css');
-			$jstree = base_url() . "assets/plugins/vakata-jstree/dist/jstree.min.js";
 			$category = base_url() . "assets/scripts/category.js";
 		?>
-		<script src="<?php echo $jstree; ?>"></script>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.0/themes/default/style.min.css" rel="stylesheet" type="text/css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.0/jstree.min.js"></script>
 		<script src="<?php echo $category; ?>"></script>
 	</head>
 	
