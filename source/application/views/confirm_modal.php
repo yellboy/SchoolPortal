@@ -7,10 +7,10 @@
 				</span>
 			</div>
 			<div class="modal-footer" align="center">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">
+				<button type="button" class="btn btn-danger yes-button" data-dismiss="modal">
 					Да
 				</button>
-				<button type="button" class="btn btn-danger" data-dismiss="modal">
+				<button type="button" class="btn" data-dismiss="modal">
 					Не
 				</button>
 			</div>

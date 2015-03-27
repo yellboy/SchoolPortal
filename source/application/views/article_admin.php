@@ -17,7 +17,7 @@
 			</div>
 		</div>
 
-		<?php $this->load->view('article_files')?>
+<!--		<?php $this->load->view('article_files')?>-->
 
 		<div class="row article-list" style="margin-top:30px;margin-bottom:15px;display:none"; >
 			<div class="col-md-6">
@@ -27,8 +27,8 @@
 			</div>
 		</div>
 		<div class="row article-list" style="display:none;">
-			<div class="col-md-3"><input type="text" class="form-control" placeholder="<?php echo $this->lang->line('SearchByTitle'); ?>"/> </div>
-			<div class="col-md-3"><input type="text" class="form-control" placeholder="<?php echo $this->lang->line('SearchByAuthor'); ?>"/> </div>
+			<div class="col-md-3"><input type="text" class="form-control searchByTitle" placeholder="<?php echo $this->lang->line('SearchByTitle'); ?>"/> </div>
+			<div class="col-md-3"><input type="text" class="form-control searchByAuthor" placeholder="<?php echo $this->lang->line('SearchByAuthor'); ?>"/> </div>
 		</div>
 		<table border="1" style="width:100%; margin-bottom:25px; margin-top:15px;display:none;" class="table-striped article-list articles-list-holder">
 		</table>
@@ -69,12 +69,13 @@
 		</td>
 		<td class="container-fluid">
 			<div class="container-fluied">
-				<button type="submit" class="btn btn-danger delete-article" data-toggle="modal" data-target="#confirm_modal"><?php echo $this->lang->line('Delete'); ?></button>
+				<button type="submit" class="btn btn-danger delete-article"><?php echo $this->lang->line('Delete'); ?></button>
 			</div>
 		</td>
 	</tr>
 	{{/rows}}
 </script>
+
 
 
 

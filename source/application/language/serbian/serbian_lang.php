@@ -30,4 +30,7 @@
 		var ST = ST || {};
 		ST.Articles = "Чланци";
 		ST.News = "Вести";
+		ST.ErrorTitle = "Морате унети наслов.";
+		ST.ErrorContent = "Морате унети садржај";
+		ST.SaveSuccess = "Успешно сачувано";
 	</script>
