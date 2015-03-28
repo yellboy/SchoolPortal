@@ -14,6 +14,12 @@ class UsersController extends CI_Controller {
 		$this->load->model('Users_model');
 		return $this->Users_model->getUsers();
 	}
+	
+	// Ajax post
+	function setUserToShow() 
+	{
+		$data['id'] = $this->input->post('$id');
+	}
 }
 
 /* End of file welcome.php */

@@ -49,7 +49,7 @@ $route['add-to-alumni'] = "addToAlumniController";
 $route['teachers'] = "teachersController";
 $route['view_profile'] = "viewProfileController";
 $route['404_override'] = '';
-
+$route['administration/profile/(:num)'] = "userProfileController/index/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

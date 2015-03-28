@@ -21,5 +21,10 @@
 			return $users;
 		}
 		
+		function getUserById($id) 
+		{
+			return $this->db->get_where('user', array('Id' => $id))->result()[0];
+		}
+		
 	}
 ?>
