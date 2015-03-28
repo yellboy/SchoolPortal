@@ -1,7 +1,7 @@
 <section class="zone pre-header container">
 	<div class="row">
 		<div class="col-md-7">
-			<img src="assets/styles/img/rss.png" alt="RSS" />
+			<img src="/assets/styles/img/rss.png" alt="RSS" />
 			<ul>
 				<li><a href="/" title="Pocetna stranica">Почетна</a></li>
 				<li><a href="/login" title="Prijava na sistem">Пријави ме</a></li>

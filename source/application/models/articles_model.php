@@ -19,7 +19,7 @@ class Articles_model extends CI_Model {
 	
 	function loadArticles($categoryId, $searchByName = null, $searchByAuthor = null)
 	{
-		$this->db->select('Id, Title, Content, CreatedByUserName, Route, CreatedAt')->from('content')->where(array('CategoryId' => $categoryId, 'ContentType' => ContentTypes::Article, 'IsDeleted' => '0'));
+		$this->db->select('Id, Title, Content, CreatedByUserName, CreatedAt')->from('content')->where(array('CategoryId' => $categoryId, 'ContentType' => ContentTypes::Article, 'IsDeleted' => '0'));
 		
 		if (!$this->IsNullOrEmptyString($searchByName)){
 			$this->db->like('Title', $searchByName);
@@ -29,7 +29,7 @@ class Articles_model extends CI_Model {
 			$this->db->like('CreatedByUserName', $searchByAuthor);
 		}
 		
-		$this->db->order_by('CreatedAt', 'asc');
+		$this->db->order_by('CreatedAt', 'desc');
 		return $this->db->get()->result();
 	}
 	
@@ -44,7 +44,6 @@ class Articles_model extends CI_Model {
 			$obj->LastModifiedAt = date("Y-m-d");
 			$this->db->where('id', $id);
 			$this->db->update('content', (array) $obj); 
-			// todo generate route somehow
 			return $id;
 		}
 		else{
@@ -55,7 +54,6 @@ class Articles_model extends CI_Model {
 			$obj->CreatedAt = date("Y-m-d");
 			$obj->LastModifiedAt = null;
 			// todo set logged user as owner
-			// todo generate route somehow
 			$this->db->insert('content', (array) $obj);
 			return $this->db->insert_id();
 		}

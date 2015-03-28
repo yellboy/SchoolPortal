@@ -3,12 +3,16 @@ $(function () {
 		$('.carousel a.right').click();
 	}, 4000)
 
-	$('ul.level1 > li > div > a').on('click', function (e) {
-		// prevent if there are no kids
+	$('.auth-only').hide(); // TEMP
+
+	if (SPV && SPV.pageHierarchyId) {
+		var root = SPV.pageHierarchyId.split('.')[1];
+		$('nav .level1 > li > div > a[id=' + root + ']').addClass('selected');
+	}
+
+	$('body').on('click', '.prevent', function (e) {
 		e.stopPropagation();
 		e.preventDefault();
 	});
 
-	$('.auth-only').hide(); // TEMP
-	$('nav .level1 li a').first().addClass('selected');
 });

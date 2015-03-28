@@ -1,6 +1,6 @@
 <?php 
     $data = array("http://www.mpn.gov.rs", "http://www.mos.gov.rs", "http://www.palilula.org.rs");
-    $url = "assets/styles/img/sidebar_";
+    $url = "/assets/styles/img/sidebar_";
 ?>
 
 

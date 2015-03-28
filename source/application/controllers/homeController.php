@@ -2,24 +2,26 @@
 
 class HomeController extends CI_Controller {
 
-	private $categoryId = 2;
+	private $homeCategoryId = 2; // HACK
 	
 	public function index()
 	{
-		$data['categories'] = $this->loadCategories();
-		$data['articles'] = $this->loadArticles();
-		$this->load->view('layouts/homeLayout', $data);
-	}
-
-	private function loadCategories()
-	{
-		$this->load->model('Categories_model');
-		return $this->Categories_model->loadCategories();
-	}
-	
-	private function loadArticles()
-	{
 		$this->load->model('Articles_model');
-		return $this->Articles_model->loadArticles($this->categoryId);
+		$this->load->model('Categories_model');
+				
+		$routeId = $this->uri->segment($this->uri->total_segments());
+		$categoryId = $this->homeCategoryId;
+
+		if ($this->uri->total_segments() > 0 && is_numeric($routeId)){
+			$categoryId = $routeId;
+		}
+		
+		$category = $this->Categories_model->loadCategory($categoryId); // if category cannot be found - go to 301
+		
+		$data['categories'] = $this->Categories_model->loadCategories();
+		$data['articles'] = $this->Articles_model->loadArticles($categoryId);
+		$data['category'] = $category; // exclude from cache
+		
+		$this->load->view('layouts/homeLayout', $data);
 	}
 }
