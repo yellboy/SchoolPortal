@@ -1,8 +1,6 @@
 <?php
 class Categories_model extends CI_Model {
 
-	var $categories = array();
-
 	function __construct()
 	{
 		parent::__construct();
@@ -15,16 +13,18 @@ class Categories_model extends CI_Model {
 		$obj->Version = 1;
 		$obj->Guid = uniqid();
 		$this->db->insert('category', (array) $obj);
-		return $this->db->insert_id(); // returns new inserted id
+		$id = $this->db->insert_id(); 
+		
+		// $this->update_category($id, $obj);
+		return $id;
 	}
 
-	function update_entry()
+	public function update_category($id, $obj)
 	{
-		//$this->title   = $_POST['title'];
-		//$this->content = $_POST['content'];
-		//$this->date    = time();
-
-		//$this->db->update('entries', $this, array('id' => $_POST['id']));
+		$obj->HierarchyId = $obj->HierarchyId . $id . '.';
+		$this->db->where('id', $id);
+		$this->db->update('category', (array) $obj); 
+		// update all other positions on this level ... this is maybe going to be a problem
 	}
 	
 	function rename_category($id, $title)
@@ -54,9 +54,9 @@ class Categories_model extends CI_Model {
 			return $this->db->select('Id, Id as id, Title as text')->order_by('Position', 'asc')->get_where('category', array('ParentId' => $id))->result();
 		}
 		
-		return $this->db->select('Id, Title, Route')->order_by('Position', 'asc')->get_where('category', array('IsHidden' => '0', 'IsDeleted' => '0', 'ParentId' => $id))->result();
+		return $this->db->select('Id, Title, Route, IsFixedRoute')->order_by('Position', 'asc')->get_where('category', array('IsHidden' => '0', 'IsDeleted' => '0', 'ParentId' => $id))->result();
 	}
-		
+	
 	// MM4ALL this will be cached for a long period - it's fast enough
 	function loadCategories()
 	{
@@ -69,7 +69,7 @@ class Categories_model extends CI_Model {
 		
 		return $categories;
 	}
-		
+	
 	private function _load_children($category, $admin = 0){
 		if ($category->ChildrenCount > 0){
 			foreach ($category->children as $child) {
@@ -80,6 +80,7 @@ class Categories_model extends CI_Model {
 		}
 	}
 	
+	// public
 	function loadCategoriesForJsTree()
 	{
 		$categories = $this->_get_category_children(null, 1);
@@ -90,6 +91,12 @@ class Categories_model extends CI_Model {
 		}
 		
 		return $categories;
+	}
+	
+	// public
+	function loadCategory($categoryId)
+	{
+		return $this->db->get_where('category', array('Id' => $categoryId))->result()[0];
 	}
 
 }

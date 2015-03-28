@@ -27,7 +27,7 @@ $(function () {
 					'data': SPV.categories
 				},
 				"types": {
-					"#": { "max_children": 1, "max_depth": 6, "valid_children": ["root"] },
+					"#": { "max_children": 1, "max_depth": 8, "valid_children": ["root"] },
 					"root": { "icon": "/assets/styles/img/tree_icon.png", "valid_children": ["default"] },
 					"default": { "valid_children": ["default", "file"] },
 					"file": { "icon": "glyphicon glyphicon-file", "valid_children": [] }
@@ -75,7 +75,18 @@ $(function () {
 			});
 
 			$("#jstree-holder").bind("move_node.jstree", function (event, data) {
-				console.log(data);
+
+				var parents = data.node.parents.reverse();
+				parents = parents.slice(1);
+				var hierarchy = parents.join('.') + '.';
+				var level = parents.length;
+
+				$.ajax({
+					type: 'POST',
+					url: '/CategoryController/UpdateCategory',
+					dataType: 'json',
+					data: { id: data.node.id, parentId: data.parent, position: data.position, level: level, hierarchy: hierarchy }
+				});
 			});
 
 			$('.rename-category').on('click', function (e) {
@@ -119,14 +130,18 @@ $(function () {
 		},
 		saveCategory: function (data) {
 			var self = this;
+			var parents = data.node.parents.reverse();
+			parents = parents.slice(1);
+			var hierarchy = parents.join('.') + '.';
+			var level = parents.length;
+
 			$.ajax({
 				type: 'POST',
 				url: '/CategoryController/SaveCategory',
 				dataType: 'json',
-				data: { id: data.node.id, title: data.node.text, parentId: data.node.parent, position: data.position },
+				data: { id: data.node.id, title: data.node.text, parentId: data.node.parent, position: data.position, level: level, hierarchy: hierarchy },
 				success: function (result) {
 					var sel = self._$jsTree.get_selected();
-					var node = self._$jsTree.get_node(sel);
 					self._$jsTree.set_id(data.node, result);
 				}
 			});

@@ -24,11 +24,13 @@
 			</div>
 		</div>
 	</div>
+	<!--	
 	<div class="row">
 		<div class="col-md-2">
 			<button type="button" class="btn btn-success btn-sm"><i class="glyphicon glyphicon-asterisk"></i> <?php echo $this->lang->line('Save'); ?> </button>
 		</div>
 	</div>
+	-->
 	<div class="row" style="margin-bottom:25px;margin-top:15px;">
 		<div class="col-md-12">
 		<h4><?php echo $this->lang->line('UserGuide'); ?></h4>

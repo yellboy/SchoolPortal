@@ -39,8 +39,23 @@ class CategoryController extends CI_Controller {
 		$obj->Title = $this->input->post('title');
 		$obj->ParentId = $this->input->post('parentId');
 		$obj->Position = $this->input->post('position');
+		$obj->HierarchyDepth = $this->input->post('level');
+		$obj->HierarchyId = $this->input->post('hierarchy');
 		
 		$id = $this->Categories_model->save_category($obj);
+		echo $id;
+	}
+	
+	public function UpdateCategory(){
+		$this->load->model('Categories_model');
+		$obj = new stdClass;
+		$id = $this->input->post('id');
+		$obj->ParentId = $this->input->post('parentId');
+		$obj->Position = $this->input->post('position');
+		$obj->HierarchyDepth = $this->input->post('level');
+		$obj->HierarchyId = $this->input->post('hierarchy');
+		
+		$this->Categories_model->update_category($id, $obj);
 		echo $id;
 	}
 	

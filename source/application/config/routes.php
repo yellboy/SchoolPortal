@@ -51,5 +51,7 @@ $route['view_profile'] = "viewProfileController";
 $route['404_override'] = '';
 $route['administration/profile/(:num)'] = "userProfileController/index/$1";
 
+$route['category/(:any)/(:num)'] = "homeController";
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

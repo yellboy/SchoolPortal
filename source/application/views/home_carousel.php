@@ -14,10 +14,10 @@
     <div class="carousel-inner" role="listbox">
         <?php 
             for ($i = 0; $i < $numOfSlides; $i++) { 
-                $isActive = $i == 0 ? "active" : "";               
+                $isActive = $i == 0 ? "active" : "";
                 echo "
                     <div class='item " . $isActive . "'>
-                      <img src='assets/styles/img/slider0" . ($i + 1) . ".jpg' alt='Slika gimnazije'>
+                      <img src='/assets/styles/img/slider0" . ($i + 1) . ".jpg' alt='Slika gimnazije'>
                     </div>
                 ";
             }
