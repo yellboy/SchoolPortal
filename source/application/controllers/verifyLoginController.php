@@ -49,6 +49,7 @@
 			}
 			else
 			{
+				$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 				$this->form_validation->set_message('check_database', $this->lang->line('LoginError') . "!");
 				return FALSE;
 			}

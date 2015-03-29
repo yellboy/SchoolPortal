@@ -80,6 +80,11 @@ body {
         color: #5F5C5C; }
         .pre-header ul li a:hover {
           color: #838383; }
+      .pre-header ul li.username {
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #ea2130;
+        font-size: 14px; }
   .pre-header form#searchbox {
     background-color: #eaf8fc;
     background-image: linear-gradient(#fff, #D2D2D2);
@@ -168,6 +173,17 @@ body {
 .main {
   background: #e3e3e3;
   border-top: 2px solid #bbb; }
+  .main div.error {
+    font-size: 20px;
+    color: #e25252;
+    margin-top: 5px;
+    margin-bottom: 30px; }
+  .main .login {
+    width: 100%; }
+    .main .login h1 {
+      margin-bottom: 25px; }
+    .main .login .row {
+      margin-bottom: 10px; }
   .main .home-carousel {
     margin-top: 25px; }
     .main .home-carousel img {

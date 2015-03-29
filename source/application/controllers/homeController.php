@@ -24,9 +24,8 @@
 			
 			$category = $this->Categories_model->loadCategory($categoryId);
 			
-			// category not found - redirect
 			if (count($category) == 0 || count($category) > 1 || ($category[0]->IsFixedRoute && $category[0]->Id != $this->homeCategoryId)){
-				redirect('/', 'refresh');
+				redirect('/', 'refresh'); // someone is trying to bypass - redirect
 			}
 			
 			$category = $category[0];
