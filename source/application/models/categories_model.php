@@ -96,7 +96,7 @@ class Categories_model extends CI_Model {
 	// public
 	function loadCategory($categoryId)
 	{
-		return $this->db->get_where('category', array('Id' => $categoryId))->result()[0];
+		return $this->db->get_where('category', array('Id' => $categoryId))->result();
 	}
 
 }

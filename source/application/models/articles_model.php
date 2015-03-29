@@ -33,6 +33,14 @@ class Articles_model extends CI_Model {
 		return $this->db->get()->result();
 	}
 	
+	function searchArticles($searchText){
+		$this->db->select('Id, Title, Content, CreatedByUserName, CreatedAt')->from('content')->where(array('ContentType' => ContentTypes::Article, 'IsDeleted' => '0'));
+		$this->db->or_like('Title', $searchText);
+		$this->db->or_like('Content', $searchText);
+		$this->db->or_like('CreatedByUserName', $searchText);
+		return $this->db->get()->result();
+	}
+	
 	function loadArticle($articleId)
 	{
 		return $this->db->select('Id, Title, Content')->get_where('content', array('Id' => $articleId, 'ContentType' => ContentTypes::Article))->result();

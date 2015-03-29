@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<?php
-			$this->load->helper('url');
 			$this->load->view('head_meta'); 
 			$category = base_url() . "assets/scripts/category.js";
 		?>

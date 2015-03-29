@@ -1,9 +1,13 @@
-<form class="login input-group">
+
+<?php echo validation_errors(); ?>
+<?php echo form_open('verifyLoginController', array('class' => 'login input-group')); ?>
+
 	<div class="form-tittle"> <h1> Улогујте се </h1> </div>
-	<input type="text" class="form-control" placeholder="Корисничко име"/> 
-	<input type="password" class="form-control" placeholder="Лозинка"/> <br/>
+	<label for="username">Корисничко име:</label>
+	<input type="text" size="20" id="username" name="username" class="form-control" placeholder="Корисничко име"/>
+	<br />
+	<label for="password">Лозинка:</label>
+	<input type="password" size="20" id="password" name="password" class="form-control" placeholder="Лозинка"/>
+	<br />
 	<button type="submit" class="btn btn-danger">Улогуј ме</button>
-	<div>
-		<a href="/default" class="text-muted">Повратак на главну страницу</a>
-	</div>
 </form>

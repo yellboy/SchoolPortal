@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<?php
-			$this->load->helper('url');
 			$this->load->view('head_meta'); 
 			$article = base_url() . "assets/scripts/article.js";
 			$ckeditor = base_url() . "assets/plugins/ckeditor/ckeditor.js";

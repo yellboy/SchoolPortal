@@ -23,6 +23,8 @@
 	$lang['Add'] = "Додај";
 	$lang['ArticlesUserGuid'] = "please write this";
 	$lang['News'] = "Вести";
+	$lang['SearchResultsFor'] = "Резултати претраге за";
+	$lang['LoginError'] = "Неисправно корисничко име или лозинка";
 ?>
 
 	<script>

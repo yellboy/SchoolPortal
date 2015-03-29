@@ -14,7 +14,6 @@
 			case '10': return 'OKT';
 			case '11': return 'NOV';
 			case '12': return 'DEC';
-			// TODO months
 			default: return '';
 		}
 	}

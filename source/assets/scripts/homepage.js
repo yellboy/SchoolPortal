@@ -7,8 +7,19 @@ $(function () {
 
 	if (SPV && SPV.pageHierarchyId) {
 		var root = SPV.pageHierarchyId.split('.')[1];
-		$('nav .level1 > li > div > a[id=' + root + ']').addClass('selected');
+		if (root) {
+			$('nav .level1 > li > div > a[id=' + root + ']').addClass('selected');
+		}
 	}
+
+	$('body').on('click', '#searchbox #submit', function (e) {
+		e.stopPropagation();
+		e.preventDefault();
+		var $text = $('#searchbox #search').val();
+		if ($text && $text.trim() != '') {
+			window.location.assign('/search/' + $text.trim());
+		}
+	});
 
 	$('body').on('click', '.prevent', function (e) {
 		e.stopPropagation();

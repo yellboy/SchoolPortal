@@ -37,9 +37,12 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
 $route['default_controller'] = "homeController";
+$route['search/(:any)'] = "homeController/search/$1";
+$route['category/(:any)/(:num)'] = "homeController";
+$route['verifyLogin'] = "verifyLoginController";
 $route['login'] = "loginController";
+$route['logout'] = "loginController/logout";
 $route['administration/users'] = "usersController";
 $route['administration/register'] = "registerController";
 $route['administration/category'] = "categoryController";
@@ -51,7 +54,7 @@ $route['view_profile'] = "viewProfileController";
 $route['404_override'] = '';
 $route['administration/profile/(:num)'] = "userProfileController/index/$1";
 
-$route['category/(:any)/(:num)'] = "homeController";
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

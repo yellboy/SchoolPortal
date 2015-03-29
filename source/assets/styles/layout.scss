@@ -28,6 +28,7 @@ body {
 		img{
 			margin-top: 9px;
 			float: left;
+			display:none;
 		}
 
 		ul{
@@ -159,15 +160,21 @@ body {
 		}
 	}
 
-.main{
+.main {
 	background: #e3e3e3;
 	border-top: 2px solid #bbb;
 
-	.home-carousel{
-		margin-top:25px;
-		img{
-			width:100%;
+	.home-carousel {
+		margin-top: 25px;
+
+		img {
+			width: 100%;
 		}
+	}
+
+	.search-results {
+		font-weight: 600;
+		font-size: 16px;
 	}
 
 	.right-sidebar-content-holder {
@@ -180,14 +187,14 @@ body {
 		margin-top: 25px;
 		box-shadow: 0 0 5px rgba(0,0,0,0.15);
 
-		h2{
+		h2 {
 			background: #d8d8d8;
 			background: -moz-linear-gradient(#fff, #d8d8d8);
 			background: -webkit-linear-gradient(#fff, #d8d8d8);
 			background: -o-linear-gradient(#fff, #d8d8d8);
 			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#d8d8d8')";
 			background: linear-gradient(#fff, #d8d8d8);
-			font-size:22px;
+			font-size: 22px;
 			text-align: center;
 			padding-bottom: 6px;
 			margin-top: -2%;
@@ -195,7 +202,7 @@ body {
 			margin-right: -5%;
 		}
 
-		div.content-holder{
+		div.content-holder {
 			margin: 0 auto;
 			width: 80%;
 		}

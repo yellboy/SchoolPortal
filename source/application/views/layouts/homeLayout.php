@@ -17,6 +17,9 @@
 				<div class="col-md-9">
 					<div class="home-carousel">
 						<?php 
+							if ($searchTerm != null){
+								echo '<div class="search-results">' . $this->lang->line('SearchResultsFor') . ' "' . $searchTerm . '":</div>';
+							}
 							if ($category->IsHome == 1){
 								$this->load->view('home_carousel');
 							}
