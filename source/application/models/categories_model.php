@@ -1,10 +1,5 @@
 <?php
 class Categories_model extends CI_Model {
-
-	function __construct()
-	{
-		parent::__construct();
-	}
 	
 	public function save_category($obj)
 	{
@@ -24,7 +19,8 @@ class Categories_model extends CI_Model {
 		$obj->HierarchyId = $obj->HierarchyId . $id . '.';
 		$this->db->where('id', $id);
 		$this->db->update('category', (array) $obj); 
-		// update all other positions on this level ... this is maybe going to be a problem
+		// update all other positions on this level 
+		// this is maybe going to be a problem
 	}
 	
 	function rename_category($id, $title)
@@ -48,19 +44,24 @@ class Categories_model extends CI_Model {
 		$this->db->update('category', $data); 
 	}
 
-	private function _get_category_children($id, $admin = 0)
+	private function _get_category_children($id)
 	{
-		if ($admin){
-			return $this->db->select('Id, Id as id, Title as text')->order_by('Position', 'asc')->get_where('category', array('ParentId' => $id))->result();
-		}
-		
-		return $this->db->select('Id, Title, Route, IsFixedRoute')->order_by('Position', 'asc')->get_where('category', array('IsHidden' => '0', 'IsDeleted' => '0', 'ParentId' => $id))->result();
+		return $this->db->select('Id, Id as id, Title as text')->order_by('Position', 'asc')->get_where('category', array('ParentId' => $id))->result();
 	}
 	
-	// MM4ALL this will be cached for a long period - it's fast enough
-	function loadCategories()
+	private function _load_children($category){
+		if ($category->ChildrenCount > 0){
+			foreach ($category->children as $child) {
+				$child->children = $this->_get_category_children($child->Id);
+				$child->ChildrenCount = count($child->children);
+				$this->_load_children($child);
+			}
+		}
+	}
+	
+	public function loadCategoriesForJsTree()
 	{
-		$categories = $this->_get_category_children('1');
+		$categories = $this->_get_category_children(null);
 		foreach ($categories as $category) {
 			$category->children = $this->_get_category_children($category->Id);
 			$category->ChildrenCount = count($category->children);
@@ -70,33 +71,42 @@ class Categories_model extends CI_Model {
 		return $categories;
 	}
 	
-	private function _load_children($category, $admin = 0){
-		if ($category->ChildrenCount > 0){
-			foreach ($category->children as $child) {
-				$child->children = $this->_get_category_children($child->Id, $admin);
-				$child->ChildrenCount = count($child->children);
-				$this->_load_children($child, $admin);
-			}
-		}
-	}
-	
-	// public
-	function loadCategoriesForJsTree()
-	{
-		$categories = $this->_get_category_children(null, 1);
-		foreach ($categories as $category) {
-			$category->children = $this->_get_category_children($category->Id, 1);
-			$category->ChildrenCount = count($category->children);
-			$this->_load_children($category, 1);
-		}
-		
-		return $categories;
-	}
-	
-	// public
-	function loadCategory($categoryId)
+	public function loadCategory($categoryId)
 	{
 		return $this->db->get_where('category', array('Id' => $categoryId))->result();
+	}
+	
+	public function loadCategoryMenu(){
+		$queryResult = $this->db->order_by('Position', 'asc')->get_where('category', array('IsHidden' => '0', 'IsDeleted' => '0'))->result();
+		$resultTree = $this->_getChildrenFromQuery($queryResult, 1);
+		return $resultTree;
+	}
+	
+	private function _getChildrenFromQuery($query, $id){
+		$tree = array();
+		foreach ($query as $cat)
+		{
+			if ($cat->ParentId == $id){
+				$obj = new stdClass();
+				$obj->Id = $cat->Id;
+				$obj->Title = $cat->Title;
+				$obj->Route = $cat->Route;
+				$obj->IsFixedRoute = $cat->IsFixedRoute;
+				$obj->Children = $this->_getChildrenFromQuery($query, $cat->Id);
+				
+				if (isset($obj->Children))
+				{
+					$obj->ChildrenCount = count($obj->Children);
+				}
+				else
+				{
+					$obj->ChildrenCount = 0;
+				}
+				
+				array_push($tree, $obj);
+			}
+		}
+		return $tree;
 	}
 
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>404 Page Not Found</title>
+<title>404 Страна није пронађена</title>
 <style type="text/css">
 
 ::selection{ background-color: #E13300; color: white; }
@@ -55,8 +55,8 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+		<h1>404 Страна није пронађена</h1>
+		Покушајте поново или отворите почетну страницу <a href="/">Почетна</a>
 	</div>
 </body>
 </html>

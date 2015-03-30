@@ -61,7 +61,6 @@ class Articles_model extends CI_Model {
 			$obj->Guid = uniqid();
 			$obj->CreatedAt = date("Y-m-d");
 			$obj->LastModifiedAt = null;
-			// todo set logged user as owner
 			$this->db->insert('content', (array) $obj);
 			return $this->db->insert_id();
 		}

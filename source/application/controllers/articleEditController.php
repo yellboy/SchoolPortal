@@ -61,11 +61,15 @@ class ArticleEditController extends CI_Controller {
 		if($this->_checkLogin())
 		{
 			$this->load->model('Articles_model');
+			$session_data = $this->session->userdata('logged_in');
 			$id = $this->input->post('id');
 			$obj = new stdClass;
 			$obj->Title = $this->input->post('title');
 			$obj->Content = $this->input->post('content');
 			$obj->CategoryId = $this->input->post('categoryId');
+			$obj->CreatedByUserName = $session_data['username'];
+			$obj->CreatedByUserId = $session_data['id'];
+			
 			$result = $this->Articles_model->saveArticle($id, $obj);
 			echo json_encode($result, JSON_UNESCAPED_UNICODE);
 		}

@@ -10,17 +10,27 @@
 			$this->load->model('Articles_model');
 			$this->load->model('Categories_model');
 		}
+		
+		private function _setProfiler()
+		{
+			$sections = array(
+				'queries' => TRUE
+			);
+
+			$this->output->set_profiler_sections($sections);
+			$this->output->enable_profiler(TRUE);
+			
+		}
 	
 		public function index()
 		{
-			// $this->output->cache(60);
-			
 			$routeId = $this->uri->segment($this->uri->total_segments());
 			$categoryId = $this->homeCategoryId;
 
 			if ($this->uri->total_segments() > 0 && is_numeric($routeId)){
 				$categoryId = $routeId;
 			}
+			
 			
 			$category = $this->Categories_model->loadCategory($categoryId);
 			
@@ -30,7 +40,7 @@
 			
 			$category = $category[0];
 			
-			$data['categories'] = $this->Categories_model->loadCategories(); // cache this!
+			$data['categories'] = $this->Categories_model->loadCategoryMenu(); 
 			$data['articles'] = $this->Articles_model->loadArticles($categoryId);
 			$data['category'] = $category;
 			$data['searchTerm'] = NULL;
@@ -50,7 +60,7 @@
 		
 		public function search($searchTerm)
 		{
-			$data['categories'] = $this->Categories_model->loadCategories(); // cache this!
+			$data['categories'] = $this->Categories_model->loadCategoryMenu();
 			$data['articles'] = $this->Articles_model->searchArticles($searchTerm);
 			$data['category'] = $this->Categories_model->loadCategory(1)[0];
 			$data['searchTerm'] = str_replace('%20', ' ', $searchTerm);
