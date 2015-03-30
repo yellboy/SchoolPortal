@@ -49,6 +49,7 @@ $route['administration/category'] = "categoryController";
 $route['administration/profile'] = "userProfileController";
 $route['administration/article'] = "articleEditController";
 $route['add-to-alumni'] = "addToAlumniController";
+$route['alumni'] = "alumniController";
 $route['teachers'] = "teachersController";
 $route['view_profile'] = "viewProfileController";
 $route['404_override'] = '';
