@@ -1,6 +1,6 @@
 <div>
 	<div class="container-fluid" align="center">
-		<div class="form-title" align="center"><h2>года</h2></div>
+		<div class="form-title" align="center"><h2><?php echo $username?></h2></div>
 		<div class="col-md-4">
 			<div>
 				<img class="img-circle" style="width:200px" src="https://cdn0.iconfinder.com/data/icons/people-groups/512/User_Female-512.png">

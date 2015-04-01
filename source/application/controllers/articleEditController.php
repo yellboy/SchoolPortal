@@ -18,6 +18,7 @@ class ArticleEditController extends CI_Controller {
 		{
 			$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
+			$data['id'] = $session_data['id'];
 			$data['categories'] = $this::loadCategories();
 			$this->load->view('layouts/articleEditLayout', $data);
 		}

@@ -48,6 +48,7 @@
 			if($this->session->userdata('logged_in'))
 			{
 				$session_data = $this->session->userdata('logged_in');
+				$data['id'] = $session_data['id'];
 				$data['username'] = $session_data['username'];
 				$data['isLogged'] = true; 
 			}
@@ -68,6 +69,7 @@
 			if($this->session->userdata('logged_in'))
 			{
 				$session_data = $this->session->userdata('logged_in');
+				$data['id'] = $session_data['id'];
 				$data['username'] = $session_data['username'];
 				$data['isLogged'] = true; 
 			}
