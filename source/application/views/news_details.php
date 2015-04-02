@@ -37,11 +37,18 @@
 
 <?php foreach ($articles as $article) { ?>
 <div class="news-details-template">
-	<?php formatDateBox($article->CreatedAt) ?>
-	<div class="news-headline">
-		<h2><a href="#" class="prevent"><?php echo $article->Title; ?></a></h2>
-	</div>
-	<div class="clear"></div>
+	<?php 
+		if ($isHome){
+			formatDateBox($article->CreatedAt) ?>
+	
+			<div class="news-headline">
+				<h2><a href="#" class="prevent"><?php echo $article->Title; ?></a></h2>
+			</div>
+			<div class="clear"></div>
+			
+			<?php 
+		}
+		 ?>
 
 	<div class="news-content">
 		<?php echo $article->Content;?>
