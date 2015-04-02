@@ -6,12 +6,10 @@
 			$article = base_url() . "assets/scripts/article.js";
 			$ckeditor = base_url() . "assets/plugins/ckeditor/ckeditor.js";
 			$ckadapter = base_url() . "assets/plugins/ckeditor/adapters/jquery.js";
-			echo link_tag("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css");
 		?>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.0/themes/default/style.min.css" rel="stylesheet" type="text/css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.0/jstree.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.js"></script>
 		<script src="<?php echo $ckeditor; ?>"></script>
 		<script src="<?php echo $ckadapter; ?>"></script>
 		<script src="<?php echo $article; ?>"></script>

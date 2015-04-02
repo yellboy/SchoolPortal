@@ -35,4 +35,5 @@
 		ST.ErrorTitle = "Морате унети наслов.";
 		ST.ErrorContent = "Морате унети садржај";
 		ST.SaveSuccess = "Успешно сачувано";
+		ST.SaveError = "Дошло је до грешке. Чување није успело."
 	</script>
