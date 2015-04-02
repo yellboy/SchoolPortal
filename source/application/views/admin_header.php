@@ -6,7 +6,7 @@
 				<li><a href="/administration/users" title="Pretraga korisnika">Kорисници</a></li>
 				<li><a href="/administration/category" title="Pretraga korisnika">Категорије</a></li>
 				<li><a href="/administration/article" title="Pretraga korisnika">Чланци</a></li>
-				<li><a href="/administration/profile" title="Pretraga korisnika">Мој профил</a></li>
+				<li><a href="/administration/profile/<?php echo $id ?>" title="Pretraga korisnika">Мој профил</a></li>
 				<li class="username"><?php echo $username; ?></li>
 				<li><a href="/logout" title="Odjava sa sistema">Oдјави ме</a></li>
 			</ul>

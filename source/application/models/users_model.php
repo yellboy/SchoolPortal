@@ -46,5 +46,11 @@
 			}
 		}
 		
+		function SaveUser($user)
+		{
+			$this->db->where('id', $user->Id);
+			$this->db->update('user', $user);
+		}
+		
 	}
 ?>

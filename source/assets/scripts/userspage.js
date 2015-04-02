@@ -1,5 +1,3 @@
-var $userToShow;
-
 $(function() {
 	
 	var $table = $('#users-table');
