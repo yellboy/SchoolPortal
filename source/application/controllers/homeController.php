@@ -44,6 +44,7 @@
 			$data['articles'] = $this->Articles_model->loadArticles($categoryId);
 			$data['category'] = $category;
 			$data['searchTerm'] = NULL;
+			$data['isHome'] = $category->Id == $this->homeCategoryId;
 			
 			if($this->session->userdata('logged_in'))
 			{
