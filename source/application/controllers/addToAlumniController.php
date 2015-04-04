@@ -2,26 +2,18 @@
 
 class addToAlumniController extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+	public static $id = 4;
+
 	public function index()
 	{
+		//$data['alumnus'] = $this::DodajAlumni();
 		$this->load->view('layouts/addToAlumniLayout'); //send data to render slides here
 	}
+	
+	public function DodajAlumni($firstName, $lastName)	//Izbaciti ove parametre???
+	{
+		$this->load->model('Alumnus_model');		
+			
+		$alumnus = $this->Alumnus_model->Dodaj(self::$id, $this->input->post('firstName'), $this->input->post('lastName'), $this->input->post('city'), $this->input->post('state'), $this->input->post('email'), $this->input->post('year'), $this->input->post('grade'));
+	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
