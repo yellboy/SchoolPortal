@@ -5,9 +5,9 @@
 		<div class="form-title" align="center"><h2><?php echo $shownUser->UserName?></h2></div>
 		<div class="col-md-4">
 			<div>
-				<img class="img-circle" style="width:200px" src="https://cdn0.iconfinder.com/data/icons/people-groups/512/User_Female-512.png">
+				<img id="user-image" class="img-circle" style="width:200px" src="<?php echo $shownUser->Photo ?>">
 			</div>
-			<div class="btn btn-danger" data-toggle="modal" data-target="#photo_modal">Промени слику</div>
+			<div class="btn btn-danger" data-toggle="modal" style="margin-top: 5px" data-target="#photo_modal">Промени слику</div>
 		</div>
 		<div class="col-md-5 form-group">
 			<input type="text" id="firstname-input" class="form-control" placeholder="Име" value="<?php echo $shownUser->FirstName ?>">
@@ -23,7 +23,7 @@
 	</div>
 	<div align="center" style="margin-bottom: 2px">
 		<button id="save-changes" data-id="<?php echo $shownUser->Id ?>" data-username="<?php echo $shownUser->UserName ?>" 
-			type=button" class="btn btn-danger">Сачувај измене</button>
+			type="button" class="btn btn-danger">Сачувај измене</button>
 	</div>
 	<?php $this->load->view('password_modal'); ?>
 	<?php $this->load->view('photo_modal'); ?>
