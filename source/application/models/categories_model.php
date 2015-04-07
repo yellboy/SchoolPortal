@@ -7,7 +7,7 @@ class Categories_model extends CI_Model {
 		$obj->IsHidden = 0;
 		$obj->Version = 1;
 		$obj->Guid = uniqid();
-		$this->db->insert('category', (array) $obj);
+		$this->db->insert('category', $obj);
 		$id = $this->db->insert_id(); 
 		
 		// $this->update_category($id, $obj);

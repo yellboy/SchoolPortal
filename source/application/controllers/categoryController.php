@@ -67,7 +67,7 @@ class CategoryController extends CI_Controller {
 			$obj->Position = $this->input->post('position');
 			$obj->HierarchyDepth = $this->input->post('level');
 			$obj->HierarchyId = $this->input->post('hierarchy');
-			$obj->IsCourse = $this->input->post('isCourse');
+			$obj->IsCourse = (integer) $this->input->post('isCourse');
 			
 			$id = $this->Categories_model->save_category($obj);
 			echo $id;

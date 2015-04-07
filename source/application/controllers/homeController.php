@@ -10,20 +10,12 @@
 			$this->load->model('Articles_model');
 			$this->load->model('Categories_model');
 		}
-		
-		private function _setProfiler()
-		{
-			$sections = array(
-				'queries' => TRUE
-			);
-
-			$this->output->set_profiler_sections($sections);
-			$this->output->enable_profiler(TRUE);
-			
-		}
 	
 		public function index()
 		{
+			$this->load->helper('profiler_helper');
+			SetProfiler($this);
+			
 			$routeId = $this->uri->segment($this->uri->total_segments());
 			$categoryId = $this->homeCategoryId;
 
