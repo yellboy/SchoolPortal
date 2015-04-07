@@ -8,12 +8,14 @@
 				</h4>
 			</div>
 			<div class="modal-body" align="center">
-				<input type="password" class="form-control" placeholder="Стара лозинка">
-				<input type="password" class="form-control" placeholder="Нова лозинка">
-				<input type="password" class="form-control" placeholder="Поновљена нова лозинка">
+				<form name="change-password-form">
+					<input type="password" id="old-password" class="form-control" placeholder="Стара лозинка" required>
+					<input type="password" id="new-password"class="form-control" placeholder="Нова лозинка" required> 
+					<input type="password" id="repeat-password"class="form-control" placeholder="Поновљена нова лозинка" required>
+				</form>
 			</div>
 			<div class="modal-footer" class="container-fluid" align="center">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">
+				<button id="save-password" type="submit" class="btn btn-default" data-id="<?php echo $shownUser->Id ?>">
 					Сачувај
 				</button>
 				<button type="button" class="btn btn-danger" data-dismiss="modal">

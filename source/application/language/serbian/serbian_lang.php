@@ -33,7 +33,13 @@
 		ST.Articles = "Чланци";
 		ST.News = "Вести";
 		ST.ErrorTitle = "Морате унети наслов.";
-		ST.ErrorContent = "Морате унети садржај";
-		ST.SaveSuccess = "Успешно сачувано";
+		ST.ErrorContent = "Морате унети садржај.";
+		ST.SaveSuccess = "Успешно сачувано.";
 		ST.SaveError = "Дошло је до грешке. Чување није успело."
+		ST.PasswordsMissmatch = "Лозинке се не поклапају."
+		ST.PasswordChanged = "Лозинка је променењена.";
+		ST.WrongPassword = "Унета лозинка је погрешна.";
+		ST.FieldMissing = "Морате попунити сва поља.";
+		ST.PhotoChanged = "Слика је променењена";
+		ST.ErrorChangingPhoto = "Дошло је до грешке. Промена слике није успела.";
 	</script>

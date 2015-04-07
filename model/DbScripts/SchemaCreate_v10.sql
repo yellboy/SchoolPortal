@@ -414,9 +414,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`Id`, `Version`, `Guid`, `UserName`, `Password`, `Email`, `FirstName`, `LastName`, `CreatedAt`, `PhotoPath`, `About`, `AuthorizationId`) VALUES
-(1, 1, '1', 'года', '', 'gdavidovic@yahoo.com', 'Гордана', 'Давидовић', '2015-03-26', '', 'Рођена сам у Београду. :)', 0),
-(2, 0, '0', 'дијо', '', 'divna@gmail.com', 'Дивна', 'Јовановић', '2015-03-26', '', NULL, 0),
-(3, 1, '6b66ca0e-d640-11e4-8641-f46d0461', 'markic', '944e7f5541dcc9e94aceb3a23d626af8', 'marin.markic@mail.com', 'Marin', 'Markic', '2015-03-29', '', NULL, 1);
+(1, 1, '1', 'года', '202cb962ac59075b964b07152d234b70', 'gdavidovic@yahoo.com', 'Гордана', 'Давидовић', '2015-03-26', './photos/1.jpg', 'Рођена сам у Београду.s :)						', 0),
+(2, 0, '0', 'дијо', '202cb962ac59075b964b07152d234b70', 'divna@gmail.com', 'Дивна', 'Јовановић', '2015-03-26', './photos/default.jpg', '									', 0),
+(3, 1, '6b66ca0e-d640-11e4-8641-f46d0461', 'markic', '944e7f5541dcc9e94aceb3a23d626af8', 'marin.markic@mail.com', 'Marin', 'Markic', '2015-03-29', './photos/default.jpg', NULL, 1);
 
 -- --------------------------------------------------------
 

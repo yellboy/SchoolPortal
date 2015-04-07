@@ -6,7 +6,6 @@
 		{
 			parent::__construct();
 			$this->load->model('users_model','',TRUE);
-			$this->lang->load('serbian', 'serbian');
 		}
 
 		function index()

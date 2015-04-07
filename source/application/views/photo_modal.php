@@ -8,13 +8,13 @@
 				</h4>
 			</div>
 			<div class="modal-body" align="center">
-				<img class="img-circle" style="width:200px;" src="https://cdn0.iconfinder.com/data/icons/people-groups/512/User_Female-512.png">
+				<img id="temp-photo" class="img-circle" style="width:200px;">
 				<div>
-					<input type="file" class="form-control">
+					<input type="file" id="userfile" class="form-control">
 				</div>
 			</div>
 			<div class="modal-footer" class="container-fluid" align="center">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">
+				<button id="change-photo" type="button" class="btn btn-default" data-attr="<?php echo $shownUser->Id ?>"> 
 					У реду
 				</button>
 				<button type="button" class="btn btn-danger" data-dismiss="modal">

@@ -2,6 +2,13 @@
 
 class UserProfileController extends CI_Controller {
 	
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->helper(array('form', 'url'));
+		$this->load->model('Users_model');
+	}
+	
 	// See how to call this method without copy-paste.
 	private function _checkLogin(){
 		if($this->session->userdata('logged_in'))
@@ -23,9 +30,14 @@ class UserProfileController extends CI_Controller {
 	
 	private function loadUser($id)
 	{
-		$this->load->model('Users_model');
-		return $this->Users_model->getUserById($id);
-		
+		$user = $this->Users_model->getUserById($id);
+		$user->Photo = $this->getUserPhoto($id);
+		return $user;
+	}
+	
+	private function getUserPhoto($id)
+	{
+		return $this->Users_model->getUserPhoto($id);
 	}
 	
 	public function SaveUserData()
@@ -39,10 +51,38 @@ class UserProfileController extends CI_Controller {
 			$user->LastName = $this->input->post('lastName');
 			$user->Email = $this->input->post('email');
 			$user->About = $this->input->post('about');
-			$this->load->model('Users_model');
 			$this->Users_model->SaveUser($user);
 			echo true;
 		}
 		return false;
+	}
+	
+	public function ChangePassword() 
+	{
+		if ($this->_checkLogin())
+		{
+			$id = $this->input->post('id');
+			$oldPassword = $this->input->post('oldPassword');
+			$newPassword = $this->input->post('newPassword');
+			if ($this->Users_model->CheckPassword($id, $oldPassword))
+			{
+				$this->Users_model->SavePassword($id, $newPassword);
+				echo true;
+			}
+		}
+		echo false;
+	}
+	
+	// Ajax post
+	public function ChangePhoto()
+	{
+		if ($this->_checkLogin())
+		{
+			$id = $this->input->post('id');
+			$photo = $this->input->post('photo');
+			$this->Users_model->SavePhoto($id, $photo);
+			echo true;
+		}
+		echo false;
 	}
 }
