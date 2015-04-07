@@ -15,6 +15,7 @@ $(function () {
 
 	SPV.CategoryModelManager = {
 		_$jsTree: null,
+		_isCourse: 0,
 		intialize: function () {
 			var self = this;
 			self.intializeEvents();
@@ -39,6 +40,15 @@ $(function () {
 							"Create": {
 								"label": "Додај подкатегорију",
 								"action": function (obj) {
+									self._isCourse = 0;
+									$node = self._$jsTree.create_node($node);
+									self._$jsTree.edit($node);
+								}
+							},
+							"Create2": {
+								"label": "Додај предмет",
+								"action": function (obj) {
+									self._isCourse = 1;
 									$node = self._$jsTree.create_node($node);
 									self._$jsTree.edit($node);
 								}
@@ -139,7 +149,15 @@ $(function () {
 				type: 'POST',
 				url: '/CategoryController/SaveCategory',
 				dataType: 'json',
-				data: { id: data.node.id, title: data.node.text, parentId: data.node.parent, position: data.position, level: level, hierarchy: hierarchy },
+				data: {
+					id: data.node.id,
+					title: data.node.text,
+					parentId: data.node.parent,
+					position: data.position,
+					level: level,
+					hierarchy: hierarchy,
+					isCourse: self._isCourse
+				},
 				success: function (result) {
 					var sel = self._$jsTree.get_selected();
 					self._$jsTree.set_id(data.node, result);

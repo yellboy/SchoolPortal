@@ -20,5 +20,21 @@
 			$alumnus = $this->db->get('alumni')->result();
 			return $alumnus;
 		}
+		
+		function Dodaj($i, $fn, $ln, $city, $state, $email, $year, $grade)
+		{
+			$obj = new stdClass();
+			//$obj ->ID = $i;
+			$obj -> firstName = $fn;
+			$obj -> lastName = $ln;
+			$obj -> city = $city;
+			$obj -> state = $state;
+			$obj -> email = $email;
+			$obj -> year = $year;
+			$obj -> classroom = $grade;
+		
+			$this->db->insert('alumni', (array) $obj);
+			return $this->db->insert_id();
+		}
 	}
 ?>
