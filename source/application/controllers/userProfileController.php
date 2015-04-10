@@ -9,16 +9,6 @@ class UserProfileController extends CI_Controller {
 		$this->load->model('Users_model');
 	}
 	
-	// See how to call this method without copy-paste.
-	private function _checkLogin(){
-		if($this->session->userdata('logged_in'))
-		{
-			return true;
-		}
-		redirect('login', 'refresh');
-		return false;
-	}
-	
 	public function index($id)
 	{
 		$data['shownUser'] = $this::loadUser($id);
@@ -42,7 +32,7 @@ class UserProfileController extends CI_Controller {
 	
 	public function SaveUserData()
 	{
-		if ($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$user = new stdClass;
 			$user->Id = $this->input->post('id');
@@ -59,7 +49,7 @@ class UserProfileController extends CI_Controller {
 	
 	public function ChangePassword() 
 	{
-		if ($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$id = $this->input->post('id');
 			$oldPassword = $this->input->post('oldPassword');
@@ -76,7 +66,7 @@ class UserProfileController extends CI_Controller {
 	// Ajax post
 	public function ChangePhoto()
 	{
-		if ($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$id = $this->input->post('id');
 			$photo = $this->input->post('photo');

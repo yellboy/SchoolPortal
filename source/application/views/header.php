@@ -1,6 +1,3 @@
-<?php 
-	$this->load->helper('routing_helper');
-?>
 <header class="zone header container" role="heading">
 	<div class="static-content">
 		<img src="/assets/styles/img/header.jpg" alt="Peta beogradska gimnazija" />
