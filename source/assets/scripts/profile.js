@@ -2,6 +2,18 @@ $(function(){
 	
 	var $photo;
 	
+	var $courseSelect = $('#course-select');
+	for (var i = 0; i < $other.length; i++) {
+		$courseSelect.append('<option data-attr=' + $other[i].Id + '>' + $other[i].CourseName + '</option>');
+	}
+	
+	var $body =  $('#table-teaching').find('tbody');
+	for (var i = 0; i < $teaching.length; i++) {
+		$body.append($('<tr>')).append($('<td>')).append($teaching[i].CourseName)
+		.append($('<td class="container-fluid">')).append('<button class="btn btn-danger remove-button" data-attr="' + $teaching[i].Id + '">Уклони</button>');
+		
+	}
+	
 	$('#save-changes').on('click', function(event) {
 		var $id = $(this).attr('data-id');
 		var $userName = $(this).attr('data-username');

@@ -40,8 +40,7 @@
 				{
 					$sess_array = array(
 						'id' => $row->id,
-						'username' => $row->username,
-						'authorizationid' => $row->authorizationid
+						'username' => $row->username
 					);
 					$this->session->set_userdata('logged_in', $sess_array);
 				}

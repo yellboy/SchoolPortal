@@ -3,14 +3,18 @@ session_start();
 
 class ArticleEditController extends CI_Controller {
 
-	public function __construct()
-	{
-		parent::__construct();
+	private function _checkLogin(){
+		if($this->session->userdata('logged_in'))
+		{
+			return true;
+		}
+		redirect('login', 'refresh');
+		return false;
 	}
 	
 	public function index()
 	{
-		if(RequireAuthentication())
+		if($this->_checkLogin())
 		{
 			$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
@@ -22,7 +26,7 @@ class ArticleEditController extends CI_Controller {
 	
 	private function loadCategories()
 	{
-		if(RequireAuthentication())
+		if($this->_checkLogin())
 		{
 			$this->load->model('Categories_model');
 			$categories = $this->Categories_model->loadCategoriesForJsTree();
@@ -33,7 +37,7 @@ class ArticleEditController extends CI_Controller {
 	
 	public function LoadArticleListForGrid() {
 		
-		if(RequireAuthentication())
+		if($this->_checkLogin())
 		{
 			$this->load->model('Articles_model');
 			$categoryId = $this->input->post('categoryId');
@@ -45,7 +49,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function LoadArticle(){
-		if(RequireAuthentication())
+		if($this->_checkLogin())
 		{
 			$this->load->model('Articles_model');
 			$id = $this->input->post('id');
@@ -55,7 +59,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function SaveArticle(){
-		if(RequireAuthentication())
+		if($this->_checkLogin())
 		{
 			$this->load->model('Articles_model');
 			$session_data = $this->session->userdata('logged_in');
@@ -73,7 +77,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function DeleteArticle(){
-		if(RequireAuthentication())
+		if($this->_checkLogin())
 		{
 			$this->load->model('Articles_model');
 			$id = $this->input->post('id');

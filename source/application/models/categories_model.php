@@ -1,13 +1,6 @@
 <?php
 class Categories_model extends CI_Model {
 	
-	// TODO refactor this code in codeigniter 'linq'
-	private $_sqlDepencyString = 
-		'UPDATE `category` as cat 
-		INNER JOIN `category` 
-		as parent ON parent.`Id` = cat.`ParentId` 
-		SET cat.`CourseName` = CONCAT(cat.Title, " - ", parent.Title) WHERE cat.`IsCourse` = 1 AND cat.`Id` =';
-	
 	public function save_category($obj)
 	{
 		$obj->IsDeleted = 0;
@@ -16,6 +9,8 @@ class Categories_model extends CI_Model {
 		$obj->Guid = uniqid();
 		$this->db->insert('category', $obj);
 		$id = $this->db->insert_id(); 
+		
+		// $this->update_category($id, $obj);
 		return $id;
 	}
 
@@ -24,13 +19,8 @@ class Categories_model extends CI_Model {
 		$obj->HierarchyId = $obj->HierarchyId . $id . '.';
 		$this->db->where('id', $id);
 		$this->db->update('category', (array) $obj); 
-		// TODO: update all other positions on new and old levels 
+		// update all other positions on this level 
 		// this is maybe going to be a problem
-	}
-	
-	private function update_course_name($id)
-	{
-		$this->db->query($this->_sqlDepencyString . $id);
 	}
 	
 	function rename_category($id, $title)
@@ -38,7 +28,6 @@ class Categories_model extends CI_Model {
 		$data = array('Title' => $title);
 		$this->db->where('id', $id);
 		$this->db->update('category', $data); 
-		$this->update_course_name($id);
 	}
 	
 	function delete_categories($ids)
@@ -68,6 +57,16 @@ class Categories_model extends CI_Model {
 				$this->_load_children($child);
 			}
 		}
+	}
+	
+	public function LoadCourses()
+	{
+		return $this->db->get_where('category', array('IsCourse' => 1))->result();
+	}
+	
+	public function GetUserCategoryRelations($id)
+	{
+		return $this->db->select('CategoryId')->get_where('usercategory', array('UserId' => $id))->result();
 	}
 	
 	public function loadCategoriesForJsTree()

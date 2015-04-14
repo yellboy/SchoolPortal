@@ -48,7 +48,7 @@
 		
 		function login($username, $password)
 		{
-			$this->db->select('id, username, password, authorizationid');
+			$this->db->select('id, username, password');
 			$this->db->from('user');
 			$this->db->where('username', $username);
 			$this->db->where('password', MD5($password));
