@@ -25,6 +25,10 @@
 	$lang['News'] = "Вести";
 	$lang['SearchResultsFor'] = "Резултати претраге за";
 	$lang['LoginError'] = "Неисправно корисничко име или лозинка";
+	$lang['AddToAlumniTitle'] = "Пријава на алумни Пете Београдске гимназије";
+	$lang['TeachersTitle'] = "Наставници Пете Београдске гимназије";
+	$lang['PageTitle'] = 'Пета београдска гимназија - Ђаци су најбољи бренд Србије, ми знамо зашто';
+
 ?>
 
 	<script>
@@ -42,4 +46,5 @@
 		ST.FieldMissing = "Морате попунити сва поља.";
 		ST.PhotoChanged = "Слика је променењена";
 		ST.ErrorChangingPhoto = "Дошло је до грешке. Промена слике није успела.";
+		ST.SearchRoute = "<?php echo ContentPageCodes::Search; ?>";
 	</script>

@@ -29,6 +29,7 @@ $(function () {
 			});
 
 			this._articlesTemplate = Handlebars.compile($('#articles-list-template').html());
+			this._filesTemplate = Handlebars.compile($('#files-list-template').html());
 			this.initalizeEvents();
 		},
 		initalizeEvents: function(){
@@ -49,6 +50,7 @@ $(function () {
 					else $('span.section-title').html(ST.Articles);
 
 					self.loadArticleList(self._model.categoryId);
+					self.loadCategoryFiles(self._model.categoryId);
 				}
 			});
 
@@ -170,6 +172,9 @@ $(function () {
 					self.loadArticleList(self._model.categoryId);
 				}
 			});
+		},
+		loadCategoryFiles: function (categoryId) {
+			$('.article-files').show();
 		}
 	};
 

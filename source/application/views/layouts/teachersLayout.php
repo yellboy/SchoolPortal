@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<?php $this->load->view('head_meta'); ?>
+		<title><?php echo $this->lang->line('TeachersTitle'); ?></title>
 	</head>
 	
 	<body>

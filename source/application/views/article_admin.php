@@ -17,8 +17,6 @@
 			</div>
 		</div>
 
-<!--		<?php $this->load->view('article_files')?>-->
-
 		<div class="row article-list" style="margin-top:30px;margin-bottom:15px;display:none"; >
 			<div class="col-md-6">
 				<h3>
@@ -43,6 +41,9 @@
 		<div class="article-details" style="display:none;">
 			<?php $this->load->view('editor');?>
 		</div>
+
+		<?php $this->load->view('article_files');?>
+
 		<?php $this->load->view('confirm_modal'); ?>
 	</div>
 </div>

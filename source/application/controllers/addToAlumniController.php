@@ -2,18 +2,25 @@
 
 class addToAlumniController extends CI_Controller {
 
-	public static $id = 4;
-
 	public function index()
 	{
-		//$data['alumnus'] = $this::DodajAlumni();
-		$this->load->view('layouts/addToAlumniLayout'); //send data to render slides here
+		if($this->session->userdata('logged_in'))
+		{
+			$session_data = $this->session->userdata('logged_in');
+			$data['id'] = $session_data['id'];
+			$data['username'] = $session_data['username'];
+			$data['isLogged'] = true; 
+		}
+		else{
+			$data['isLogged'] = false; 
+		}
+		
+		$this->load->view('layouts/addToAlumniLayout', $data);
 	}
 	
-	public function DodajAlumni($firstName, $lastName)	//Izbaciti ove parametre???
+	public function DodajAlumni()
 	{
-		$this->load->model('Alumnus_model');		
-			
+		$this->load->model('Alumnus_model');
 		$alumnus = $this->Alumnus_model->Dodaj(self::$id, $this->input->post('firstName'), $this->input->post('lastName'), $this->input->post('city'), $this->input->post('state'), $this->input->post('email'), $this->input->post('year'), $this->input->post('grade'));
 	}
 }

@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<?php
 			$this->load->view('head_meta'); 
 		?>
+		<title>Алумнисти Пете Београдске гимназије</title>
 	</head>
 	
 	<body>

@@ -48,13 +48,15 @@ class Articles_model extends CI_Model {
 	
 	function saveArticle($id, $obj)
 	{
-		if ((int) $id > 0){
+		if ((int) $id > 0)
+		{
 			$obj->LastModifiedAt = date("Y-m-d");
 			$this->db->where('id', $id);
 			$this->db->update('content', (array) $obj); 
 			return $id;
 		}
-		else{
+		else
+		{
 			$obj->IsDeleted = 0;
 			$obj->Version = 1;
 			$obj->ContentType = ContentTypes::Article;

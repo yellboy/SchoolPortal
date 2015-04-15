@@ -9,8 +9,8 @@
 		<div class="col-md-7">
 <!--			<img src="/assets/styles/img/rss.png" alt="RSS" />-->
 			<ul>
-				<li><a href="/" title="Pocetna stranica">Почетна</a></li>
-				<li><a href="/login" title="Prijava na sistem">Пријави ме</a></li>
+				<li><a href="/" title="Početna stranica">Почетна</a></li>
+				<li><a href="<?php echo ResolveRoute(ContentPageCodes::Login) ?>" title="Prijava na sistem">Пријави ме</a></li>
 			</ul>
 		</div>
 		<div class="col-md-5">
