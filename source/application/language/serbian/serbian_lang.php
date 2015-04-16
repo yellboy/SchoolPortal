@@ -46,12 +46,9 @@
 		ST.FieldMissing = "Морате попунити сва поља.";
 		ST.PhotoChanged = "Слика је променењена";
 		ST.ErrorChangingPhoto = "Дошло је до грешке. Промена слике није успела.";
-<<<<<<< HEAD
 		ST.CourseAddedToUser = "Предмет је успешно додат кориснику.";
 		ST.CouldNotAddCourse = "Дошло је до грешке. Додавање предмета није успело.";
 		ST.CourseRemovedFromUser = "Предмет је успешно уклоњен са листе.";
 		ST.CouldNotRemoveCourse = "Дошло је до грешке. Уклањање предмета није успело.";
-=======
 		ST.SearchRoute = "<?php echo ContentPageCodes::Search; ?>";
->>>>>>> b3c54002567b21fa4593301cbd78dc47c59962a0
 	</script>
