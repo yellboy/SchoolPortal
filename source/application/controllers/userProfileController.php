@@ -120,4 +120,28 @@ class UserProfileController extends CI_Controller {
 		}
 		echo false;
 	}
+	
+	public function AddCourseToUser() 
+	{
+		if ($this->_checkLogin())
+		{
+			$courseId = $this->input->post('courseId');
+			$userId = $this->input->post('userId');
+			$this->Users_model->AddCourseToUser($userId, $courseId);
+			echo true;
+		}
+		echo false;
+	}
+	
+	public function RemoveCourseFromUser()
+	{
+		if ($this->_checkLogin())
+		{
+			$courseId = $this->input->post('courseId');
+			$userId = $this->input->post('userId');
+			$this->Users_model->RemoveCourseFromUser($userId, $courseId);
+			echo true;
+		}
+		echo false;
+	}
 }

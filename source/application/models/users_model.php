@@ -96,5 +96,20 @@
 			$this->db->update('user');
 		}
 		
+		function AddCourseToUser($userId, $courseId) 
+		{
+			$object = new stdClass(); 
+			$object->UserId = $userId;
+			$object->CategoryId = $courseId;
+			$this->db->insert('usercategory', $object);
+		}
+		
+		function RemoveCourseFromUser($userId, $courseId) 
+		{ 
+			$this->db->where('UserId', $userId);
+			$this->db->where('CategoryId', $courseId);
+			$this->db->delete('usercategory');
+		}
+		
 	}
 ?>

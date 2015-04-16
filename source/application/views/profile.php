@@ -29,8 +29,6 @@
 			type="button" class="btn btn-danger">Сачувај измене</button>
 	</div>
 	<br>
-	<!--<div class="row"> -->
-		<!--<div class="col-md-4"> -->
 	<table class="table-stripped" style="width:40%">
 	<tbody>
 		<tr>
@@ -39,7 +37,7 @@
 			</select>
 			</td>
 			<td>
-			<button type="button" class="btn btn-danger">Додај предмет</button>
+			<button type="button" class="btn btn-danger" id="add-course" data-user-id="<?php echo $shownUser->Id; ?>">Додај предмет</button>
 			</td>
 		</tr>
 	</tbody>
@@ -48,7 +46,7 @@
 		<div>
 			<h4>Предмети наставника	<?php echo $shownUser->UserName ?></h2>
 		</div>
-		<table id="table-teaching" style="width:40%">
+		<table id="table-teaching" style="width:40%" data-user-id="<?php echo $shownUser->Id ?>">
 			<tbody></tbody>
 		</table>
 	</div>
