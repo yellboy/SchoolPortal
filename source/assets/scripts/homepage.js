@@ -3,8 +3,6 @@ $(function () {
 		$('.carousel a.right').click();
 	}, 4000)
 
-	$('.auth-only').hide(); // TEMP
-
 	if (SPV && SPV.pageHierarchyId) {
 		var root = SPV.pageHierarchyId.split('.')[1];
 		if (root) {
@@ -17,7 +15,7 @@ $(function () {
 		e.preventDefault();
 		var $text = $('#searchbox #search').val();
 		if ($text && $text.trim() != '') {
-			window.location.assign('/search/' + $text.trim());
+			window.location.assign(ST.SearchRoute + $text.trim());
 		}
 	});
 

@@ -2,18 +2,19 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <?php 
-	if (isset($category)){
-		// TODO config SEO
-		echo '<title>' . $category->Title .'</title>';
-		echo '<meta name="description" content=' . $category->Title .'>';
-	}
-
 	$this->load->helper('html');
 	echo link_tag('assets/styles/layout.min.css');
 	echo link_tag('assets/styles/img/favicon.ico', 'shortcut icon', 'image/ico');
 	echo link_tag('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css');
 	$homepage = base_url() . "assets/scripts/homepage.js";
 	$this->lang->load('serbian', 'serbian');
+	if (isset($category) && $category->Id != 2){
+		echo '<title>' . $category->Title .'</title>';
+		echo '<meta name="description" content=' . $category->Title .'>';
+	}
+	else {
+		echo '<title>' . $this->lang->line('PageTitle') . '</title>';
+	}
 ?>
 
 <script>var SPV = SPV || {};</script>

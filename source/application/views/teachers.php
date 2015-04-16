@@ -8,7 +8,7 @@
 			<input type="text" class="form-control" placeholder="е-пошта"/>
 			<input type="text" class="form-control" placeholder="Предмети"/>
 			<div>
-				<a href="/default_controller" class="text-muted">Повратак на главну страницу</a>
+				<a href="/" class="text-muted">Повратак на главну страницу</a>
 			</div>
 		</div>
 	</form>

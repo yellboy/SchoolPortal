@@ -4,9 +4,9 @@
 	<form class="login input-group row">
 		<div>
 			<div>
-				<a href="/default_controller" class="text-muted">Повратак на главну страницу</a>
+				<a href="/" class="text-muted">Повратак на главну страницу</a>
 				<br>
-				<a href="/administration/register" class="text-muted">Регистрација</a>
+				<a href="<?php echo ResolveRoute(ContentPageCodes::Register) ?>" class="text-muted">Регистрација</a>
 			</div>
 		</div>
 	</form>

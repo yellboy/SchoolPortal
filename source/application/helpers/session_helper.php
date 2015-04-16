@@ -15,7 +15,7 @@
 			{
 				return true;
 			}
-			redirect('login', 'refresh');
+			redirect(ResolveRoute(ContentPageCodes::Login), 'refresh');
 			return false;
 		}
 	}
