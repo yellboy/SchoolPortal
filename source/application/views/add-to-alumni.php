@@ -1,4 +1,8 @@
-﻿<form class="form-group row" name="add-to-alumni-form">
+
+<?php // TODO use form open to enable CSRF protection ?>
+
+
+<form class="form-group row" name="add-to-alumni-form" onsubmit="return validateForm()" method="post">
 	<div class="col-md-5">
 		<h3 class="form-title">Пријава на алумни листу</h3>
 		<input type="text" class="form-control firstName" placeholder="Име" required>

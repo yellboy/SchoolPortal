@@ -21,6 +21,6 @@ class addToAlumniController extends CI_Controller {
 	public function DodajAlumni()
 	{
 		$this->load->model('Alumnus_model');
-		$alumnus = $this->Alumnus_model->Dodaj(self::$id, $this->input->post('firstName'), $this->input->post('lastName'), $this->input->post('city'), $this->input->post('state'), $this->input->post('email'), $this->input->post('year'), $this->input->post('grade'));
+		$alumnus = $this->Alumnus_model->Dodaj(1, $this->input->post('firstName'), $this->input->post('lastName'), $this->input->post('city'), $this->input->post('state'), $this->input->post('email'), $this->input->post('year'), $this->input->post('grade'));
 	}
 }
