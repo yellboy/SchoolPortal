@@ -110,21 +110,5 @@
 			$this->db->delete('usercategory');
 		}
 		
-		function CreateUser($username) 
-		{
-			$DefaultPhotoPath = './photos/default.jpg';
-			
-			$user = new stdClass;
-			$user->Password = MD5('peta12345');
-			$user->UserName = $username;
-			$user->FirstName = '';
-			$user->LastName = '';
-			$user->Email = '';
-			$user->About = '';
-			$user->PhotoPath = $DefaultPhotoPath;
-			$this->db->insert('user', $user);
-			return $this->db->get_where('user', array('UserName' => $username))->result()[0];
-		}
-		
 	}
 ?>

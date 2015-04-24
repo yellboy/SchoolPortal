@@ -9,7 +9,9 @@ $(function(){
 		for (var i = 0; i < $other.length; i++) {
 			$courseSelect.append('<option value=' + $other[i].Id + '>' + $other[i].CourseName + '</option>');
 		}
-		$selectedCourseId = $other[0].Id;	
+		$selectedCourseId = $other[0].Id;
+		
+		
 	}
 	
 	function fillTable() {
@@ -172,7 +174,7 @@ $(function(){
 		$selectedCourseId  = $(this).val();
 	});
 	
-	// Click event must be bound to some non-dynamic element.
+	// Click event must be binded to some non-dynamic element.
 	$('table').on('click', '.remove-course', function() {
 		var $courseId = $(this).attr('data-course-id');
 		var $userId = $('#table-teaching').attr('data-user-id');
