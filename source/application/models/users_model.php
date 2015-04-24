@@ -110,5 +110,42 @@
 			$this->db->delete('usercategory');
 		}
 		
+		function CreateUser($username)
+		{
+			$DefaultPhotoPath = './photos/default.jpg';
+			$query = $this->db->get_where('user', array('UserName' => $username));
+			if ($query->num_rows() == 0) 
+			{
+				$user = new stdClass;
+				$user->UserName = $username;
+				$user->FirstName = '';
+				$user->LastName = '';
+				$user->Email = '';
+				$user->PhotoPath = $DefaultPhotoPath;
+				$user->About = '';
+				$user->IsDeleted = 0;
+				$this->db->insert('user', $user);
+				return $this->db->get_where('user', array('UserName' => $username))->result()[0];
+			}
+			$user = $query->result()[0];
+			if ($user->IsDeleted == 0) 
+			{
+				return null;
+			}
+			$user->IsDeleted = 0;
+			$this->db->where('Id', $user->Id);
+			$this->db->set('IsDeleted', 0);
+			$this->db->update('user');
+			return $user;
+		}
+		
+		function DeleteUser($id) 
+		{
+			$this->db->where('Id', $id);
+			$this->db->set('IsDeleted', '1');
+			$this->db->update('user');
+			return true;
+		}
+		
 	}
 ?>

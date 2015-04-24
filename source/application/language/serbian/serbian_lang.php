@@ -51,6 +51,10 @@
 		ST.CourseRemovedFromUser = "Предмет је успешно уклоњен са листе.";
 		ST.CouldNotRemoveCourse = "Дошло је до грешке. Уклањање предмета није успело.";
 		ST.UserNameMissing = "Морате унети корисничко име.";
+		ST.UserCreated = "Корисник је успешно креиран.";
+		ST.UserAlreadyExists = "Корисник са унетим корисничким именом већ постоји.";
 		ST.CouldNotCreateUser =  "Дошло је до грешке. Креирање корисника није успело.";
+		ST.UserDeleted = "Корисник је обрисан.";
+		ST.CouldNotDeleteUser = "Дошло је до грешке. Брисање корисника није успело.";
 		ST.SearchRoute = "<?php echo ContentPageCodes::Search; ?>";
 	</script>
