@@ -1,12 +1,11 @@
 <?php 
 
 	class Users_model extends CI_model 
-	{
-		
+	{	
 		var $users = array();
 		
 		function __construct()
-		{
+		{ 
 			parent::__construct();
 		}
 		
@@ -68,7 +67,7 @@
 		
 		function SaveUser($user)
 		{
-			$this->db->where('id', $user->Id);
+			$this->db->where('Id', $user->Id);
 			$this->db->update('user', $user);
 		}
 		
@@ -94,6 +93,37 @@
 			$this->db->where('Id', $id);
 			$this->db->set('PhotoPath', $path);
 			$this->db->update('user');
+		}
+		
+		function AddCourseToUser($userId, $courseId) 
+		{
+			$object = new stdClass(); 
+			$object->UserId = $userId;
+			$object->CategoryId = $courseId;
+			$this->db->insert('usercategory', $object);
+		}
+		
+		function RemoveCourseFromUser($userId, $courseId) 
+		{ 
+			$this->db->where('UserId', $userId);
+			$this->db->where('CategoryId', $courseId);
+			$this->db->delete('usercategory');
+		}
+		
+		function CreateUser($username) 
+		{
+			$DefaultPhotoPath = './photos/default.jpg';
+			
+			$user = new stdClass;
+			$user->Password = MD5('peta12345');
+			$user->UserName = $username;
+			$user->FirstName = '';
+			$user->LastName = '';
+			$user->Email = '';
+			$user->About = '';
+			$user->PhotoPath = $DefaultPhotoPath;
+			$this->db->insert('user', $user);
+			return $this->db->get_where('user', array('UserName' => $username))->result()[0];
 		}
 		
 	}

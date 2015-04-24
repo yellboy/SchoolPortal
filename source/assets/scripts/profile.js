@@ -1,6 +1,27 @@
 $(function(){
 	
 	var $photo;
+	var $selectedCourseId;
+
+	function fillDropdown() {
+		var $courseSelect = $('#course-select');
+		$courseSelect.html('');
+		for (var i = 0; i < $other.length; i++) {
+			$courseSelect.append('<option value=' + $other[i].Id + '>' + $other[i].CourseName + '</option>');
+		}
+		$selectedCourseId = $other[0].Id;	
+	}
+	
+	function fillTable() {
+		var $body =  $('#table-teaching').find('tbody');
+		$body.html('');
+		for (var i = 0; i < $teaching.length; i++) {
+			$body.append('<tr><td>' + $teaching[i].CourseName + '</td><td class="container-fluid"><button class="btn btn-danger remove-course" data-course-id="' + $teaching[i].Id + '">Уклони</button></td></tr>');
+		}
+	}
+	
+	fillDropdown();
+	fillTable();
 	
 	$('#save-changes').on('click', function(event) {
 		var $id = $(this).attr('data-id');
@@ -113,5 +134,82 @@ $(function(){
 	$('#photo_modal').on('shown.bs.modal', function() {
 		$('#temp-photo').attr('src', $('#user-image').attr('src'));
 	});
+	
+	$('#add-course').on('click', function() {
+		var course;
+		for (var i = 0; i < $other.length; i++) {
+			if ($other[i].Id == $selectedCourseId) {
+				course = $other[i];
+				break;
+			}
+		}
+		
+		var $id = $(this).attr('data-user-id');
+		
+		$.ajax ({
+			type: 'post',
+			url:  '/UserProfileController/AddCourseToUser',
+			dataType: 'json',
+			data: {
+				'courseId': $selectedCourseId,
+				'userId': $id
+			},
+			success: function() {
+				$teaching.push(course);
+				$teaching.sort(sortById);
+				$other.splice($.inArray(course, $other), 1);
+				fillDropdown();
+				fillTable();
+				toastr.success(ST.CourseAddedToUser);
+			}, 
+			error: function() {
+				toastr.error(ST.CouldNotAddCourse);
+			}
+		});
+	});
+	
+	$('#course-select').change( function() {
+		$selectedCourseId  = $(this).val();
+	});
+	
+	// Click event must be bound to some non-dynamic element.
+	$('table').on('click', '.remove-course', function() {
+		var $courseId = $(this).attr('data-course-id');
+		var $userId = $('#table-teaching').attr('data-user-id');
+		var course;
+		for (var i = 0; i < $teaching.length; i++) {
+			if ($teaching[i].Id === $courseId) {
+				course = $teaching[i];
+				break;
+			}
+		}
+		
+		$.ajax({
+			type: 'post',
+			url: '/UserProfileController/RemoveCourseFromUser',
+			dataType: 'json',
+			data: {
+				'userId': $userId,
+				'courseId': $courseId
+			},
+			success: function() {
+				$other.push(course);
+				$other.sort(sortById);
+				$teaching.splice($.inArray(course, $teaching), 1);
+				fillDropdown();
+				fillTable();
+				toastr.success(ST.CourseRemovedFromUser);
+			},
+			error: function() {
+				toastr.error(ST.CouldNotRemoveCourse);
+			}
+		});
+	});
+	
+	function sortById(a, b) {
+		var aId = a.Id;
+		var bId = b.Id; 
+		return ((aId < bId) ? -1 : ((aId > bId) ? 1 : 0));
+	}
 	
 });

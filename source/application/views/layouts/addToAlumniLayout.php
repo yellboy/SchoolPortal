@@ -3,12 +3,14 @@
 
 	<head>
 		<?php
-			$this->load->view('head_meta');			
+			$this->load->view('head_meta');
 			$alumni = base_url() . "assets/scripts/alumni.js";
 		?>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.0/themes/default/style.min.css" rel="stylesheet" type="text/css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.0/jstree.min.js"></script>
 		<script src="<?php echo $alumni; ?>"></script>
+		<title><?php echo $this->lang->line('AddToAlumniTitle'); ?></title>
+		<meta
 	</head>
 	
 	<body>

@@ -3,6 +3,6 @@
 	<input type="text" class="form-control" placeholder="Корисничко име"/>
 	<button type="submit" class="btn btn-danger">Додај</button>
 	<div>
-		<a href="/administration/users" class="text-muted">Повратак на претрагу</a>
+		<a href="<?php echo ResolveRoute(ContentPageCodes::Users) ?>" class="text-muted">Повратак на претрагу</a>
 	</div>
 </form>

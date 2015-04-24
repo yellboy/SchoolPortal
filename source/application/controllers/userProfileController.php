@@ -22,6 +22,23 @@ class UserProfileController extends CI_Controller {
 	public function index($id)
 	{
 		$data['shownUser'] = $this::loadUser($id);
+		$allCourses = $this::loadCourses();
+		$teachingIds = $this::getTeachingIds($id);
+		$teaching = array();
+		$other = array();
+		foreach ($allCourses as $course) 
+		{
+			if (in_array('' . $course->Id, $teachingIds)) 
+			{
+				array_push($teaching, $course);
+				}
+			else 
+			{
+				array_push($other, $course);
+			}
+		}
+		$data['teaching'] = $teaching;
+		$data['other'] = $other;
 		$session_data = $this->session->userdata('logged_in');
 		$data['username'] = $session_data['username'];
 		$data['id'] = $session_data['id'];
@@ -33,6 +50,24 @@ class UserProfileController extends CI_Controller {
 		$user = $this->Users_model->getUserById($id);
 		$user->Photo = $this->getUserPhoto($id);
 		return $user;
+	}
+	
+	private function getTeachingIds($id)
+	{
+		$this->load->model('Categories_model');
+		$result = $this->Categories_model->GetUserCategoryRelations($id);
+		$teachingIds = array();
+		foreach ($result as $r)
+		{
+			array_push($teachingIds, $r->CategoryId);
+		}
+		return $teachingIds;
+	}
+	
+	private function loadCourses()
+	{
+		$this->load->model('Categories_model');
+		return $this->Categories_model->LoadCourses();
 	}
 	
 	private function getUserPhoto($id)
@@ -81,6 +116,30 @@ class UserProfileController extends CI_Controller {
 			$id = $this->input->post('id');
 			$photo = $this->input->post('photo');
 			$this->Users_model->SavePhoto($id, $photo);
+			echo true;
+		}
+		echo false;
+	}
+	
+	public function AddCourseToUser() 
+	{
+		if ($this->_checkLogin())
+		{
+			$courseId = $this->input->post('courseId');
+			$userId = $this->input->post('userId');
+			$this->Users_model->AddCourseToUser($userId, $courseId);
+			echo true;
+		}
+		echo false;
+	}
+	
+	public function RemoveCourseFromUser()
+	{
+		if ($this->_checkLogin())
+		{
+			$courseId = $this->input->post('courseId');
+			$userId = $this->input->post('userId');
+			$this->Users_model->RemoveCourseFromUser($userId, $courseId);
 			echo true;
 		}
 		echo false;

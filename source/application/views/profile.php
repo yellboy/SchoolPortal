@@ -1,4 +1,8 @@
 <?php $profile = base_url()."/assets/scripts/profile.js" ?>
+<script> 
+	var $teaching = <?php echo json_encode($teaching); ?>;
+	var $other = <?php echo json_encode($other); ?>;
+</script>
 <script src="<?php echo $profile ?>"></script>
 <div id="root-div">
 	<div class="container-fluid" align="center">
@@ -13,7 +17,6 @@
 			<input type="text" id="firstname-input" class="form-control" placeholder="Име" value="<?php echo $shownUser->FirstName ?>">
 			<input type="text" id="lastname-input" class="form-control" placeholder="Презиме" value="<?php echo $shownUser->LastName ?>">
 			<input type="text" id="email-input"class="form-control" placeholder="е-пошта" value="<?php echo $shownUser->Email ?>">
-			<input type="text" id="courses-input" class="form-control" placeholder="Предмети" value="Математика">
 			<textarea id="about-input" class="form-control" rows="5" placeholder="О кориснику..." style="resize: none"><?php echo $shownUser->About ?>
 			</textarea>
 		</div>
@@ -24,6 +27,28 @@
 	<div align="center" style="margin-bottom: 2px">
 		<button id="save-changes" data-id="<?php echo $shownUser->Id ?>" data-username="<?php echo $shownUser->UserName ?>" 
 			type="button" class="btn btn-danger">Сачувај измене</button>
+	</div>
+	<br>
+	<table class="table-stripped" style="width:40%">
+	<tbody>
+		<tr>
+			<td>
+			<select id="course-select" class="form-control" style="width:95%">
+			</select>
+			</td>
+			<td>
+			<button type="button" class="btn btn-danger" id="add-course" data-user-id="<?php echo $shownUser->Id; ?>">Додај предмет</button>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	<div>
+		<div>
+			<h4>Предмети наставника	<?php echo $shownUser->UserName ?></h2>
+		</div>
+		<table id="table-teaching" style="width:40%" data-user-id="<?php echo $shownUser->Id ?>">
+			<tbody></tbody>
+		</table>
 	</div>
 	<?php $this->load->view('password_modal'); ?>
 	<?php $this->load->view('photo_modal'); ?>

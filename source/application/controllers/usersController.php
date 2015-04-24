@@ -1,7 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class UsersController extends CI_Controller {
-
+	
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Users_model');
+	}
+	
 	public function index()
 	{
 		$data['users'] = $this::loadUsers();
@@ -13,8 +19,14 @@ class UsersController extends CI_Controller {
 	
 	private function loadUsers() 
 	{
-		$this->load->model('Users_model');
 		return $this->Users_model->getUsers();
+	}
+	
+	public function AddNewUser() 
+	{
+		$username = $this->input->post('username');
+		$newUser = $this->Users_model->CreateUser($username);
+		echo json_encode($newUser);
 	}
 }
 

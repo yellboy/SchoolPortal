@@ -59,6 +59,16 @@ class Categories_model extends CI_Model {
 		}
 	}
 	
+	public function LoadCourses()
+	{
+		return $this->db->get_where('category', array('IsCourse' => 1))->result();
+	}
+	
+	public function GetUserCategoryRelations($id)
+	{
+		return $this->db->select('CategoryId')->get_where('usercategory', array('UserId' => $id))->result();
+	}
+	
 	public function loadCategoriesForJsTree()
 	{
 		$categories = $this->_get_category_children(null);
