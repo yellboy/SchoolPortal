@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2015 at 11:20 PM
+-- Generation Time: Apr 28, 2015 at 10:26 PM
 -- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -21,6 +21,24 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+
+--
+-- Table structure for table `alumni`
+--
+
+CREATE TABLE IF NOT EXISTS `alumni` (
+`Id` bigint(20) NOT NULL,
+  `FirstName` text CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL,
+  `LastName` text CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL,
+  `City` text CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL,
+  `State` text CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL,
+  `Email` text CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL,
+  `Year` int(11) NOT NULL,
+  `Classroom` text CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=604 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `alumni`
 --
 
 INSERT INTO `alumni` (`Id`, `FirstName`, `LastName`, `City`, `State`, `Email`, `Year`, `Classroom`) VALUES
@@ -232,16 +250,15 @@ CREATE TABLE IF NOT EXISTS `category` (
   `IsHome` bit(1) NOT NULL,
   `IsFixedRoute` bit(1) NOT NULL,
   `Route` text COLLATE cp1251_bin NOT NULL,
-  `IsCourse` bit(1) NOT NULL,
-  `CourseName` varchar(50) COLLATE cp1251_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=cp1251 COLLATE=cp1251_bin;
+  `IsCourse` bit(1) DEFAULT NULL,
+  `CourseName` varchar(50) COLLATE cp1251_bin DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=cp1251 COLLATE=cp1251_bin;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`Id`, `Version`, `Guid`, `Title`, `HierarchyDepth`, `HierarchyId`, `ParentId`, `Position`, `IsDeleted`, `IsHidden`, `IsHome`, `IsFixedRoute`, `Route`, `IsCourse`, `CourseName`) VALUES
-(0, 1, '55169df9d83a0', 'кат1', 3, '1.8.87.88.', 87, 0, 0, 0, b'0', b'0', '', b'0', ''),
 (1, 1, '1601be17-d0ac-11e4-9841-f46d04612ccc', 'Категорије', 0, '1.', NULL, 0, 0, 1, b'0', b'0', '', b'0', ''),
 (2, 1, 'bb0ac377-d0ab-11e4-9841-f46d04612ccc', 'Почетна', 1, '1.2.', 1, 0, 0, 0, b'1', b'1', '/', b'0', ''),
 (3, 1, '6f3c3964-d0ac-11e4-9841-f46d04612ccc', 'Школа', 1, '1.3.', 1, 1, 0, 0, b'0', b'0', '', b'0', ''),
@@ -276,7 +293,7 @@ INSERT INTO `category` (`Id`, `Version`, `Guid`, `Title`, `HierarchyDepth`, `Hie
 (33, 1, '4a3442e4-d0bc-11e4-9841-f46d04612ccc', 'Стручни сарадници', 2, '1.9.33.', 9, 3, 0, 0, b'0', b'0', '', b'0', ''),
 (34, 1, 'ab383330-d0bd-11e4-9841-f46d04612ccc', 'Рачуноводство и администрација', 2, '1.9.34.', 9, 4, 0, 0, b'0', b'0', '', b'0', ''),
 (35, 1, '1ffb82fc-d0be-11e4-9841-f46d04612ccc', 'Техничко и помоћно особље', 2, '1.9.35.', 9, 5, 0, 0, b'0', b'0', '', b'0', ''),
-(36, 1, '09487e75-d0c1-11e4-9841-f46d04612ccc', 'Наставници', 2, '1.9.36.', 9, 5, 0, 0, b'0', b'1', '/teachers', b'0', ''),
+(36, 1, '09487e75-d0c1-11e4-9841-f46d04612ccc', 'Наставници', 2, '1.9.36.', 9, 5, 0, 0, b'0', b'1', '/наставници', b'0', ''),
 (37, 1, 'e0de2d58-d0c2-11e4-9841-f46d04612ccc', 'Прва година', 3, '1.5.16.37.', 16, 0, 0, 0, b'0', b'0', '', b'0', ''),
 (38, 1, '013c7415-d0c3-11e4-9841-f46d04612ccc', 'Друга година', 3, '1.5.16.38.', 16, 1, 0, 0, b'0', b'0', '', b'0', ''),
 (39, 1, '1b1cd5d3-d0c3-11e4-9841-f46d04612ccc', 'Трећа година', 3, '1.5.16.39.', 16, 2, 0, 0, b'0', b'0', '', b'0', ''),
@@ -287,28 +304,28 @@ INSERT INTO `category` (`Id`, `Version`, `Guid`, `Title`, `HierarchyDepth`, `Hie
 (44, 1, '3f5acd59-d0c4-11e4-9841-f46d04612ccc', 'Школа данас', 3, '1.7.42.44.', 42, 0, 0, 0, b'0', b'0', '', b'0', ''),
 (45, 1, '4c593e45-d0c4-11e4-9841-f46d04612ccc', 'Кабинети', 3, '1.7.42.45.', 42, 1, 0, 0, b'0', b'0', '', b'0', ''),
 (46, 1, '5709c11a-d0c4-11e4-9841-f46d04612ccc', 'Дружења', 3, '1.7.42.46.', 42, 2, 0, 0, b'0', b'0', '', b'0', ''),
-(47, 1, '8eac84ba-d0cb-11e4-9841-f46d04612ccc', 'Српски језик и књижевност', 4, '1.5.16.37.47.', 37, 0, 0, 0, b'0', b'0', '', b'0', ''),
-(48, 1, 'fb9eb30c-d0cb-11e4-9841-f46d04612ccc', 'Математика', 4, '1.5.16.37.48.', 37, 1, 0, 0, b'0', b'0', '', b'0', ''),
-(49, 1, 'aa446f8f-d0cf-11e4-9841-f46d04612ccc', 'Физика', 4, '1.5.16.37.49.', 37, 2, 0, 0, b'0', b'0', '', b'0', ''),
-(50, 1, 'bc61b686-d0cf-11e4-9841-f46d04612ccc', 'Хемија', 4, '1.5.16.37.50.', 37, 3, 0, 0, b'0', b'0', '', b'0', ''),
-(51, 1, 'cea62af5-d0cf-11e4-9841-f46d04612ccc', 'Историја', 4, '1.5.16.37.51.', 37, 4, 0, 0, b'0', b'0', '', b'0', ''),
-(52, 1, 'eb02efca-d0cf-11e4-9841-f46d04612ccc', 'Рачунарство и информатика', 4, '1.5.16.37.52.', 37, 5, 0, 0, b'0', b'0', '', b'0', ''),
-(53, 1, '2c72d8f7-d0d0-11e4-9841-f46d04612ccc', 'Српски језик и књижевност', 4, '1.5.16.38.53.', 38, 0, 0, 0, b'0', b'0', '', b'0', ''),
-(54, 1, '7c3d17ce-d0d0-11e4-9841-f46d04612ccc', 'Математика', 4, '1.5.16.38.54.', 38, 1, 0, 0, b'0', b'0', '', b'0', ''),
-(55, 1, '7c44c894-d0d0-11e4-9841-f46d04612ccc', 'Физика', 4, '1.5.16.38.55.', 38, 2, 0, 0, b'0', b'0', '', b'0', ''),
-(56, 1, '7c4b9523-d0d0-11e4-9841-f46d04612ccc', 'Хемија', 4, '1.5.16.38.56.', 38, 3, 0, 0, b'0', b'0', '', b'0', ''),
-(57, 1, '7c524b75-d0d0-11e4-9841-f46d04612ccc', 'Историја', 4, '1.5.16.38.57.', 38, 4, 0, 0, b'0', b'0', '', b'0', ''),
-(58, 1, '7c569dbe-d0d0-11e4-9841-f46d04612ccc', 'Рачунарство и информатика', 4, '1.5.16.38.58.', 38, 5, 0, 0, b'0', b'0', '', b'0', ''),
-(59, 1, 'f6169c3b-d0d0-11e4-9841-f46d04612ccc', 'Српски језик и књижевност', 4, '1.5.16.39.59.', 39, 0, 0, 0, b'0', b'0', '', b'0', ''),
-(60, 1, 'f61d8fa5-d0d0-11e4-9841-f46d04612ccc', 'Математика', 4, '1.5.16.39.60.', 39, 1, 0, 0, b'0', b'0', '', b'0', ''),
-(61, 1, 'f625082a-d0d0-11e4-9841-f46d04612ccc', 'Физика', 4, '1.5.16.39.61.', 39, 2, 0, 0, b'0', b'0', '', b'0', ''),
-(62, 1, 'f62fedea-d0d0-11e4-9841-f46d04612ccc', 'Хемија', 4, '1.5.16.39.62.', 39, 3, 0, 0, b'0', b'0', '', b'0', ''),
-(63, 1, 'f63b03de-d0d0-11e4-9841-f46d04612ccc', 'Рачунарство и информатика', 4, '1.5.16.39.63.', 39, 4, 0, 0, b'0', b'0', '', b'0', ''),
-(64, 1, '40689d5e-d0d1-11e4-9841-f46d04612ccc', 'Српски језик и књижевност', 4, '1.5.16.40.64.', 40, 0, 0, 0, b'0', b'0', '', b'0', ''),
-(65, 1, '406d7ad5-d0d1-11e4-9841-f46d04612ccc', 'Математика', 4, '1.5.16.40.65.', 40, 1, 0, 0, b'0', b'0', '', b'0', ''),
-(66, 1, '40719398-d0d1-11e4-9841-f46d04612ccc', 'Физика', 4, '1.5.16.40.66.', 40, 2, 0, 0, b'0', b'0', '', b'0', ''),
-(67, 1, '407799ab-d0d1-11e4-9841-f46d04612ccc', 'Хемија', 4, '1.5.16.40.67.', 40, 3, 0, 0, b'0', b'0', '', b'0', ''),
-(68, 1, '407d6692-d0d1-11e4-9841-f46d04612ccc', 'Рачунарство и информатика', 4, '1.5.16.40.68.', 40, 4, 0, 0, b'0', b'0', '', b'0', '');
+(47, 1, '8eac84ba-d0cb-11e4-9841-f46d04612ccc', 'Српски језик и књижевност', 4, '1.5.16.37.47.', 37, 0, 0, 0, b'0', b'0', '', b'1', 'Српски језик и књижевност - Прва година'),
+(48, 1, 'fb9eb30c-d0cb-11e4-9841-f46d04612ccc', 'Математика', 4, '1.5.16.37.48.', 37, 1, 0, 0, b'0', b'0', '', b'1', 'Математика - Прва година'),
+(49, 1, 'aa446f8f-d0cf-11e4-9841-f46d04612ccc', 'Физика', 4, '1.5.16.37.49.', 37, 2, 0, 0, b'0', b'0', '', b'1', 'Физика - Прва година'),
+(50, 1, 'bc61b686-d0cf-11e4-9841-f46d04612ccc', 'Хемија', 4, '1.5.16.37.50.', 37, 3, 0, 0, b'0', b'0', '', b'1', 'Хемија - Прва година'),
+(51, 1, 'cea62af5-d0cf-11e4-9841-f46d04612ccc', 'Историја', 4, '1.5.16.37.51.', 37, 4, 0, 0, b'0', b'0', '', b'1', 'Историја - Прва година'),
+(52, 1, 'eb02efca-d0cf-11e4-9841-f46d04612ccc', 'Рачунарство и информатика', 4, '1.5.16.37.52.', 37, 5, 0, 0, b'0', b'0', '', b'1', 'Рачунарство и информатика - Прва година'),
+(53, 1, '2c72d8f7-d0d0-11e4-9841-f46d04612ccc', 'Српски језик и књижевност', 4, '1.5.16.38.53.', 38, 0, 0, 0, b'0', b'0', '', b'1', 'Српски језик и књижевност - Друга година'),
+(54, 1, '7c3d17ce-d0d0-11e4-9841-f46d04612ccc', 'Математика', 4, '1.5.16.38.54.', 38, 1, 0, 0, b'0', b'0', '', b'1', 'Математика - Друга година'),
+(55, 1, '7c44c894-d0d0-11e4-9841-f46d04612ccc', 'Физика', 4, '1.5.16.38.55.', 38, 2, 0, 0, b'0', b'0', '', b'1', 'Физика - Друга година'),
+(56, 1, '7c4b9523-d0d0-11e4-9841-f46d04612ccc', 'Хемија', 4, '1.5.16.38.56.', 38, 3, 0, 0, b'0', b'0', '', b'1', 'Хемија - Друга година'),
+(57, 1, '7c524b75-d0d0-11e4-9841-f46d04612ccc', 'Историја', 4, '1.5.16.38.57.', 38, 4, 0, 0, b'0', b'0', '', b'1', 'Историја - Друга година'),
+(58, 1, '7c569dbe-d0d0-11e4-9841-f46d04612ccc', 'Рачунарство и информатика', 4, '1.5.16.38.58.', 38, 5, 0, 0, b'0', b'0', '', b'1', 'Рачунарство и информатика - Друга година'),
+(59, 1, 'f6169c3b-d0d0-11e4-9841-f46d04612ccc', 'Српски језик и књижевност', 4, '1.5.16.39.59.', 39, 0, 0, 0, b'0', b'0', '', b'1', 'Српски језик и књижевност - Трећа година'),
+(60, 1, 'f61d8fa5-d0d0-11e4-9841-f46d04612ccc', 'Математика', 4, '1.5.16.39.60.', 39, 1, 0, 0, b'0', b'0', '', b'1', 'Математика - Трећа година'),
+(61, 1, 'f625082a-d0d0-11e4-9841-f46d04612ccc', 'Физика', 4, '1.5.16.39.61.', 39, 2, 0, 0, b'0', b'0', '', b'1', 'Физика - Трећа година'),
+(62, 1, 'f62fedea-d0d0-11e4-9841-f46d04612ccc', 'Хемија', 4, '1.5.16.39.62.', 39, 3, 0, 0, b'0', b'0', '', b'1', 'Хемија - Трећа година'),
+(63, 1, 'f63b03de-d0d0-11e4-9841-f46d04612ccc', 'Рачунарство и информатика', 4, '1.5.16.39.63.', 39, 4, 0, 0, b'0', b'0', '', b'1', 'Рачунарство и информатика - Трећа година'),
+(64, 1, '40689d5e-d0d1-11e4-9841-f46d04612ccc', 'Српски језик и књижевност', 4, '1.5.16.40.64.', 40, 0, 0, 0, b'0', b'0', '', b'1', 'Српски језик и књижевност - Четврта година'),
+(65, 1, '406d7ad5-d0d1-11e4-9841-f46d04612ccc', 'Математика', 4, '1.5.16.40.65.', 40, 1, 0, 0, b'0', b'0', '', b'1', 'Математика - Четврта година'),
+(66, 1, '40719398-d0d1-11e4-9841-f46d04612ccc', 'Физика', 4, '1.5.16.40.66.', 40, 2, 0, 0, b'0', b'0', '', b'1', 'Физика - Четврта година'),
+(67, 1, '407799ab-d0d1-11e4-9841-f46d04612ccc', 'Хемија', 4, '1.5.16.40.67.', 40, 3, 0, 0, b'0', b'0', '', b'1', 'Хемија - Четврта година'),
+(68, 1, '407d6692-d0d1-11e4-9841-f46d04612ccc', 'Рачунарство и информатика', 4, '1.5.16.40.68.', 40, 4, 0, 0, b'0', b'0', '', b'1', 'Рачунарство и информатика - Четврта година');
 
 -- --------------------------------------------------------
 
@@ -330,7 +347,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   `ContentType` tinyint(5) DEFAULT NULL,
   `Content` text COLLATE cp1251_bin,
   `FilePath` text COLLATE cp1251_bin
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=cp1251 COLLATE=cp1251_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=cp1251 COLLATE=cp1251_bin;
 
 --
 -- Dumping data for table `content`
@@ -389,7 +406,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `PhotoPath` text NOT NULL,
   `About` text CHARACTER SET utf16 COLLATE utf16_bin,
   `AuthorizationId` bigint(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -416,6 +433,12 @@ CREATE TABLE IF NOT EXISTS `usercategory` (
 --
 
 --
+-- Indexes for table `alumni`
+--
+ALTER TABLE `alumni`
+ ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `authorizationrole`
 --
 ALTER TABLE `authorizationrole`
@@ -424,12 +447,36 @@ ALTER TABLE `authorizationrole`
 --
 -- Indexes for table `category`
 --
+ALTER TABLE `category`
+ ADD PRIMARY KEY (`Id`), ADD UNIQUE KEY `Guid` (`Guid`);
 
+--
+-- Indexes for table `content`
+--
+ALTER TABLE `content`
+ ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`Id`), ADD UNIQUE KEY `Id` (`Id`);
+
+--
+-- Indexes for table `usercategory`
+--
+ALTER TABLE `usercategory`
+ ADD PRIMARY KEY (`UserId`,`CategoryId`), ADD KEY `FK_category_user` (`CategoryId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `alumni`
+--
+ALTER TABLE `alumni`
+MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=604;
 --
 -- AUTO_INCREMENT for table `authorizationrole`
 --
@@ -439,17 +486,17 @@ MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=168;
 --
 -- AUTO_INCREMENT for table `content`
 --
 ALTER TABLE `content`
-MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
+MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=100;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=100;
 --
 -- Constraints for dumped tables
 --
