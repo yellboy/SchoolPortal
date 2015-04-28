@@ -36,5 +36,12 @@
 			$this->db->insert('alumni', (array) $obj);
 			return $this->db->insert_id();
 		}
+		
+		function Obrisi($id)
+		{
+			$obj = new stdClass();
+			$obj -> ID = $id;
+			$this->db->delete('alumni', (array) $obj); 
+		}
 	}
 ?>
