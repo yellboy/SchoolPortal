@@ -8,6 +8,7 @@ class Alumni extends CI_Model {
 	var $email;
 	var $year;
 	var $classroom;
+	var $isdeleted;
 }
 
 ?>
