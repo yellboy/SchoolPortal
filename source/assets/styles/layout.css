@@ -40,6 +40,91 @@
         .news-details-template .news-headline h2 a:hover {
           color: #BF251C; }
 
+.alumni-context h3, .teachers-custom-table h3 {
+  padding-left: 20px; }
+.alumni-context table a:link, .teachers-custom-table table a:link {
+  color: #666;
+  font-weight: bold;
+  text-decoration: none; }
+.alumni-context table a:visited, .teachers-custom-table table a:visited {
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none; }
+.alumni-context table a:active, .alumni-context table a:hover, .teachers-custom-table table a:active, .teachers-custom-table table a:hover {
+  color: #bd5a35;
+  text-decoration: underline; }
+.alumni-context table, .teachers-custom-table table {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666;
+  font-size: 12px;
+  text-shadow: 1px 1px 0px #fff;
+  background: #eaebec;
+  margin: 20px;
+  border: #ccc 1px solid;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px #d1d1d1;
+  -webkit-box-shadow: 0 1px 2px #d1d1d1;
+  box-shadow: 0 1px 2px #d1d1d1; }
+.alumni-context table th, .teachers-custom-table table th {
+  padding: 15px 22px 12px 25px;
+  border-top: 1px solid #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+  background: -moz-linear-gradient(top, #ededed, #ebebeb); }
+.alumni-context table th:first-child, .teachers-custom-table table th:first-child {
+  text-align: left;
+  padding-left: 20px; }
+.alumni-context table tr:first-child th:first-child, .teachers-custom-table table tr:first-child th:first-child {
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px; }
+.alumni-context table tr:first-child th:last-child, .teachers-custom-table table tr:first-child th:last-child {
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px; }
+.alumni-context table tr, .teachers-custom-table table tr {
+  text-align: center;
+  padding-left: 20px; }
+.alumni-context table td:first-child, .teachers-custom-table table td:first-child {
+  text-align: left;
+  padding-left: 20px;
+  border-left: 0; }
+.alumni-context table td, .teachers-custom-table table td {
+  padding: 12px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  background: #fafafa;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+  background: -moz-linear-gradient(top, #fbfbfb, #fafafa); }
+.alumni-context table tr.even td, .teachers-custom-table table tr.even td {
+  background: #f6f6f6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+  background: -moz-linear-gradient(top, #f8f8f8, #f6f6f6); }
+.alumni-context table tr:last-child td, .teachers-custom-table table tr:last-child td {
+  border-bottom: 0; }
+.alumni-context table tr:last-child td:first-child, .teachers-custom-table table tr:last-child td:first-child {
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px; }
+.alumni-context table tr:last-child td:last-child, .teachers-custom-table table tr:last-child td:last-child {
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px; }
+.alumni-context table tr:hover td, .teachers-custom-table table tr:hover td {
+  background: #f2f2f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+  background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0); }
+
+.add-to-alumnus .row {
+  padding-top: 10px; }
+
+button.search-users {
+  width: 100%; }
+
 body {
   background: url('img/background.jpg'); }
 
@@ -48,7 +133,6 @@ body {
 
 .pre-header {
   height: 50px;
-  border-bottom: 2px solid #A3A2A2;
   background: #fcfff4;
   /* Old browsers */
   background: -moz-linear-gradient(top, #fcfff4 0%, #EFECEC 40%, #b3bead 100%);
@@ -232,9 +316,16 @@ body {
         color: #C7C7C7; }
         .footer ul li a:hover {
           color: #838383; }
+      .footer ul li.right {
+        padding-left: 20%; }
+      .footer ul li:first-child {
+        margin-left: 34px; }
 
 .clear {
   clear: both; }
+
+.margin-t5 {
+  margin-top: 5px; }
 
 .dropdown-submenu {
   position: relative; }

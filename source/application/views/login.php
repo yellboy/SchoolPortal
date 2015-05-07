@@ -4,18 +4,18 @@
 
 	<div class="row">
 		<div class="col-md-2">
-			<label for="username">Корисничко име:</label>
+			<label for="username" class="margin-t5">Корисничко име:</label>
 		</div>
 		<div class="col-md-4">
-			<input type="text" size="20" id="username" name="username" class="form-control" placeholder="Корисничко име"/>
+			<input type="text" id="username" name="username" class="form-control" placeholder="Корисничко име"/>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-2">
-			<label for="password">Лозинка:</label>
+			<label for="password" class="margin-t5">Лозинка:</label>
 		</div>
 		<div class="col-md-4">
-			<input type="password" size="20" id="password" name="password" class="form-control" placeholder="Лозинка"/>
+			<input type="password" id="password" name="password" class="form-control" placeholder="Лозинка"/>
 		</div>
 	</div>
 	<div class="row">

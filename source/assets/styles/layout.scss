@@ -1,4 +1,5 @@
 @import 'news_details';
+@import 'alumnus';
 
 $linkColor: #BF251C;
 $grayButton: #2D2D2D;
@@ -15,7 +16,7 @@ body {
 
 .pre-header {
 	height: 50px;
-	border-bottom: 2px solid #A3A2A2;
+	// border-bottom: 2px solid #A3A2A2;
 	background: #fcfff4; /* Old browsers */
 	background: -moz-linear-gradient(top, #fcfff4 0%, #EFECEC 40%, rgba(179,190,173,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(40%,#EFECEC), color-stop(100%,#B8B8B8)); /* Chrome,Safari4+ */
@@ -256,12 +257,22 @@ body {
 					color: #838383;
 				}
 			}
+			&.right{
+				padding-left: 20%;
+			}
+			&:first-child{
+				margin-left: 34px;
+			}
 		}
 	}
 }
 
 .clear{
 	clear:both;
+}
+
+.margin-t5{
+	margin-top:5px;
 }
 
 
