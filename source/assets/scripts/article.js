@@ -100,6 +100,7 @@ $(function () {
 			CKEDITOR.replace('ck-holder', {
 				language: 'sr'
 			});
+			CKEDITOR.config.extraPlugins = "base64image";
 		},
 		_getCKEditor: function () {
 			return CKEDITOR.instances['ck-holder'];

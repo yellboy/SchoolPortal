@@ -13,8 +13,8 @@
 	
 		public function index()
 		{
-			$this->load->helper('profiler_helper');
-			SetProfiler($this);
+			//$this->load->helper('profiler_helper');
+			//SetProfiler($this);
 			
 			$routeId = $this->uri->segment($this->uri->total_segments());
 			$categoryId = $this->homeCategoryId;
