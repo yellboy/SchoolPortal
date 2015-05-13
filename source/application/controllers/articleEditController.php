@@ -30,7 +30,7 @@ class ArticleEditController extends CI_Controller {
 		{
 			$this->load->model('Categories_model');
 			$categories = $this->Categories_model->loadCategoriesForJsTree();
-			return json_encode($categories, JSON_UNESCAPED_UNICODE);
+			return json_encode($categories);
 		}
 		return 0;
 	}
@@ -70,7 +70,6 @@ class ArticleEditController extends CI_Controller {
 			$obj->CategoryId = $this->input->post('categoryId');
 			$obj->CreatedByUserName = $session_data['username'];
 			$obj->CreatedByUserId = $session_data['id'];
-			
 			$result = $this->Articles_model->saveArticle($id, $obj);
 			echo json_encode($result, JSON_UNESCAPED_UNICODE);
 		}
