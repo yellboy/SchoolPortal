@@ -1,6 +1,13 @@
 <?php
 class Categories_model extends CI_Model {
 	
+	// TODO refactor this code in codeigniter 'linq'
+	private $_sqlDepencyString = 
+		'UPDATE `category` as cat 
+		INNER JOIN `category` 
+		as parent ON parent.`Id` = cat.`ParentId` 
+		SET cat.`CourseName` = CONCAT(cat.Title, " - ", parent.Title) WHERE cat.`IsCourse` = 1 AND cat.`Id` =';
+
 	public function save_category($obj)
 	{
 		$obj->IsDeleted = 0;
@@ -10,7 +17,6 @@ class Categories_model extends CI_Model {
 		$this->db->insert('category', $obj);
 		$id = $this->db->insert_id(); 
 		
-		// $this->update_category($id, $obj);
 		return $id;
 	}
 
@@ -23,11 +29,17 @@ class Categories_model extends CI_Model {
 		// this is maybe going to be a problem
 	}
 	
+	private function update_course_name($id)
+	{
+		$this->db->query($this->_sqlDepencyString . $id);
+	}
+	
 	function rename_category($id, $title)
 	{
 		$data = array('Title' => $title);
 		$this->db->where('id', $id);
 		$this->db->update('category', $data); 
+		$this->update_course_name($id);
 	}
 	
 	function delete_categories($ids)

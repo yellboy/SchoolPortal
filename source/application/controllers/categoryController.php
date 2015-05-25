@@ -2,19 +2,10 @@
 session_start();
 
 class CategoryController extends CI_Controller {
-
-	private function _checkLogin(){
-		if($this->session->userdata('logged_in'))
-		{
-			return true;
-		}
-		redirect('login', 'refresh');
-		return false;
-	}
 	
 	public function index()
 	{
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$session_data = $this->session->userdata('logged_in');
 			$data['id'] = $session_data['id'];
@@ -26,7 +17,7 @@ class CategoryController extends CI_Controller {
 	
 	private function loadCategories()
 	{
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Categories_model');
 			$categories = $this->Categories_model->loadCategoriesForJsTree();
@@ -36,7 +27,7 @@ class CategoryController extends CI_Controller {
 	}
 	
 	public function DeleteCategory() {
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Categories_model');
 			$ids = $this->input->post('ids');
@@ -46,7 +37,7 @@ class CategoryController extends CI_Controller {
 	}
 	
 	public function RenameCategory() {
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Categories_model');
 			$id = $this->input->post('id');
@@ -57,7 +48,7 @@ class CategoryController extends CI_Controller {
 	}
 	
 	public function SaveCategory(){
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Categories_model');
 			$obj = new stdClass;
@@ -75,7 +66,7 @@ class CategoryController extends CI_Controller {
 	}
 	
 	public function UpdateCategory(){
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Categories_model');
 			$obj = new stdClass;

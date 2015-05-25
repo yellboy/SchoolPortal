@@ -1,12 +1,13 @@
 <script>
 	SPV.categories = <?php echo $categories; ?>;
+	SPV.userCourses = <?php echo $userCourses; ?>;
 </script>
 
 <div class="col-md-12">
 	<h3><?php echo $this->lang->line('ArticlesAdministration'); ?></h3>
 
 	<div class="container-fluid">
-		<div class="row" style="border-bottom: 1px solid #ccc;margin-bottom:30px;">
+		<div class="row" style="border-bottom: 1px solid #ccc;margin-bottom:30px;padding-bottom:20px">
 			<div class="col-md-6">
 				<div id="jstree-holder" class="demo jstree jstree-1 jstree-default" style="margin-top:1em; min-height:200px;" role="tree" aria-multiselectable="true" tabindex="0" aria-activedescendant="demo_root_2" aria-busy="false">
 				</div>

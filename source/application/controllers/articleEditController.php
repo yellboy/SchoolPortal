@@ -2,42 +2,41 @@
 session_start();
 
 class ArticleEditController extends CI_Controller {
-
-	private function _checkLogin(){
-		if($this->session->userdata('logged_in'))
-		{
-			return true;
-		}
-		redirect('login', 'refresh');
-		return false;
-	}
 	
 	public function index()
 	{
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
 			$data['id'] = $session_data['id'];
 			$data['categories'] = $this::loadCategories();
+			
+			if (!IsAdministrator()){
+				$data['userCourses'] = 	json_encode($this->Categories_model->GetUserCategoryRelations($data['id']), JSON_UNESCAPED_UNICODE);
+			}
+			else{
+				$data['userCourses'] = '0';
+			}
+			
 			$this->load->view('layouts/articleEditLayout', $data);
 		}
 	}
 	
 	private function loadCategories()
 	{
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Categories_model');
 			$categories = $this->Categories_model->loadCategoriesForJsTree();
-			return json_encode($categories);
+			return json_encode($categories, JSON_UNESCAPED_UNICODE);
 		}
 		return 0;
 	}
 	
 	public function LoadArticleListForGrid() {
 		
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Articles_model');
 			$categoryId = $this->input->post('categoryId');
@@ -49,7 +48,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function LoadArticle(){
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Articles_model');
 			$id = $this->input->post('id');
@@ -59,7 +58,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function SaveArticle(){
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Articles_model');
 			$session_data = $this->session->userdata('logged_in');
@@ -70,13 +69,14 @@ class ArticleEditController extends CI_Controller {
 			$obj->CategoryId = $this->input->post('categoryId');
 			$obj->CreatedByUserName = $session_data['username'];
 			$obj->CreatedByUserId = $session_data['id'];
+			
 			$result = $this->Articles_model->saveArticle($id, $obj);
 			echo json_encode($result, JSON_UNESCAPED_UNICODE);
 		}
 	}
 	
 	public function DeleteArticle(){
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Articles_model');
 			$id = $this->input->post('id');
