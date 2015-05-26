@@ -2,7 +2,7 @@
 
 	class contactController extends CI_Controller {
 
-		private $homeCategoryId = 2; // HACK
+		private $homeCategoryId = 10; // HACK
 		
 		public function __construct()
 		{

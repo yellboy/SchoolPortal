@@ -23,7 +23,6 @@
 				$categoryId = $routeId;
 			}
 			
-			
 			$category = $this->Categories_model->loadCategory($categoryId);
 			
 			if (count($category) == 0 || count($category) > 1 || ($category[0]->IsFixedRoute && $category[0]->Id != $this->homeCategoryId)){

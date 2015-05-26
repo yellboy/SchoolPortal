@@ -44,7 +44,7 @@
 	<div class="clear"></div>
 
 	<div class="news-content">
-		<?php echo $article->Content;?>
+		<?php include($article->Content); ?>
 	</div>
 </div>
 

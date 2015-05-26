@@ -16,7 +16,7 @@ $route[rawurlencode('алумни')] = "alumniController";
 $route[rawurlencode('наставници')] = "teachersController";
 $route[rawurlencode('преглед-профила')] = "viewProfileController";
 $route[rawurlencode('профил-корисника').'/(:num)'] = "userProfileController/index/$1";
-$route['contact'] = "contactController";
+$route[rawurlencode('контакт')] = "contactController";
 $route['404_override'] = '';
 
 
