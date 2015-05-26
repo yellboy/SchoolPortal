@@ -16,6 +16,7 @@ abstract class ContentPageCodes
 	const Teachers = 11;
 	const ViewProfile = 12;
 	const UserProfile = 13;
+	const ContactPage = 14;
 		
 	// this should be loaded from db
 	public static $route_prefix = array('/',
@@ -31,7 +32,8 @@ abstract class ContentPageCodes
 								'/алумни', 
 								'/наставници', 
 								'/преглед-профила', 
-								'/профил-корисника/');
+								'/профил-корисника/',
+								'/контакт');
 }
 	
 if ( ! function_exists('ResolveRoute'))

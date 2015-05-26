@@ -126,6 +126,7 @@ $(function () {
 					$('.articles-list-holder').html(self._articlesTemplate({ rows: data }));
 					$('.article-list').show();
 					$('.article-details').hide();
+					self.updateViewInCaseOfAdminRights(categoryId);
 				}
 			});
 		},
@@ -186,6 +187,18 @@ $(function () {
 			var self = this;
 			
 			$('.article-files').show();
+		},
+		updateViewInCaseOfAdminRights: function (categoryId) {
+			if (SPV.userCourses instanceof Array) {
+				if (SPV.userCourses.indexOf(categoryId) > -1) {
+					$('button').hide();
+				}
+				else {
+					$('button').show();
+				}
+
+			}
+
 			
 			$.ajax({
 				type: 'POST',

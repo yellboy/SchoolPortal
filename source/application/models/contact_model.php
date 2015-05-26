@@ -1,5 +1,5 @@
 <?php
-class Categories_model extends CI_Model {
+class contact_model extends CI_Model {
 	
 	// TODO refactor this code in codeigniter 'linq'
 	private $_sqlDepencyString = 
@@ -7,7 +7,7 @@ class Categories_model extends CI_Model {
 		INNER JOIN `category` 
 		as parent ON parent.`Id` = cat.`ParentId` 
 		SET cat.`CourseName` = CONCAT(cat.Title, " - ", parent.Title) WHERE cat.`IsCourse` = 1 AND cat.`Id` =';
-
+	
 	public function save_category($obj)
 	{
 		$obj->IsDeleted = 0;
@@ -16,7 +16,6 @@ class Categories_model extends CI_Model {
 		$obj->Guid = uniqid();
 		$this->db->insert('category', $obj);
 		$id = $this->db->insert_id(); 
-		
 		return $id;
 	}
 
@@ -25,7 +24,7 @@ class Categories_model extends CI_Model {
 		$obj->HierarchyId = $obj->HierarchyId . $id . '.';
 		$this->db->where('id', $id);
 		$this->db->update('category', (array) $obj); 
-		// update all other positions on this level 
+		// TODO: update all other positions on new and old levels 
 		// this is maybe going to be a problem
 	}
 	
@@ -69,16 +68,6 @@ class Categories_model extends CI_Model {
 				$this->_load_children($child);
 			}
 		}
-	}
-	
-	public function LoadCourses()
-	{
-		return $this->db->get_where('category', array('IsCourse' => 1))->result();
-	}
-	
-	public function GetUserCategoryRelations($id)
-	{
-		return $this->db->select('CategoryId')->get_where('usercategory', array('UserId' => $id))->result();
 	}
 	
 	public function loadCategoriesForJsTree()

@@ -1,8 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-	class HomeController extends CI_Controller {
+	class contactController extends CI_Controller {
 
-		private $homeCategoryId = 2; // HACK
+		private $homeCategoryId = 10; // HACK
 		
 		public function __construct()
 		{
@@ -22,6 +22,7 @@
 			if ($this->uri->total_segments() > 0 && is_numeric($routeId)){
 				$categoryId = $routeId;
 			}
+			
 			
 			$category = $this->Categories_model->loadCategory($categoryId);
 			
@@ -47,7 +48,7 @@
 				$data['isLogged'] = false; 
 			}
 			
-			$this->load->view('layouts/homeLayout', $data);
+			$this->load->view('layouts/contactLayout', $data);
 		}
 		
 		public function search($searchTerm)

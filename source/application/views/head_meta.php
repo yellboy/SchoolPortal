@@ -4,7 +4,6 @@
 <?php 
 	$this->load->helper('html');
 	echo link_tag('assets/styles/layout.min.css');
-	echo link_tag('assets/styles/img/favicon.ico', 'shortcut icon', 'image/ico');
 	echo link_tag('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css');
 	$homepage = base_url() . "assets/scripts/homepage.js";
 	$this->lang->load('serbian', 'serbian');
