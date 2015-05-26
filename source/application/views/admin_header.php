@@ -3,8 +3,15 @@
 		<div class="col-md-7">
 			<ul> 
 				<li><a href="/">Почетна</a></li>
-				<li><a href="<?php echo ResolveRoute(ContentPageCodes::Users) ?>">Kорисници</a></li>
-				<li><a href="<?php echo ResolveRoute(ContentPageCodes::CategoryAdmin) ?>">Категорије</a></li>
+				<?php 
+					if (IsAdministrator()) 
+					{
+				?>
+						<li><a href="<?php echo ResolveRoute(ContentPageCodes::Users) ?>">Kорисници</a></li>
+						<li><a href="<?php echo ResolveRoute(ContentPageCodes::CategoryAdmin) ?>">Категорије</a></li>
+				<?php
+					}
+				?>
 				<li><a href="<?php echo ResolveRoute(ContentPageCodes::ArticleAdmin) ?>">Чланци</a></li>
 				<li><a href="<?php echo ResolveRoute(ContentPageCodes::UserProfile, $id) ?>">Мој профил</a></li>
 				<li class="username"><?php echo $username; ?></li>

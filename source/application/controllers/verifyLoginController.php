@@ -40,9 +40,11 @@
 				{
 					$sess_array = array(
 						'id' => $row->id,
-						'username' => $row->username
+						'username' => $row->username,
+						'authorizationid' => $row->authorizationid
 					);
 					$this->session->set_userdata('logged_in', $sess_array);
+					$this->session->set_userdata('authorizationid', $sess_array->authorizationid);
 				}
 				return TRUE;
 			}

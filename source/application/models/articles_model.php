@@ -19,7 +19,7 @@ class Articles_model extends CI_Model {
 	
 	function loadArticles($categoryId, $searchByName = null, $searchByAuthor = null)
 	{
-		$this->db->select('Id, Title, Content, CreatedByUserName, CreatedAt')->from('content')->where(array('CategoryId' => $categoryId));
+		$this->db->select('Id, Title, Content, CreatedByUserName, CreatedAt')->from('content')->where(array('CategoryId' => $categoryId, 'ContentType' => ContentTypes::Article));
 		
 		if (!$this->IsNullOrEmptyString($searchByName)){
 			$this->db->like('Title', $searchByName);
@@ -53,7 +53,7 @@ class Articles_model extends CI_Model {
 	
 	function loadArticle($articleId)
 	{
-		$articles = $this->db->select('Id, Title, Content')->get_where('content', array('Id' => $articleId, 'ContentType' => ContentTypes::Article))->result();
+		$articles = $this->db->select('Id, Title, Content')->get_where('content', array('Id' => $articleId, 'ContentType' => ContentTypes::Article, 'IsDeleted' => '0'))->result();
 		// Dirty solution, refactoring needed.
 		foreach ($articles as $article)
 		{
@@ -117,6 +117,31 @@ class Articles_model extends CI_Model {
 		$data = array('IsDeleted' => 1);
 		$this->db->where('id', $id);
 		$this->db->update('content', $data); 
+	}
+	
+	function SaveFile($categoryId, $title, $userId, $userName)
+	{
+		$fileName = './files/' . $_FILES["myfile"]["name"];
+		$obj = new stdClass;
+		$obj->IsDeleted = 0;
+		$obj->Version = 1;
+		$obj->ContentType = ContentTypes::File;
+		$obj->Guid = uniqid();
+		$obj->Content = '';
+		$obj->Title = $title;
+		$obj->CreatedByUserName = $userName;
+		$obj->CreatedByUserId = $userId;
+		$obj->CategoryId = $categoryId;
+		$obj->FilePath = $fileName;
+		$obj->CreatedAt = date("Y-m-d");
+		$obj->LastModifiedAt = null;
+		$this->db->insert('content', (array) $obj);
+ 		move_uploaded_file($_FILES["myfile"]["tmp_name"], $fileName);
+	}
+	
+	function LoadFiles($categoryId)
+	{
+		return $this->db->get_where('content', array('ContentType' => ContentTypes::File, 'CategoryId' => $categoryId))->result();
 	}
 }
 ?>

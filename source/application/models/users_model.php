@@ -20,6 +20,11 @@
 			return $users;
 		}
 		
+		function getTeachers()
+		{
+			return $this->db->get_where('user', array('AuthorizationId' => 2))->result();
+		}
+		
 		function getUserById($id) 
 		{
 			return $this->db->get_where('user', array('Id' => $id))->result()[0];
@@ -47,7 +52,7 @@
 		
 		function login($username, $password)
 		{
-			$this->db->select('id, username, password');
+			$this->db->select('id, username, password, authorizationid');
 			$this->db->from('user');
 			$this->db->where('username', $username);
 			$this->db->where('password', MD5($password));

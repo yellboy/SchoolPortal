@@ -2,8 +2,15 @@
 
 class teachersController extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Users_model');
+	}
+		
 	public function index()
 	{
+		$data['teachers'] = $this::loadTeachers();
 		if($this->session->userdata('logged_in'))
 		{
 			$session_data = $this->session->userdata('logged_in');
@@ -16,5 +23,10 @@ class teachersController extends CI_Controller {
 		}	
 	
 		$this->load->view('layouts/teachersLayout', $data);
+	}
+	
+	private function loadTeachers()
+	{
+		return $this->Users_model->getUsers();
 	}
 }

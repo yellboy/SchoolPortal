@@ -11,7 +11,14 @@
 			<div>
 				<img id="user-image" class="img-circle" style="width:200px" src="<?php echo $shownUser->Photo ?>">
 			</div>
+			<?php
+				if (IsAdministrator() || ($shownUser->Id == $id))
+				{
+			?>
 			<div class="btn btn-danger" data-toggle="modal" style="margin-top: 5px" data-target="#photo_modal">Промени слику</div>
+			<?php
+				}
+			?>
 		</div>
 		<div class="col-md-5 form-group">
 			<input type="text" id="firstname-input" class="form-control" placeholder="Име" value="<?php echo $shownUser->FirstName ?>">

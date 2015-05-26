@@ -7,6 +7,8 @@ $(function () {
 			categoryName: '',
 			searchByName: '',
 			searchByAuthor: '',
+			materialTitle: '',
+			uploadObj: ''
 		},
 		_articlesTemplate: null,
 		_$jsTree: null,
@@ -31,6 +33,7 @@ $(function () {
 			this._articlesTemplate = Handlebars.compile($('#articles-list-template').html());
 			this._filesTemplate = Handlebars.compile($('#files-list-template').html());
 			this.initalizeEvents();
+			this.initFileUpload();
 		},
 		initalizeEvents: function(){
 			var self = this;
@@ -79,6 +82,11 @@ $(function () {
 					dataType: 'json',
 					data: { id: self._savedId },
 				});
+			});
+						
+			$('#save-file').on('click', function() {
+				self._model.materialTitle = $('#material-title').val();
+				self._model.uploadObj.startUpload();
 			});
 
 			$('body').on('click', '.save-article', function (e) {
@@ -175,10 +183,58 @@ $(function () {
 			});
 		},
 		loadCategoryFiles: function (categoryId) {
+			var self = this;
+			
 			$('.article-files').show();
+			
+			$.ajax({
+				type: 'POST',
+				url: '/ArticleEditController/LoadMaterialListForGrid',
+				dataType: 'json',
+				data: {
+					'categoryId': categoryId
+				},
+				success: function (data) {
+					$('.article-files-list').html(self._filesTemplate({ rows: data }));
+					$('.article-files-list').show();
+					// $('.file-details').hide();
+				}
+			});
+		},
+		initFileUpload: function() {
+			
+			var self = this;
+			
+			self._model.uploadObj = $('#fileuploader').uploadFile({
+				url:'/ArticleEditController/SaveMaterial',
+				autoSubmit: false,
+				showDone: true,
+				showDelete: true,
+				dynamicFormData: function() {
+					var data = {
+						'categoryId': self._model.categoryId,
+						'title': self._model.materialTitle
+					};
+					return data;
+				}, 
+				dragDropStr: ST.DragAndDropFile,
+				showAbort: true,
+				showStatusAfterSuccess: false,
+				onSuccess: function() {
+					toastr.success(ST.FileSaved);
+					jQuery.noConflict(); // Has to be added in order to close modal
+					$('#file_modal').modal('hide');
+				},
+				onError: function() {
+					toastr.error(ST.CouldNotSaveFile);
+				},
+				fileName:"myfile"
+			});
 		}
 	};
-
+		
+	
+	
 	SPV.ArticlesModule.initialize();
 
 });

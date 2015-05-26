@@ -10,7 +10,7 @@
 			<div class="modal-body" align="center">
 				<img id="temp-photo" class="img-circle" style="width:200px;">
 				<div>
-					<input type="file" id="userfile" class="form-control">
+					<input type="file" id="userfile" class="form-control" accept="image/*">
 				</div>
 			</div>
 			<div class="modal-footer" class="container-fluid" align="center">

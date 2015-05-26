@@ -14,7 +14,7 @@
 	<table id="users-table" border="1" style="width:100%" class="table-striped">
 		<thead>
 			<tr>
-				<th><input type=text" class="form-control filter" placeholder="Корисничко име"/> </th>
+				<th><input type="text" class="form-control filter" placeholder="Корисничко име"/> </th>
 				<th><input type="text" class="form-control filter" placeholder="Име"/></th>
 				<th><input type="text" class="form-control filter" placeholder="Презиме"/></th>
 				<th><input type="text" class="form-control filter" placeholder="е-пошта"/></th>

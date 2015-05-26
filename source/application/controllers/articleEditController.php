@@ -48,6 +48,17 @@ class ArticleEditController extends CI_Controller {
 		}
 	}
 	
+	public function LoadMaterialListForGrid()
+	{
+		if (IsUserAuthenticated()) 
+		{
+			$this->load->model('Articles_model');
+			$categoryId = $this->input->post('categoryId');
+			$result = $this->Articles_model->LoadFiles($categoryId);
+			echo json_encode($result, JSON_UNESCAPED_UNICODE);
+		}
+	}
+	
 	public function LoadArticle(){
 		if($this->_checkLogin())
 		{
@@ -56,6 +67,7 @@ class ArticleEditController extends CI_Controller {
 			$result = $this->Articles_model->loadArticle($id);
 			echo json_encode($result, JSON_UNESCAPED_UNICODE);
 		}
+        $this->output->set_status_header('400');
 	}
 	
 	public function SaveArticle(){
@@ -83,6 +95,21 @@ class ArticleEditController extends CI_Controller {
 			$this->Articles_model->deleteArticle($id);
 			echo $id;
 		}
+	}
+	
+	public function SaveMaterial() {
+		if($this->_checkLogin())
+		{
+			$session_data = $this->session->userdata('logged_in');
+			$categoryId = $this->input->post('categoryId');
+			$title = $this->input->post('title');
+			$userName = $session_data['username'];
+			$id = $session_data['id'];
+			$this->load->model('Articles_model');
+			$this->Articles_model->SaveFile($categoryId, $title, $id, $userName);
+			echo true;
+		}
+		echo false;
 	}
 	
 }

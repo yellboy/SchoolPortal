@@ -123,6 +123,7 @@ $(function(){
 			},
 			success: function() {
 				toastr.success(ST.PhotoChanged);
+				jQuery.noConflict(); // Has to be added in order to access the modal
 				$('#photo_modal').modal('hide');
 				$('#userfile').val('');
 				$('#user-image').attr('src', $photo);
@@ -174,7 +175,7 @@ $(function(){
 		$selectedCourseId  = $(this).val();
 	});
 	
-	// Click event must be binded to some non-dynamic element.
+	// Click event must be bound to some non-dynamic element.
 	$('table').on('click', '.remove-course', function() {
 		var $courseId = $(this).attr('data-course-id');
 		var $userId = $('#table-teaching').attr('data-user-id');

@@ -1,17 +1,17 @@
 		<div class="row article-files" style="margin-top:30px;margin-bottom:15px;display:none"; >
 			<div class="col-md-6">
 				<h3>
-					<span class="section-title">Materijali</span> у категорији '<span class="category-name"></span>':
+					<span class="section-title2">Материјали</span> у категорији '<span class="category-name"></span>':
 				</h3>
 			</div>
 		</div>
-		<table border="1" style="width:100%; margin-bottom:25px; margin-top:15px;display:none;" class="table-striped article-files">
+		<table border="1" style="width:100%; margin-bottom:25px; margin-top:15px;display:none;" class="table-striped article-files-list">
 		</table>
 
 		<div class="row article-files" style="margin-bottom:30px;border-bottom: 1px solid #ccc;padding-bottom:15px;display:none;">
 			<div class="col-md-12">
 				<div>
-					<button type="submit" class="btn btn-success add-article-files">Додај материјал</button>
+					<button type="submit" id="add-article-files" class="btn btn-success" data-toggle="modal" data-target="#file_modal">Додај материјал</button>
 				</div>
 			</div>
 		</div>
@@ -21,6 +21,7 @@
 		<th class="container-fluid col-md-6"><b>Наслов</b></th>
 		<th class="container-fluid col-md-3"><b>Аутор</b></th>
 		<th class="container-fluid col-md-2"><b>Датум креирања</b></th>
+		<th class="container-fluid"></th>
 		<th class="container-fluid"></th>
 	</tr>
 	{{#rows}}
@@ -42,3 +43,4 @@
 	</tr>
 	{{/rows}}
 </script>
+<?php $this->load->view('file_modal'); ?>

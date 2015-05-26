@@ -57,4 +57,8 @@
 		ST.UserDeleted = "Корисник је обрисан.";
 		ST.CouldNotDeleteUser = "Дошло је до грешке. Брисање корисника није успело.";
 		ST.SearchRoute = "<?php echo ContentPageCodes::Search; ?>";
+		ST.NoFileChosen = "Није одабрана ниједна датотека.";
+		ST.FileSaved = "Датотека је успешно сачувана.";
+		ST.CouldNotSaveFile = "Дошло је до грешке. Чување датотеке није успело.";
+		ST.DragAndDropFile = "<span>Превуците датотеку овде.</span>"
 	</script>
