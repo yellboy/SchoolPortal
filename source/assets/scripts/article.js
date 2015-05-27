@@ -89,6 +89,12 @@ $(function () {
 				self._model.uploadObj.startUpload();
 			});
 
+			$('body').on('click', '.download-file', function(e) {
+				e.preventDefault();
+				var path = $(this).attr('data-path')
+				window.location.href = path;
+			});
+			
 			$('body').on('click', '.save-article', function (e) {
 				self.saveArticle();
 			});
@@ -189,6 +195,9 @@ $(function () {
 			$('.article-files').show();
 		},
 		updateViewInCaseOfAdminRights: function (categoryId) {
+			
+			var self = this;
+			
 			if (SPV.userCourses instanceof Array) {
 				if (SPV.userCourses.indexOf(categoryId) > -1) {
 					$('button').hide();

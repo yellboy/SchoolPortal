@@ -31,7 +31,7 @@
 		<td class="container-fluid">{{CreatedAt}}</td>
 		<td class="container-fluid">
 			<div class="container-fluied">
-				<button type="submit" class="btn btn-warning edit-article"><?php echo $this->lang->line('Edit'); ?></button>
+				<button type="submit" class="btn btn-warning download-file" data-path="{{FilePath}}"><?php echo $this->lang->line('Download'); ?></button>
 			</div>
 
 		</td>

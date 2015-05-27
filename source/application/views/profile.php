@@ -15,7 +15,7 @@
 				if (IsAdministrator() || ($shownUser->Id == $id))
 				{
 			?>
-			<div class="btn btn-danger" data-toggle="modal" style="margin-top: 5px" data-target="#photo_modal">Промени слику</div>
+			<div id="open-photo-modal" class="btn btn-danger" data-toggle="modal" style="margin-top: 5px" data-target="#photo_modal">Промени слику</div>
 			<?php
 				}
 			?>

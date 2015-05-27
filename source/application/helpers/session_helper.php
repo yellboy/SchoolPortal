@@ -57,4 +57,12 @@
 			return IsAuthorizedForRole(AuthorizationRoleCodes::ADMOD);
 		}
 	}
+	
+	if ( ! function_exists('IsTeacher'))
+	{
+		function IsTeacher()
+		{
+			return IsAuthorizedForRole(AuthorizationRoleCodes::TEACHER);
+		}
+	}
 ?>

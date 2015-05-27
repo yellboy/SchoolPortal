@@ -98,7 +98,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function SaveMaterial() {
-		if($this->_checkLogin())
+		if(RequireAuthentication())
 		{
 			$session_data = $this->session->userdata('logged_in');
 			$categoryId = $this->input->post('categoryId');
