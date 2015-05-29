@@ -5,7 +5,7 @@ class ArticleEditController extends CI_Controller {
 	
 	public function index()
 	{
-		if(RequireAuthentication())
+		if(IsUserAuthenticated())
 		{
 			$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
@@ -25,7 +25,7 @@ class ArticleEditController extends CI_Controller {
 	
 	private function loadCategories()
 	{
-		if(RequireAuthentication())
+		if(IsUserAuthenticated())
 		{
 			$this->load->model('Categories_model');
 			$categories = $this->Categories_model->loadCategoriesForJsTree();
@@ -36,7 +36,7 @@ class ArticleEditController extends CI_Controller {
 	
 	public function LoadArticleListForGrid() {
 		
-		if(RequireAuthentication())
+		if(IsUserAuthenticated())
 		{
 			$this->load->model('Articles_model');
 			$categoryId = $this->input->post('categoryId');
@@ -59,18 +59,17 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function LoadArticle(){
-		if(RequireAuthentication())
+		if(IsUserAuthenticated())
 		{
 			$this->load->model('Articles_model');
 			$id = $this->input->post('id');
 			$result = $this->Articles_model->loadArticle($id);
 			echo json_encode($result, JSON_UNESCAPED_UNICODE);
 		}
-        $this->output->set_status_header('400');
 	}
 	
 	public function SaveArticle(){
-		if(RequireAuthentication())
+		if(IsUserAuthenticated())
 		{
 			$this->load->model('Articles_model');
 			$session_data = $this->session->userdata('logged_in');
@@ -88,7 +87,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function DeleteArticle(){
-		if(RequireAuthentication())
+		if(IsUserAuthenticated())
 		{
 			$this->load->model('Articles_model');
 			$id = $this->input->post('id');
@@ -98,7 +97,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function SaveMaterial() {
-		if(RequireAuthentication())
+		if(IsUserAuthenticated())
 		{
 			$session_data = $this->session->userdata('logged_in');
 			$categoryId = $this->input->post('categoryId');

@@ -61,4 +61,6 @@
 		ST.FileSaved = "Датотека је успешно сачувана.";
 		ST.CouldNotSaveFile = "Дошло је до грешке. Чување датотеке није успело.";
 		ST.DragAndDropFile = "<span>Превуците датотеку овде.</span>"
+		ST.ShowMaterials = 'Прикажи материјале';
+		ST.HideMaterials = 'Сакриј материјале';
 	</script>

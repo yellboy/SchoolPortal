@@ -58,12 +58,14 @@ class Articles_model extends CI_Model {
 	
 	function saveArticle($id, $obj)
 	{
+		$content = $obj->Content;
 		if ((int) $id > 0)
 		{
 			$obj->LastModifiedAt = date("Y-m-d");
+			$path = './contents/' . $id . '.html';
+			$obj->Content = $path;
 			$this->db->where('id', $id);
-			$this->db->update('content', (array) $obj); 
-			return $id;
+			$this->db->update('content', (array) $obj);
 		}
 		else
 		{
@@ -71,11 +73,20 @@ class Articles_model extends CI_Model {
 			$obj->Version = 1;
 			$obj->ContentType = ContentTypes::Article;
 			$obj->Guid = uniqid();
+			$obj->Content = '';
 			$obj->CreatedAt = date("Y-m-d");
 			$obj->LastModifiedAt = null;
 			$this->db->insert('content', (array) $obj);
-			return $this->db->insert_id();
+			$id = $this->db->insert_id();
+			$path = './contents/' . $id . '.html';
+			$obj->Content = $path;
+			$this->db->where('Id', $id);
+			$this->db->update('content', (array) $obj);
 		}
+		$myFile = fopen($path, 'w');
+		fwrite($myFile, $content);
+		fclose($myFile);
+		return $id;
 	}
 	
 	function deleteArticle($id)

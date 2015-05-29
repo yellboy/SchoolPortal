@@ -33,6 +33,7 @@
 			
 			$data['categories'] = $this->Categories_model->loadCategoryMenu(); 
 			$data['articles'] = $this->Articles_model->loadArticles($categoryId);
+			$data['files'] = $this->Articles_model->LoadFiles($categoryId);
 			$data['category'] = $category;
 			$data['searchTerm'] = NULL;
 			
