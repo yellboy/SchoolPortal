@@ -354,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `content` (
 --
 
 INSERT INTO `content` (`Id`, `Version`, `Guid`, `Title`, `CategoryId`, `IsDeleted`, `CreatedAt`, `LastModifiedAt`, `CreatedByUserId`, `CreatedByUserName`, `ContentType`, `Content`, `FilePath`) VALUES
-(1, 1, '551b06899c8e0', 'Кроз историју', 11, b'0', '2015-03-31', '2015-05-09', 1, '????', 1, './contents/1.html', NULL),
+(1, 1, '551b06899c8e0', 'Кроз историју', 11, b'0', '2015-03-31', '2015-05-09', 1, 'markic', 1, './contents/1.html', NULL),
 (2, 1, '551b077677f7e', 'Школски одбор', 12, b'0', '2015-03-31', '2015-04-02', 3, 'markic', 1, './contents/2.html', NULL),
 (3, 1, '551b09bc8fe31', 'Контакт', 10, b'0', '2015-03-31', NULL, 3, 'markic', 1, './contents/3.html', NULL),
 (4, 1, '551b0a9cec298', 'Директор и помоћник директора', 30, b'0', '2015-03-31', '2015-03-31', 3, 'markic', 1, './contents/4.html', NULL),

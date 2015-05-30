@@ -60,4 +60,5 @@
 		ST.FileSaved = "Датотека је успешно сачувана.";
 		ST.CouldNotSaveFile = "Дошло је до грешке. Чување датотеке није успело.";
 		ST.DragAndDropFile = "<span>Превуците датотеку овде.</span>"
+		ST.SearchRoute = "<?php echo ResolveRoute(ContentPageCodes::Search); ?>";
 	</script>
