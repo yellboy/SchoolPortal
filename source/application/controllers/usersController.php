@@ -24,21 +24,25 @@ class UsersController extends CI_Controller {
 	
 	public function AddNewUser() 
 	{
-		$username = $this->input->post('username');
-		$newUser = $this->Users_model->CreateUser($username);
-		if ($newUser == null)
-		{
-			$this->output->set_status_header(400);
-			$this->data['message'] = 'Bad request';
-			echo json_encode($this->data);
+		if(IsAdministrator()){
+			$username = $this->input->post('username');
+			$newUser = $this->Users_model->CreateUser($username);
+			if ($newUser == null)
+			{
+				$this->output->set_status_header(400);
+				$this->data['message'] = 'Bad request';
+				echo json_encode($this->data);
+			}
+			echo json_encode($newUser);
 		}
-		echo json_encode($newUser);
 	}
 	
 	public function DeleteUser()
 	{
-		$id = $this->input->post('id');
-		echo $this->Users_model->DeleteUser($id);
+		if(IsAdministrator()){
+			$id = $this->input->post('id');
+			echo $this->Users_model->DeleteUser($id);
+		}
 	}
 }
 

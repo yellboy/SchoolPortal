@@ -1,3 +1,6 @@
+<?php $news = base_url()."/assets/scripts/news.js" ?>
+<script src=<?php echo $news ?>></script>
+
 <?php
 	function formatMonth($id){
 		switch ($id)
@@ -34,6 +37,17 @@
 
 ?>
 
+<a class="text-muted" id="toggle-materials" href="#">Прикажи материјале</a>
+
+<ul id="materials-list">
+<?php foreach($files as $file) 
+{
+?>
+	<li><a class="text-muted" href="<?php echo base_url().$file->FilePath ?>"><?php echo $file->Title ?></li>
+<?php 
+}
+?>
+</ul>
 
 <?php foreach ($articles as $article) { ?>
 <div class="news-details-template">

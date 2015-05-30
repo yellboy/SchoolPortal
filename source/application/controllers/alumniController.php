@@ -31,7 +31,10 @@ class alumniController extends CI_Controller {
 	
 	public function DeleteAlumni($id)
 	{
-		$this->load->model('Alumnus_model');
-		$alumnus = $this->Alumnus_model->Obrisi($this->input->post('id'));
+		if(IsAdministrator())
+		{
+			$this->load->model('Alumnus_model');
+			$alumnus = $this->Alumnus_model->Obrisi($this->input->post('id'));
+		}
 	}
 }

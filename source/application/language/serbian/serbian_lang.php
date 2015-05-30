@@ -28,6 +28,7 @@
 	$lang['AddToAlumniTitle'] = "Пријава на алумни Пете Београдске гимназије";
 	$lang['TeachersTitle'] = "Наставници Пете Београдске гимназије";
 	$lang['PageTitle'] = 'Пета београдска гимназија - Ђаци су најбољи бренд Србије, ми знамо зашто';
+	$lang['Download'] = 'Преузми';
 
 ?>
 
@@ -61,4 +62,6 @@
 		ST.CouldNotSaveFile = "Дошло је до грешке. Чување датотеке није успело.";
 		ST.DragAndDropFile = "<span>Превуците датотеку овде.</span>"
 		ST.SearchRoute = "<?php echo ResolveRoute(ContentPageCodes::Search); ?>";
+		ST.ShowMaterials = 'Прикажи материјале';
+		ST.HideMaterials = 'Сакриј материјале';
 	</script>

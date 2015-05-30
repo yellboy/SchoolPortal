@@ -134,7 +134,7 @@ $(function(){
 		});
 	});
 	
-	$('#photo_modal').on('shown.bs.modal', function() {
+	$('#open-photo-modal').on('click', function() {
 		$('#temp-photo').attr('src', $('#user-image').attr('src'));
 	});
 	
