@@ -1,8 +1,6 @@
 
-<?php // TODO use form open to enable CSRF protection ?>
-
-
 <form class="form-group" name="add-to-alumni-form" onsubmit="return validateForm()" method="post">
+	<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash();?>" />
 	<div class="add-to-alumnus">
 		<div class="row">
 			<div class="col-md-5">

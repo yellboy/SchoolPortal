@@ -7,7 +7,7 @@
 
 <div class="container-fluid alumni-context">
 
-	<form class="form-group row" name="add-to-alumni-form">
+	<div class="form-group row" name="add-to-alumni-form">
 		<div id="target" class="col-md-5">
 			<h3 class="form-title">Алумнисти</h3>
 		</div>
@@ -18,7 +18,7 @@
 			<tr>
 				<th class="container-fluid"><b>Име</b></th>
 				<th class="container-fluid"><b>Презиме</b></th>
-				<th class="container-fluid"><b>е-пошта</b></th>																	
+				<th class="container-fluid"><b>е-пошта</b></th>
 				<?php if (isset($isLogged) && $isLogged) { ?>
 					<th class="container-fluid"><b>&nbsp</b></th>
 				<?php } ?>

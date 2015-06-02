@@ -37,7 +37,7 @@ body {
 
 	ul {
 		float: left;
-		margin-top: 11px;
+		margin-top: 14px;
 
 		li {
 			display: inline;
@@ -64,11 +64,11 @@ body {
 
 	form#searchbox {
 		background-color: #eaf8fc;
-		background-image: linear-gradient(#fff, #D2D2D2);
+		background-image: linear-gradient(#fff,#D2D2D2);
 		border-radius: 35px;
 		border-width: 1px;
 		border-style: solid;
-		border-color: #c4d9df #a4c3ca #83afb7;
+		border-color: #DCDEDF #C4C7C8 #B8B8B8;
 		height: 39px;
 		margin-top: 5px;
 		padding: 5px;
@@ -78,14 +78,14 @@ body {
 			padding: 5px 9px;
 			height: 23px;
 			width: 76%;
-			border: 1px solid #a4c3ca;
-			font: normal 13px 'trebuchet MS', arial, helvetica;
+			border: 1px solid #B3C2C5;
+			font-size: 13px;
 			background: #f1f1f1;
 			-moz-border-radius: 50px 3px 3px 50px;
 			border-radius: 50px 3px 3px 50px;
-			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 white;
-			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 white;
-			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 white;
+			-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25) inset,0 1px 0 white;
+			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25) inset,0 1px 0 white;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.25) inset,0 1px 0 white;
 		}
 
 		input#submit {
@@ -93,22 +93,23 @@ body {
 			border-radius: 3px 50px 50px 3px;
 			border-width: 1px;
 			border-style: solid;
-			border-color: #8E8C8C;
-			-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-			-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-			box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+			border-color: #C2BEBE;
+			-moz-box-shadow: 0 0 1px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.3) inset;
+			-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.3) inset;
+			box-shadow: 0 0 1px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.3) inset;
 			height: 26px;
 			margin: 0 0 0 10px;
 			padding: 0;
+			font-size: 13px;
 			width: 20%;
 			cursor: pointer;
-			color: #23441e;
-			text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+			color: #6E6868;
+			text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 			font-weight: 600;
 		}
 
 		#submit:hover {
-			background-color: #E1E1EA;
+			background-color: #FADEDE;
 		}
 
 		#submit:active {
@@ -178,20 +179,22 @@ body {
 	background: #e3e3e3;
 	border-top: 2px solid #bbb;
 
-	div.error{
+	div.error {
 		font-size: 20px;
 		color: rgb(226, 82, 82);
-		margin-top:5px;
+		margin-top: 5px;
 		margin-bottom: 30px;
 	}
 
-	.login{
-		h1{
-			margin-bottom:25px;
+	.login {
+		h1 {
+			margin-bottom: 25px;
 		}
-		width:100%;
-		.row{
-			margin-bottom:10px;
+
+		width: 100%;
+
+		.row {
+			margin-bottom: 10px;
 		}
 	}
 
@@ -231,12 +234,36 @@ body {
 			margin-top: -2%;
 			margin-left: -5%;
 			margin-right: -5%;
-			color:$grayButton;
+			color: $grayButton;
 		}
 
 		div.content-holder {
 			margin: 0 auto;
 			width: 80%;
+		}
+
+		.sidebar-sprite {
+			background-image: url(img/sidebars.png);
+			background-repeat: no-repeat;
+			display: block;
+		}
+
+		.sprite-sidebar_0 {
+			width: 180px;
+			height: 115px;
+			background-position: -5px -5px;
+		}
+
+		.sprite-sidebar_1 {
+			width: 180px;
+			height: 115px;
+			background-position: -5px -130px;
+		}
+
+		.sprite-sidebar_2 {
+			width: 180px;
+			height: 100px;
+			background-position: -195px -5px;
 		}
 	}
 }

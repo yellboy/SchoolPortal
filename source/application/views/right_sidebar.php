@@ -1,6 +1,5 @@
 <?php 
-    $data = array("http://www.mpn.gov.rs", "http://www.mos.gov.rs", "http://www.palilula.org.rs");
-    $url = "/assets/styles/img/sidebar_";
+	$data = array("http://www.mpn.gov.rs", "http://www.mos.gov.rs", "http://www.palilula.org.rs");
 ?>
 
 
@@ -9,7 +8,7 @@
 	<div class="content-holder">
 		<?php
 			for ($i=0; $i < count($data); $i++) { 
-				echo '<div class="content"><a href="' . $data[$i] . '" target="_blank"><img src="' . $url . $i .'.png"></a></div>';
+				echo '<div class="content"><a href="' . $data[$i] . '" target="_blank"><i class="sidebar-sprite sprite-sidebar_' . $i .'"></i></a></div>';
 			}
 		?>
 	</div>

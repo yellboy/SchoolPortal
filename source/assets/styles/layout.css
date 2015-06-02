@@ -12,7 +12,7 @@
     float: left;
     padding-right: 10px; }
     .news-details-template .date-image div.box {
-      background-image: url('img/date-cover.png');
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAArlBMVEUAAAAAAABVVVWenp4KCgqUlJSUlJQLERGTk5MAAACVlZU8PDwNDQ1paWeVlZVGTlJ4eHYxMTGVlZWXl5cwMDBNTU2Xl5dnZ2cjIyNRUVGqqqpkZGR1dXWEhISWlpZbW1uWlpaMjIyXl5cwMDA3Nzc7OztAQEBFRUVKSkpOTk5SUlJVVVVZWVljY2NtbW12dXV/fn6Ih4ePjo6Tk5OVl5eYmJibnJyfn5+jo6Omp6dJqHazAAAAI3RSTlMABAwVGh8mLS0zNU1QV298hIyQoqSlrLC4ubrV3OPo7u/z+ByDJVsAAAHISURBVBgZBcHLbhwFAEXBOj1txwISHgvy/5/HAnAkEI4905eqKM9Pbo5uTgC4e+y69vi4rjnV8en55umoc18LYPvj2nbd3/uYldvLy6fnX+WIAJi5+Pv97e3t2un28vL5l+sOBGAN+Hy8Pnl73I7nH758eUAVCFIF18v1vsd53F5+vidogcCaTNeXj4/j8PT1kUiCJKQoXb8/OW8nIRFIYshkztvphCAAIEbGTudBQhA0MDJaOU6IEIRgMZmGk/MRkSJg2Bpw47TXR0IIAMMwu83J3RBBC2sYBndOWiSEILFYY3HSSIQARqY14gCJKAAVEeCkQISANU2jhQOSiEKSiCRxgiQiSCbLWoODAAKAIoA4UZKEAJO11oIDAFFIFABwABKg1gIhwEEEiEhKCBEHQBIZ2AgADoABEygIgAORQAEIJMIBAAyAgYE4MGYYADDD2DgAGBhgAIDjAoBZg40BwHW4Y2bGzLZhNjPD3fnQAmsaYRgDlsdxPQ4zYwzbBoyZOR7XjadTRATAmjH037f74fvr08YYM2DMGNvT63e33H15DGC2bTOMWZ/+/HZJbj/+9NuGAACG469//n1YxPPLAQAA4Hp7Z/4HVOD1+Nx2KMMAAAAASUVORK5CYII=);
       width: 40px; }
       .news-details-template .date-image div.box div.day {
         text-align: center;
@@ -182,7 +182,7 @@ body {
     display: none; }
   .pre-header ul {
     float: left;
-    margin-top: 11px; }
+    margin-top: 14px; }
     .pre-header ul li {
       display: inline;
       list-style: none;
@@ -203,7 +203,7 @@ body {
     border-radius: 35px;
     border-width: 1px;
     border-style: solid;
-    border-color: #c4d9df #a4c3ca #83afb7;
+    border-color: #DCDEDF #C4C7C8 #B8B8B8;
     height: 39px;
     margin-top: 5px;
     padding: 5px;
@@ -212,8 +212,8 @@ body {
       padding: 5px 9px;
       height: 23px;
       width: 76%;
-      border: 1px solid #a4c3ca;
-      font: normal 13px 'trebuchet MS', arial, helvetica;
+      border: 1px solid #B3C2C5;
+      font-size: 13px;
       background: #f1f1f1;
       -moz-border-radius: 50px 3px 3px 50px;
       border-radius: 50px 3px 3px 50px;
@@ -225,20 +225,21 @@ body {
       border-radius: 3px 50px 50px 3px;
       border-width: 1px;
       border-style: solid;
-      border-color: #8E8C8C;
+      border-color: #C2BEBE;
       -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
       -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
       height: 26px;
       margin: 0 0 0 10px;
       padding: 0;
+      font-size: 13px;
       width: 20%;
       cursor: pointer;
-      color: #23441e;
+      color: #6E6868;
       text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
       font-weight: 600; }
     .pre-header form#searchbox #submit:hover {
-      background-color: #E1E1EA; }
+      background-color: #FADEDE; }
     .pre-header form#searchbox #submit:active {
       background: #8E8C8C;
       outline: none;
@@ -329,6 +330,22 @@ body {
     .main .right-sidebar-content-holder div.content-holder {
       margin: 0 auto;
       width: 80%; }
+    .main .right-sidebar-content-holder .sidebar-sprite {
+      background-image: url(img/sidebars.png);
+      background-repeat: no-repeat;
+      display: block; }
+    .main .right-sidebar-content-holder .sprite-sidebar_0 {
+      width: 180px;
+      height: 115px;
+      background-position: -5px -5px; }
+    .main .right-sidebar-content-holder .sprite-sidebar_1 {
+      width: 180px;
+      height: 115px;
+      background-position: -5px -130px; }
+    .main .right-sidebar-content-holder .sprite-sidebar_2 {
+      width: 180px;
+      height: 100px;
+      background-position: -195px -5px; }
 
 .footer {
   background: #111;
@@ -400,4 +417,4 @@ body {
 .dropdown:hover > .dropdown-menu {
   display: block; }
 
-/*# sourceMappingURL=../../../../Program Files (x86)/Microsoft Visual Studio 12.0/Common7/IDE/layout.css.map */
+/*# sourceMappingURL=../../../../../../../Program Files (x86)/Microsoft Visual Studio 12.0/Common7/IDE/layout.css.map */

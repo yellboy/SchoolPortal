@@ -1,5 +1,3 @@
-<?php $news = base_url()."/assets/scripts/news.js" ?>
-<script src=<?php echo $news ?>></script>
 
 <?php
 	function formatMonth($id){
