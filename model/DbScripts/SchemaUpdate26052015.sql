@@ -42,7 +42,6 @@ CREATE TABLE IF NOT EXISTS `alumni` (
 --
 
 INSERT INTO `alumni` (`Id`, `FirstName`, `LastName`, `City`, `State`, `Email`, `Year`, `Classroom`) VALUES
-(437, 'FirstName', 'LastName', 'City', 'State', 'Email', 0, 'Classroom'),
 (438, 'Andrej', 'Jankovic', 'Beograd', 'Serbia', 'andrejjankovic2004@yahoo.com', 2004, '10'),
 (439, 'Aleksandar', 'Jankovic', 'Beograd', 'Serbia', 'a.sale.jankovic@gmail.com', 1973, '5'),
 (440, 'Luka', 'Djordjevic', 'Beograd', 'Serbia', 'djordjevic_luka@yahoo.com', 2004, '10'),
