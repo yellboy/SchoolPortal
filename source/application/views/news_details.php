@@ -24,7 +24,6 @@
 	function formatDateBox($date)
 	{
 		$array = date_parse($date);
-		
 		echo '
 			<div class="date-image">
 				<div class="box">
@@ -37,21 +36,25 @@
 
 ?>
 
-<a class="text-muted" id="toggle-materials" href="#">Прикажи материјале</a>
+<?php if ($category->IsCourse == 1){
+	echo '<a class="text-muted" id="toggle-materials" href="#">Прикажи материјале</a>';
+	echo '<ul id="materials-list">';
+	
+	foreach($files as $file) {
+		echo '<li><a class="text-muted" href=" ' . base_url() . $file->FilePath . '">' .$file->Title . '</li>';
+	}
+	
+	echo '</ul>';
+}?>
 
-<ul id="materials-list">
-<?php foreach($files as $file) 
-{
-?>
-	<li><a class="text-muted" href="<?php echo base_url().$file->FilePath ?>"><?php echo $file->Title ?></li>
-<?php 
-}
-?>
-</ul>
 
 <?php foreach ($articles as $article) { ?>
 <div class="news-details-template">
-	<?php formatDateBox($article->CreatedAt) ?>
+	<?php 
+		if ($category->IsHome == 1){
+			formatDateBox($article->CreatedAt);
+		}
+	?>
 	<div class="news-headline">
 		<h2><a href="#" class="prevent"><?php echo $article->Title; ?></a></h2>
 	</div>

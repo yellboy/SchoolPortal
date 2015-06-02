@@ -5,7 +5,7 @@ class ArticleEditController extends CI_Controller {
 	
 	public function index()
 	{
-		if(IsUserAuthenticated())
+		if(RequireAuthentication())
 		{
 			$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
@@ -25,7 +25,7 @@ class ArticleEditController extends CI_Controller {
 	
 	private function loadCategories()
 	{
-		if(IsUserAuthenticated())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Categories_model');
 			$categories = $this->Categories_model->loadCategoriesForJsTree();
@@ -36,7 +36,7 @@ class ArticleEditController extends CI_Controller {
 	
 	public function LoadArticleListForGrid() {
 		
-		if(IsUserAuthenticated())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Articles_model');
 			$categoryId = $this->input->post('categoryId');
@@ -49,7 +49,7 @@ class ArticleEditController extends CI_Controller {
 	
 	public function LoadMaterialListForGrid()
 	{
-		if (IsUserAuthenticated()) 
+		if (RequireAuthentication()) 
 		{
 			$this->load->model('Articles_model');
 			$categoryId = $this->input->post('categoryId');
@@ -59,7 +59,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function LoadArticle(){
-		if(IsUserAuthenticated())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Articles_model');
 			$id = $this->input->post('id');
@@ -69,7 +69,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function SaveArticle(){
-		if(IsUserAuthenticated())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Articles_model');
 			$session_data = $this->session->userdata('logged_in');
@@ -87,7 +87,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function DeleteArticle(){
-		if(IsUserAuthenticated())
+		if(RequireAuthentication())
 		{
 			$this->load->model('Articles_model');
 			$id = $this->input->post('id');
@@ -97,7 +97,7 @@ class ArticleEditController extends CI_Controller {
 	}
 	
 	public function SaveMaterial() {
-		if(IsUserAuthenticated())
+		if(RequireAuthentication())
 		{
 			$session_data = $this->session->userdata('logged_in');
 			$categoryId = $this->input->post('categoryId');

@@ -125,8 +125,36 @@
 button.search-users {
   width: 100%; }
 
+.contact-holder-main {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #d8d8d8;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #DBDBDB;
+  padding: 12px;
+  margin-top: 25px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px; }
+  .contact-holder-main .info-address {
+    padding-bottom: 20px; }
+  .contact-holder-main h1 {
+    font-size: 26px;
+    margin-top: 0px;
+    color: #BF251C; }
+  .contact-holder-main p {
+    font-size: 14px;
+    display: inline-block;
+    font-weight: 600;
+    color: #333; }
+  .contact-holder-main a {
+    float: right;
+    margin-right: 15px; }
+
 body {
-  background: url('img/background.jpg'); }
+  background: url('img/background.jpg');
+  background-repeat: repeat;
+  background-position: top left;
+  background-attachment: fixed; }
 
 .container {
   background: #f4f4f4; }
@@ -231,7 +259,7 @@ body {
       padding-right: 5px; }
       .header nav ul.level1 > li > div > a {
         background-color: white;
-        color: #2D2D2D;
+        color: #333;
         padding: 6px 16px;
         margin-bottom: 0;
         font-size: 14px;
@@ -240,17 +268,17 @@ body {
         border-radius: 4px;
         width: auto; }
         .header nav ul.level1 > li > div > a.selected {
-          background-color: #2D2D2D;
+          background-color: #333;
           color: white; }
         .header nav ul.level1 > li > div > a:hover {
-          background-color: #2D2D2D;
+          background-color: #333;
           color: white; }
   .header nav ul.level2 li {
     background-color: #dfdfdf; }
     .header nav ul.level2 li a {
       color: black; }
       .header nav ul.level2 li a:hover {
-        background-color: #2D2D2D;
+        background-color: #333;
         text-decoration: underline;
         color: white; }
 
@@ -296,7 +324,8 @@ body {
       padding-bottom: 6px;
       margin-top: -2%;
       margin-left: -5%;
-      margin-right: -5%; }
+      margin-right: -5%;
+      color: #333; }
     .main .right-sidebar-content-holder div.content-holder {
       margin: 0 auto;
       width: 80%; }

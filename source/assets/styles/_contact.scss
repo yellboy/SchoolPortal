@@ -1,0 +1,31 @@
+﻿.contact-holder-main {
+	background-color: white;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #d8d8d8;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #DBDBDB;
+	padding: 12px;
+	margin-top: 25px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.15);
+	margin-bottom: 25px;
+
+	.info-address{
+		padding-bottom: 20px;
+	}
+
+	h1 {
+		font-size:26px;
+		margin-top: 0px;
+  		color: #BF251C;
+	}
+	p{
+		font-size:14px;
+		display:inline-block;
+		font-weight: 600;
+		color: #333;
+	}
+	a{
+		float:right;
+		margin-right:15px;
+	}
+}

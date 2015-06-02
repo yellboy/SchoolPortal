@@ -43,7 +43,7 @@ $(function(){
 				
 				$.ajax({
 					type: 'POST',
-					url: '/AddToAlumniController/DodajAlumni',
+					url: '/AddToAlumniController/addAlumnus',
 					data: {firstName: self._model.firstName, lastName: self._model.lastName, city: self._model.city, state: self._model.state, email: self._model.email,year: self._model.year,grade: self._model.grade },
 					dataType: 'json'
 				});

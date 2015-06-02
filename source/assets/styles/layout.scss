@@ -1,12 +1,16 @@
 @import 'news_details';
 @import 'alumnus';
+@import 'contact';
 
 $linkColor: #BF251C;
-$grayButton: #2D2D2D;
+$grayButton: #333;
 $borderColor: #bbb;
 
 body {
 	background: url('img/background.jpg');
+	background-repeat: repeat;
+	background-position: top left;
+	background-attachment: fixed;
 }
 
 // layout
@@ -227,6 +231,7 @@ body {
 			margin-top: -2%;
 			margin-left: -5%;
 			margin-right: -5%;
+			color:$grayButton;
 		}
 
 		div.content-holder {

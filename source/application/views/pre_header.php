@@ -7,7 +7,6 @@
 <section class="zone pre-header container">
 	<div class="row">
 		<div class="col-md-7">
-<!--			<img src="/assets/styles/img/rss.png" alt="RSS" />-->
 			<ul>
 				<li><a href="/" title="Početna stranica">Почетна</a></li>
 				<li><a href="<?php echo ResolveRoute(ContentPageCodes::Login) ?>" title="Prijava na sistem">Пријави ме</a></li>

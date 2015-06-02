@@ -13,8 +13,6 @@
 	
 		public function index()
 		{
-			//$this->load->helper('profiler_helper');
-			//SetProfiler($this);
 			
 			$routeId = $this->uri->segment($this->uri->total_segments());
 			$categoryId = $this->homeCategoryId;
@@ -49,26 +47,5 @@
 			}
 			
 			$this->load->view('layouts/contactLayout', $data);
-		}
-		
-		public function search($searchTerm)
-		{
-			$data['categories'] = $this->Categories_model->loadCategoryMenu();
-			$data['articles'] = $this->Articles_model->searchArticles($searchTerm);
-			$data['category'] = $this->Categories_model->loadCategory(1)[0];
-			$data['searchTerm'] = str_replace('%20', ' ', $searchTerm);
-			
-			if($this->session->userdata('logged_in'))
-			{
-				$session_data = $this->session->userdata('logged_in');
-				$data['id'] = $session_data['id'];
-				$data['username'] = $session_data['username'];
-				$data['isLogged'] = true; 
-			}
-			else{
-				$data['isLogged'] = false; 
-			}
-			
-			$this->load->view('layouts/homeLayout', $data);
 		}
 	}
