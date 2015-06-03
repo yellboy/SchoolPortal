@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://localhost:90/default_controller -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Title</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<link href="./styles/layout.css" rel="stylesheet" type="text/css"><link href="http://localhost:90/assets/styles/img/favicon.ico" rel="shortcut icon" type="image/ico">
+<script src="./scripts/jquery-2.1.3.min.js"></script>
+<script src="./scripts/bootstrap.min.js"></script>
+<script src="./scripts/homepage.js"></script>
+	</head>
+	
+	<body>
+		<section class="zone pre-header container">
+	<div class="row">
+		<div class="col-md-7">
+			<img src="./styles/images/rss.png" alt="RSS">
+			<ul>
+				<li><a href="/home.html" title="Pocetna stranica">Почетна</a></li>
+				<li><a href="./login.html" title="Prijava na sistem">Пријави ме</a></li>
+				<li><a href="./users.html" title="Pretraga korisnika">Корисници</a></li>
+				<li><a href="./category.html" title="Administracija kategorija">Категорије</a></li>
+				<li><a href="./article_admin.html" title="Administracija clanaka">Чланци</a></li>
+				<li><a href="./profile.html" title="Profil">Мој профил</a></li>
+				<li class="auth-only" style="display: none;">Marin Markic - </li>
+				<li class="auth-only" style="display: none;"><a href="./login.html" title="Odjava sa sistema">одјави ме</a></li>
+			</ul>
+		</div>
+		<div class="col-md-5">
+			<form id="searchbox">
+			    <input id="search" type="text" placeholder="Унесите текст">
+			    <input id="submit" type="submit" value="Претражи">
+			</form>
+		</div>
+	</div>
+</section>		<header class="zone header container" role="heading">
+	<div class="static-content">
+		<img src="./styles/images/header.jpg" alt="Peta beogradska gimnazija">
+	</div>
+	<nav>
+
+<ul class="level1">
+		<li>
+	    <div class="dropdown">
+	    	<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#">
+	        	<strong>Школа</strong> 
+	        	<span class="caret"></span> <!-- hide span if no kids -->
+	    	</a>
+	    	<!-- hide ul if no kids -->
+			<ul class="dropdown-menu multi-level level2" role="menu" aria-labelledby="dropdownMenu">
+		      <li><a href="./home.html">Some action</a></li>
+		      <li><a href="./home.html">Some other action</a></li>
+		      <li class="dropdown-submenu">
+		        <a tabindex="-1" href="./home.html">Hover me for more options</a>
+		        <ul class="dropdown-menu">
+		          <li><a tabindex="-1" href="./home.html">Second level</a></li>
+		          <li class="dropdown-submenu">
+		            <a href="./home.html">Even More..</a>
+		            <ul class="dropdown-menu">
+		                <li><a href="./home.html">3rd level</a></li>
+		            	<li><a href="./home.html">3rd level</a></li>
+		            </ul>
+		          </li>
+		          <li><a href="./home.html">Second level</a></li>
+		          <li><a href="./home.html">Second level</a></li>
+		        </ul>
+		      </li>
+		    </ul>
+	   </div>
+	</li>
+		<li>
+	    <div class="dropdown">
+	    	<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#">
+	        	<strong>Школа</strong> 
+	        	<span class="caret"></span> <!-- hide span if no kids -->
+	    	</a>
+	    	<!-- hide ul if no kids -->
+			<ul class="dropdown-menu multi-level level2" role="menu" aria-labelledby="dropdownMenu">
+		      <li><a href="./home.html">Some action</a></li>
+		      <li><a href="./home.html">Some other action</a></li>
+		      <li class="dropdown-submenu">
+		        <a tabindex="-1" href="./home.html">Hover me for more options</a>
+		        <ul class="dropdown-menu">
+		          <li><a tabindex="-1" href="./home.html">Second level</a></li>
+		          <li class="dropdown-submenu">
+		            <a href="./home.html">Even More..</a>
+		            <ul class="dropdown-menu">
+		                <li><a href="./home.html">3rd level</a></li>
+		            	<li><a href="./home.html">3rd level</a></li>
+		            </ul>
+		          </li>
+		          <li><a href="./home.html">Second level</a></li>
+		          <li><a href="./home.html">Second level</a></li>
+		        </ul>
+		      </li>
+		    </ul>
+	   </div>
+	</li>
+		<li>
+		<div class="dropdown">
+			<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#">
+				<strong>Запослени</strong> 
+				<span class="caret"></span> <!-- hide span if no kids -->
+			</a>
+			<!-- hide ul if no kids -->
+			<ul class="dropdown-menu multi-level level2" role="menu" aria-labelledby="dropdownMenu">
+			  <li><a href="">Директор и заменик директора</a></li>
+			  <li><a href="./teachers.html">Наставници</a></li>
+			</ul>
+		</div>
+	</li>
+	<li>
+		<div class="dropdown">
+			<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#">
+				<strong>Алумни</strong> 
+				<span class="caret"></span> <!-- hide span if no kids -->
+			</a>
+			<!-- hide ul if no kids -->
+			<ul class="dropdown-menu multi-level level2" role="menu" aria-labelledby="dropdownMenu">
+			  <li><a href="">Алумнисти</a></li>
+			  <li><a href="./add-to-alumni.html">Пријави се на листу</a></li>
+			</ul>
+		</div>
+	</li>
+	  <div class="clear"></div>
+</ul> 
+</nav>	
+</header>
+		<main class="main container" role="main">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="home-carousel">
+						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators"><li data-target="#carousel0" data-slide-to="0" class=""></li><li data-target="#carousel1" data-slide-to="1" class=""></li><li data-target="#carousel2" data-slide-to="2" class=""></li><li data-target="#carousel3" data-slide-to="3" class=""></li><li data-target="#carousel4" data-slide-to="4" class="active"></li></ol>
+    <div class="carousel-inner" role="listbox">
+        
+                    <div class="item">
+                      <img src="./styles/images/slider01.jpg" alt="Slika gimnazije">
+                    </div>
+                
+                    <div class="item">
+                      <img src="./styles/images/slider02.jpg" alt="Slika gimnazije">
+                    </div>
+                
+                    <div class="item">
+                      <img src="./styles/images/slider03.jpg" alt="Slika gimnazije">
+                    </div>
+                
+                    <div class="item">
+                      <img src="./styles/images/slider04.jpg" alt="Slika gimnazije">
+                    </div>
+                
+                    <div class="item active">
+                      <img src="./styles/images/slider05.jpg" alt="Slika gimnazije">
+                    </div>
+                    </div>
+
+	<a class="left carousel-control" href="./home.htmlcarousel-example-generic" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Sledeći</span>
+	</a>
+	<a class="right carousel-control" href="./home.htmlcarousel-example-generic" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Prethodni</span>
+	</a>
+</div>
+
+
+					</div>
+					<div class="clear"></div>
+					<div class="news-details-template">
+	<div class="date-image">
+		<div class="box">
+			<div class="month">APR</div>
+			<div class="day">15</div>
+		</div>
+		<div class="year">2015</div>
+	</div> 
+	<div class="news-headline">
+		<h2><a href="./home.html" class="prevent">Link do vesti, ovo je neki naslov, moze da ide u vise redova itd veoma cudnovato</a></h2>
+	</div>
+	<div class="clear"></div>
+
+	<div class="news-content">
+		Hello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewer	</div>
+</div>
+
+<div class="news-details-template">
+	<div class="date-image">
+		<div class="box">
+			<div class="month">APR</div>
+			<div class="day">15</div>
+		</div>
+		<div class="year">2015</div>
+	</div> 
+	<div class="news-headline">
+		<h2><a href="./home.html" class="prevent">Link do vesti, ovo je neki naslov, moze da ide u vise redova itd veoma cudnovato</a></h2>
+	</div>
+	<div class="clear"></div>
+
+	<div class="news-content">
+		Hello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewer	</div>
+</div>
+
+<div class="news-details-template">
+	<div class="date-image">
+		<div class="box">
+			<div class="month">APR</div>
+			<div class="day">15</div>
+		</div>
+		<div class="year">2015</div>
+	</div> 
+	<div class="news-headline">
+		<h2><a href="./home.html" class="prevent">Link do vesti, ovo je neki naslov, moze da ide u vise redova itd veoma cudnovato</a></h2>
+	</div>
+	<div class="clear"></div>
+
+	<div class="news-content">
+		Hello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewerHello dear viewer	</div>
+</div>
+
+
+				</div>
+				<aside class="col-md-3">
+					<div class="right-sidebar-content-holder">
+	<h2>Пријатељи школе</h2>
+	Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork Bacon ipsum dolor amet boudin sausage pork </div>				</aside>
+			</div>
+
+		</main>
+		<footer class="zone footer container">
+<ul>
+	<li>© <a href="mailto:bojanjelaca@mail.com" title="bojanjelaca@mail.com">Бојан Јелача</a>,</li>
+	<li><a href="mailto:marinmarkic@mail.com" title="marinmarkic@mail.com">Марин Маркић</a>.</li>
+	<li><a href="mailto:vladandjuric@mail.com" title="vladandjuric@mail.com">Владан Ђурић</a>.</li>
+	<li><a href="mailto:jovanmarkovic@mail.com" title="jovanmarkovic@mail.com">Јован Марковић</a>.</li>
+	<li> Сва права задржана. </li>
+	<li><a href="http://www.vbeogradska.edu.rs/">www.vbeogradska.edu.rs</a>.</li>
+</ul>
+</footer>	
+</body></html>

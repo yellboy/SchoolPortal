@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<link href="./styles/layout.css" rel="stylesheet" type="text/css" /><link href="http://localhost:90/assets/styles/img/favicon.ico" rel="shortcut icon" type="image/ico" />
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="./scripts/homepage.js"></script>
+	</head>
+	
+	<body>
+		
+		<section class="zone pre-header container">
+	<div class="row">
+		<div class="col-md-7">
+			<ul> 
+				<li><a href="./home.html" title="Prijava na sistem">Почетна</a></li>
+				<li><a href="./users.html" title="Pretraga korisnika">Kорисници</a></li>
+				<li><a href="./category.html" title="Pretraga korisnika">Категорије</a></li>
+				<li><a href="./article_admin.html" title="Pretraga korisnika">Чланци</a></li>
+				<li><a href="./profile.html" title="Pretraga korisnika">Мој профил</a></li>
+				<li class="auth-only">Marin Markic - </li>
+				<li class="auth-only"><a href="login.html" title="Odjava sa sistema">одјави ме</a></li>
+			</ul>
+		</div>
+		<div class="col-md-5">
+			<form id="searchbox">
+			    <input id="search" type="text" placeholder="Унесите текст">
+			    <input id="submit" type="submit" value="Претражи">
+			</form>
+		</div>
+	</div>
+</section>		
+		<main class="main container" role="main">
+			<div>
+	<div class="container-fluid" align="center">
+		<div class="form-title" align="center"><h2>года</h2></div>
+		<div class="col-md-4">
+			<div>
+				<img class="img-circle" style="width:200px" src="https://cdn0.iconfinder.com/data/icons/people-groups/512/User_Female-512.png">
+			</div>
+			<div class="btn btn-danger" data-toggle="modal" data-target="#photo_modal">Промени слику</div>
+		</div>
+		<div class="col-md-5 form-group">
+			<input type="text" class="form-control" placeholder="Име" value="Гордана">
+			<input type="text" class="form-control" placeholder="Презиме" value="Давидовић">
+			<input type="text" class="form-control" placeholder="е-пошта" value="gdavidovic@yahoo.com">
+			<input type="text" class="form-control" placeholder="Предмети" value="Математика">
+			<textarea class="form-control" rows="5" placeholder="О кориснику..." style="resize: none">Рођена сам у Београду у прошлом миленијуму. :) 
+Завршила сам Математички факултет и од тада све време радим у Петој београдској гимназији. 
+Сада сам у пензији.
+			</textarea>
+		</div>
+		<div class="col-md-1" align="center">
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#password_modal">Промени лозинку</button>
+		</div>
+	</div>
+	<div align="center" style="margin-bottom: 2px">
+		<button type="button" class="btn btn-danger">Сачувај измене</button>
+	</div>
+	<div class="modal fade" id="password_modal" tabindex="-1" role="dialog" aria-labelledby="password_label" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="password_label">
+					Промена лозинке
+				</h4>
+			</div>
+			<div class="modal-body" align="center">
+				<input type="password" class="form-control" placeholder="Стара лозинка">
+				<input type="password" class="form-control" placeholder="Нова лозинка">
+				<input type="password" class="form-control" placeholder="Поновљена нова лозинка">
+			</div>
+			<div class="modal-footer" class="container-fluid" align="center">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">
+					Сачувај
+				</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">
+					Одустани
+				</button>
+			</div>
+		</div>
+	</div>
+</div>	<div class="modal fade" id="photo_modal" tabindex="-1" role="dialog" aria-labelledby="photo_label" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="photo_label">
+					Промена слике
+				</h4>
+			</div>
+			<div class="modal-body" align="center">
+				<img class="img-circle" style="width:200px;" src="https://cdn0.iconfinder.com/data/icons/people-groups/512/User_Female-512.png">
+				<div>
+					<input type="file" class="form-control">
+				</div>
+			</div>
+			<div class="modal-footer" class="container-fluid" align="center">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">
+					У реду
+				</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">
+					Одустани
+				</button>
+			</div>
+		</div>
+	</div>
+</div></div>
+		</main>
+		<footer class="zone footer container">
+<ul>
+	<li>© <a href="mailto:bojanjelaca@mail.com" title="bojanjelaca@mail.com">Бојан Јелача</a>,</li>
+	<li><a href="mailto:marinmarkic@mail.com" title="marinmarkic@mail.com">Марин Маркић</a>.</li>
+	<li><a href="mailto:vladandjuric@mail.com" title="vladandjuric@mail.com">Владан Ђурић</a>.</li>
+	<li><a href="mailto:jovanmarkovic@mail.com" title="jovanmarkovic@mail.com">Јован Марковић</a>.</li>
+	<li> Сва права задржана. </li>
+	<li><a href="http://www.vbeogradska.edu.rs">www.vbeogradska.edu.rs</a>.</li>
+</ul>
+</footer>	</body>
+</html>

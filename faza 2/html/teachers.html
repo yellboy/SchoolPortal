@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<link href="./styles/layout.css" rel="stylesheet" type="text/css" /><link href="http://localhost:90/assets/styles/img/favicon.ico" rel="shortcut icon" type="image/ico" />
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="./scripts/homepage.js"></script>
+	</head>
+	
+	<body>
+		
+		<section class="zone pre-header container">
+	<div class="row">
+		<div class="col-md-7">
+			<img src="./styles/images/rss.png" alt="RSS" />
+			<ul>
+				<li><a href="./home.html" title="Pocetna stranica">Почетна</a></li>
+				<li><a href="./login.html" title="Prijava na sistem">Пријави ме</a></li>
+				<li><a href="./users" title="Pretraga korisnika">Корисници</a></li>
+				<li><a href="./category" title="Administracija kategorija">Категорије</a></li>
+				<li><a href="./article" title="Administracija clanaka">Чланци</a></li>
+				<li><a href="./profile" title="Profil">Мој профил</a></li>
+				<li class="auth-only">Marin Markic - </li>
+				<li class="auth-only"><a href="login.html" title="Odjava sa sistema">одјави ме</a></li>
+			</ul>
+		</div>
+		<div class="col-md-5">
+			<form id="searchbox">
+			    <input id="search" type="text" placeholder="Унесите текст">
+			    <input id="submit" type="submit" value="Претражи">
+			</form>
+		</div>
+	</div>
+</section>
+		<main class="main container" role="main">
+			<div class="container-fluid" align="left">
+	<form class="login input-group row">
+		<div class="col-md-4">
+			<div class="form-tittle"> <h4> Претрага корисника </h4> </div>
+			<input type="text" class="form-control" placeholder="Корисничко име"/> 
+			<input type="text" class="form-control" placeholder="Име"/>
+			<input type="text" class="form-control" placeholder="Презиме"/>
+			<input type="text" class="form-control" placeholder="е-пошта"/>
+			<input type="text" class="form-control" placeholder="Предмети"/>
+			<div>
+				<a href="./home.html" class="text-muted">Повратак на главну страницу</a>
+			</div>
+		</div>
+	</form>
+	<table border="1" style="width:100%" class="table-striped">
+		<tr>
+			<th class="container-fluid"><b>Корисничко име</b></th>
+			<th class="container-fluid"><b>Име</b></th>
+			<th class="container-fluid"><b>Презиме</b></th>
+			<th class="container-fluid"><b>е-пошта</b></th>
+			<th class="container-fluid"><b>Предмети</b></th>
+		</tr>
+		<tr>
+			<td class="container-fluid"><a href="./view_profile.html" class="text-muted">года</a></td>
+			<td class="container-fluid">Гордана</td>
+			<td class="container-fluid">Давидовић</td>
+			<td class="container-fluid">gdavidovic@yahoo.com</td>
+			<td class="container-fluid">Математика</td>
+		</tr>
+		<tr>
+			<td class="container-fluid"><a href="./view_profile.html" class="text-muted">дијо</a></td>
+			<td class="container-fluid">Дивна</td>
+			<td class="container-fluid">Јовановић</td>
+			<td class="container-fluid">divna@yahoo.com</td>
+			<td class="container-fluid">Физика</td>
+		</tr>
+	</table>
+</div>
+
+		</main>
+		<footer class="zone footer container">
+<ul>
+	<li>© <a href="mailto:bojanjelaca@mail.com" title="bojanjelaca@mail.com">Бојан Јелача</a>,</li>
+	<li><a href="mailto:marinmarkic@mail.com" title="marinmarkic@mail.com">Марин Маркић</a>.</li>
+	<li><a href="mailto:vladandjuric@mail.com" title="vladandjuric@mail.com">Владан Ђурић</a>.</li>
+	<li><a href="mailto:jovanmarkovic@mail.com" title="jovanmarkovic@mail.com">Јован Марковић</a>.</li>
+	<li> Сва права задржана. </li>
+	<li><a href="http://www.vbeogradska.edu.rs">www.vbeogradska.edu.rs</a>.</li>
+</ul>
+</footer>	</body>
+</html>

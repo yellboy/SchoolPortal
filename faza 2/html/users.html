@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<link href="./styles/layout.css" rel="stylesheet" type="text/css" /><link href="http://localhost:90/assets/styles/img/favicon.ico" rel="shortcut icon" type="image/ico" />
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="./scripts/homepage.js"></script>
+	</head>
+	
+	<body>
+		
+		<section class="zone pre-header container">
+	<div class="row">
+		<div class="col-md-7">
+			<ul> 
+				<li><a href="./home.html" title="Prijava na sistem">Почетна</a></li>
+				<li><a href="/administration/users" title="Pretraga korisnika">Kорисници</a></li>
+				<li><a href="/administration/category" title="Pretraga korisnika">Категорије</a></li>
+				<li><a href="/administration/article" title="Pretraga korisnika">Чланци</a></li>
+				<li><a href="/administration/profile" title="Pretraga korisnika">Мој профил</a></li>
+				<li class="auth-only">Marin Markic - </li>
+				<li class="auth-only"><a href="login.html" title="Odjava sa sistema">одјави ме</a></li>
+			</ul>
+		</div>
+		<div class="col-md-5">
+			<form id="searchbox">
+			    <input id="search" type="text" placeholder="Унесите текст">
+			    <input id="submit" type="submit" value="Претражи">
+			</form>
+		</div>
+	</div>
+</section>		
+		<main class="main container" role="main">
+			<div class="container-fluid" align="left">
+	<form class="login input-group row">
+		<div class="col-md-4">
+			<div class="form-tittle"> <h4> Претрага корисника </h4> </div>
+			<input type="text" class="form-control" placeholder="Корисничко име"/> 
+			<input type="text" class="form-control" placeholder="Име"/>
+			<input type="text" class="form-control" placeholder="Презиме"/>
+			<input type="text" class="form-control" placeholder="е-пошта"/>
+			<input type="text" class="form-control" placeholder="Предмети"/>
+			<div>
+				<a href="./home.html" class="text-muted">Повратак на главну страницу</a>
+				<br>
+				<a href="./register.html" class="text-muted">Регистрација</a>
+			</div>
+		</div>
+	</form>
+	<table border="1" style="width:100%" class="table-striped">
+		<tr>
+			<th class="container-fluid"><b>Корисничко име</b></th>
+			<th class="container-fluid"><b>Име</b></th>
+			<th class="container-fluid"><b>Презиме</b></th>
+			<th class="container-fluid"><b>е-пошта</b></th>
+			<th class="container-fluid"><b>Предмети</b></th>
+			<th class="container-fluid"><b>&nbsp</b></th>
+			<th class="container-fluid"><b>&nbsp</b></th>
+		</tr>
+		<tr>
+			<td class="container-fluid">года</td>
+			<td class="container-fluid">Гордана</td>
+			<td class="container-fluid">Давидовић</td>
+			<td class="container-fluid">gdavidovic@yahoo.com</td>
+			<td class="container-fluid">Математика</td>
+			<td class="container-fluid">
+				<div align="center">
+					<a type="submit" class="btn btn-danger" href="./profile.html">Измени</a>
+				</div>
+			</td>
+			<td class="container-fluid">
+				<div class="container-fluid" align="center">
+					<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#confirm_modal">Обриши</button>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="container-fluid">дијо</td>
+			<td class="container-fluid">Дивна</td>
+			<td class="container-fluid">Јовановић</td>
+			<td class="container-fluid">divna@yahoo.com</td>
+			<td class="container-fluid">Физика</td>
+			<td class="container-fluid">
+				<div class="container-fluied" align="center">
+					<a type="submit" class="btn btn-danger" href="./profile.html">Измени</a>
+				</div>
+			</td>
+			<td class="container-fluid">
+				<div class="container-fluid" align="center">
+					<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#confirm_modal">Обриши</button>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	<div class="modal fade" id="confirm_modal" tabindex="-1" role="dialog" aria-labelledby="confirm_label" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-body">
+				<span>
+					Да ли сте сигурни?
+				</span>
+			</div>
+			<div class="modal-footer" align="center">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">
+					Да
+				</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">
+					Не
+				</button>
+			</div>
+		</div>
+	</div>
+</div></div>
+		</main>
+		<footer class="zone footer container">
+<ul>
+	<li>© <a href="mailto:bojanjelaca@mail.com" title="bojanjelaca@mail.com">Бојан Јелача</a>,</li>
+	<li><a href="mailto:marinmarkic@mail.com" title="marinmarkic@mail.com">Марин Маркић</a>.</li>
+	<li><a href="mailto:vladandjuric@mail.com" title="vladandjuric@mail.com">Владан Ђурић</a>.</li>
+	<li><a href="mailto:jovanmarkovic@mail.com" title="jovanmarkovic@mail.com">Јован Марковић</a>.</li>
+	<li> Сва права задржана. </li>
+	<li><a href="http://www.vbeogradska.edu.rs">www.vbeogradska.edu.rs</a>.</li>
+</ul>
+</footer>	</body>
+</html>
