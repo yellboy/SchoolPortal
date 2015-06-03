@@ -10,39 +10,40 @@ viewProfileController - nije uradjeno
 
 Dizajn
 
-sredjivanje svih public strana aplikacije
-sredivanje admin strana aplikacije
-sredjivanje svih sadrzaja
-responsive design svih public strana
+sredjivanje svih public strana aplikacije (ostao Profil)
+sredivanje admin strana aplikacije (korisnici i profil)
+sredjivanje svih sadrzaja OK
+responsive design svih public strana (ostao profil)
 
 SEO
 
-sve public strane po wb pravilniku (js, css, html)
-generisanje sitemap
-generisanje robots.txt
-generisanje title i meta podataka za sve public strane i neki sistem ispisivanja istih
-rutiranje u 1 i 2 nivoa - uradjeno
+sve public strane po wb pravilniku (js, css, html) OK
+generisanje sitemap - post production
+generisanje robots.txt - post production
+generisanje title i meta podataka za sve public strane i neki sistem ispisivanja istih - uglavnom OK
+rutiranje u 1 i 2 nivoa - OK
 
 Security
 
-XSS - strip svih public formi - login uradjen, search uradjen
-CSRF - anti forgery formi (samo login treba, provericu)
+XSS - strip svih public formi - login uradjen, search uradjen (ostaje dodavanje alumnija) 
+CSRF - anti forgery formi (samo login treba)
 coockie stealing - zabraniti citanje coockies - niski prioritet - kroz CSRF
-loose ajax - zastite svih not public akcija - uradjeno
+loose ajax - zastite svih not public akcija - OK
+sql injection - OK
 
 Migration
 
-Migracija sadrzaja - gotovo
-Migracija slika
-Migracija alumnista - gotovo
-Migracija kategorija i predmeta - gotovo
-Migracija korisnika - razmotriti?
+Migracija sadrzaja - OK
+Migracija slika - OK
+Migracija alumnista - OK
+Migracija kategorija i predmeta - OK
+Migracija korisnika - u dogovoru sa petom gimnazijom
 
 
 Optimizacija
 
 skloniti slike, css na razlicite domene - posle produkcije
-minimizovati i spojiti css - uradjeno
-minimozovati i spojiti js - nije neophodno
-spajanje slika - spojene su koje je moguce spojiti + prebacene base64 u css
+minimizovati i spojiti css - OK
+minimozovati i spojiti js - nije neophodno, js je lak na public stranama
+spajanje slika - spojene su koje je moguce spojiti + prebacene base64 u css - OK
 parcijalni mehanizam serverskog kesiranja za codeigniter - ako bude spor page load na serveru
