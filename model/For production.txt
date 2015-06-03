@@ -1,0 +1,48 @@
+public strane su:
+addToAlumniController
+alumniController
+contactController
+homeController
+loginController
+teachersController
+viewProfileController - nije uradjeno
+
+
+Dizajn
+
+sredjivanje svih public strana aplikacije
+sredivanje admin strana aplikacije
+sredjivanje svih sadrzaja
+responsive design svih public strana
+
+SEO
+
+sve public strane po wb pravilniku (js, css, html)
+generisanje sitemap
+generisanje robots.txt
+generisanje title i meta podataka za sve public strane i neki sistem ispisivanja istih
+rutiranje u 1 i 2 nivoa - uradjeno
+
+Security
+
+XSS - strip svih public formi - login uradjen, search uradjen
+CSRF - anti forgery formi (samo login treba, provericu)
+coockie stealing - zabraniti citanje coockies - niski prioritet - kroz CSRF
+loose ajax - zastite svih not public akcija - uradjeno
+
+Migration
+
+Migracija sadrzaja - gotovo
+Migracija slika
+Migracija alumnista - gotovo
+Migracija kategorija i predmeta - gotovo
+Migracija korisnika - razmotriti?
+
+
+Optimizacija
+
+skloniti slike, css na razlicite domene - posle produkcije
+minimizovati i spojiti css - uradjeno
+minimozovati i spojiti js - nije neophodno
+spajanje slika - spojene su koje je moguce spojiti + prebacene base64 u css
+parcijalni mehanizam serverskog kesiranja za codeigniter - ako bude spor page load na serveru
