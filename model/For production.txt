@@ -17,9 +17,9 @@ responsive design svih public strana (ostao profil)
 
 SEO
 
-sve public strane po wb pravilniku (js, css, html) OK
+sve public strane po wb pravilniku (js, css, html) - OK
 generisanje sitemap - post production
-generisanje robots.txt - post production
+generisanje robots.txt - OK
 generisanje title i meta podataka za sve public strane i neki sistem ispisivanja istih - uglavnom OK
 rutiranje u 1 i 2 nivoa - OK
 

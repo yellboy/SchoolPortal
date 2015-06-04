@@ -11,18 +11,11 @@
 				<?php
 					}
 				?>
-				<?php 
-					if (IsTeacher() || isAdministrator())
-					{
-				?>
-						<li><a href="<?php echo ResolveRoute(ContentPageCodes::CategoryAdmin) ?>">Категорије</a></li>
-						<li><a href="<?php echo ResolveRoute(ContentPageCodes::ArticleAdmin) ?>">Чланци</a></li>
-						<li><a href="<?php echo ResolveRoute(ContentPageCodes::UserProfile, $id) ?>">Мој профил</a></li>
-						<li class="username"><?php echo $username; ?></li>
-						<li><a href="/logout" title="Odjava sa sistema">Oдјави ме</a></li>
-				<?php
-					}
-				?>
+				<li><a href="<?php echo ResolveRoute(ContentPageCodes::CategoryAdmin) ?>">Категорије</a></li>
+				<li><a href="<?php echo ResolveRoute(ContentPageCodes::ArticleAdmin) ?>">Чланци</a></li>
+				<li><a href="<?php echo ResolveRoute(ContentPageCodes::UserProfile, $id) ?>">Мој профил</a></li>
+				<li class="username"><?php echo $username; ?></li>
+				<li><a href="/logout" title="Odjava sa sistema">Oдјави ме</a></li>
 			</ul>
 		</div>
 		<div class="col-md-5">
