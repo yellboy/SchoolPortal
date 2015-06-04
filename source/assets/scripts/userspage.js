@@ -92,13 +92,15 @@ $(function() {
 	
 	$('#add-user').on('click', function(e) {
 		var username = $('#new-user-username').val();
+		var isAdmod = $('#is-admod-checkbox').prop('checked');
 		if (username != null && username != '') {
 			$.ajax({
 				type: 'post',
 				url: '/UsersController/AddNewUser',
 				dataType: 'json',
 				data: {
-					'username': username
+					'username': username,
+					'isAdmod': isAdmod
 				},
 				success: function(data) {
 					var found = false;

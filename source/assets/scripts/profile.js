@@ -1,4 +1,4 @@
-$(function(){
+$(function(){	
 	
 	var $photo;
 	var $selectedCourseId;
@@ -18,7 +18,11 @@ $(function(){
 		var $body =  $('#table-teaching').find('tbody');
 		$body.html('');
 		for (var i = 0; i < $teaching.length; i++) {
-			$body.append('<tr><td>' + $teaching[i].CourseName + '</td><td class="container-fluid"><button class="btn btn-danger remove-course" data-course-id="' + $teaching[i].Id + '">Уклони</button></td></tr>');
+			var innerHtml = '<td>' + $teaching[i].CourseName + '</td>';
+			if ($isAdministrator) {
+				innerHtml += '<td class="container-fluid"><button class="btn btn-danger remove-course" data-course-id="' + $teaching[i].Id + '">Уклони</button></td>';
+			}
+			$body.append('<tr>' + innerHtml + '</tr>');
 		}
 	}
 	

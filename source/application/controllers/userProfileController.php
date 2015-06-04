@@ -32,6 +32,11 @@ class UserProfileController extends CI_Controller {
 		$session_data = $this->session->userdata('logged_in');
 		$data['username'] = $session_data['username'];
 		$data['id'] = $session_data['id'];
+		$data['isAdministrator'] = 'false';
+		if (IsAdministrator())
+		{
+			$data['isAdministrator'] = 'true';
+		}
 		$this->load->view('layouts/userProfileLayout', $data);
 	}
 	

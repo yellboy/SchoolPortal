@@ -10,11 +10,14 @@ class UsersController extends CI_Controller {
 	
 	public function index()
 	{
-		$data['users'] = $this::loadUsers();
-		$session_data = $this->session->userdata('logged_in');
-		$data['username'] = $session_data['username'];
-		$data['id'] = $session_data['id'];
-		$this->load->view('layouts/usersLayout', $data);
+		if (IsAdministrator())
+		{
+			$data['users'] = $this::loadUsers();
+			$session_data = $this->session->userdata('logged_in');
+			$data['username'] = $session_data['username'];
+			$data['id'] = $session_data['id'];
+			$this->load->view('layouts/usersLayout', $data);
+		}
 	}
 	
 	private function loadUsers() 
@@ -24,9 +27,15 @@ class UsersController extends CI_Controller {
 	
 	public function AddNewUser() 
 	{
-		if(IsAdministrator()){
+		if (IsAdministrator()){
 			$username = $this->input->post('username');
-			$newUser = $this->Users_model->CreateUser($username);
+			$isAdmod = $this->input->post('isAdmod');
+			$role = 2;
+			if ($isAdmod) 
+			{
+				$role = 1;
+			}
+			$newUser = $this->Users_model->CreateUser($username, $role);
 			if ($newUser == null)
 			{
 				$this->output->set_status_header(400);
@@ -39,12 +48,9 @@ class UsersController extends CI_Controller {
 	
 	public function DeleteUser()
 	{
-		if(IsAdministrator()){
+		if (IsAdministrator()){
 			$id = $this->input->post('id');
 			echo $this->Users_model->DeleteUser($id);
 		}
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

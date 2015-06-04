@@ -115,9 +115,10 @@
 			$this->db->delete('usercategory');
 		}
 		
-		function CreateUser($username)
+		function CreateUser($username, $role)
 		{
 			$DefaultPhotoPath = './photos/default.jpg';
+			$DefaultPassword = MD5('пета123');
 			$query = $this->db->get_where('user', array('UserName' => $username));
 			if ($query->num_rows() == 0) 
 			{
@@ -128,6 +129,8 @@
 				$user->Email = '';
 				$user->PhotoPath = $DefaultPhotoPath;
 				$user->About = '';
+				$user->Password = $DefaultPassword;
+				$user->AuthorizationId = $role;
 				$user->IsDeleted = 0;
 				$this->db->insert('user', $user);
 				return $this->db->get_where('user', array('UserName' => $username))->result()[0];
