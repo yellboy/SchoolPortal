@@ -39,6 +39,9 @@
         color: #BF251C; }
         .news-details-template .news-headline h2 a:hover {
           color: #BF251C; }
+  .news-details-template .news-content {
+    padding-left: 7px;
+    padding-top: 12px; }
 
 .alumni-context h3, .teachers-custom-table h3 {
   padding-left: 20px; }

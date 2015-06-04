@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /корисници
+Disallow: /категорије
+Disallow: /чланци
+Disallow: /профил-корисника/

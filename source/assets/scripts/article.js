@@ -133,6 +133,7 @@ $(function () {
 					$('.article-list').show();
 					$('.article-details').hide();
 					self.updateViewInCaseOfAdminRights(categoryId);
+					self.loadMaterialsList(categoryId);
 				}
 			});
 		},
@@ -195,20 +196,21 @@ $(function () {
 			$('.article-files').show();
 		},
 		updateViewInCaseOfAdminRights: function (categoryId) {
-			
 			var self = this;
 			
 			if (SPV.userCourses instanceof Array) {
-				if (SPV.userCourses.indexOf(categoryId) > -1) {
-					$('button').hide();
-				}
-				else {
-					$('button').show();
-				}
-
+				// its teacher
+				$('button').hide();
+				$.each(SPV.userCourses, function (i, v) {
+					if (v.CategoryId == categoryId) {
+						$('button').show(); // access granted
+					}
+				});
 			}
+		},
+		loadMaterialsList: function (categoryId) {
+			var self = this;
 
-			
 			$.ajax({
 				type: 'POST',
 				url: '/ArticleEditController/LoadMaterialListForGrid',
@@ -222,6 +224,7 @@ $(function () {
 					// $('.file-details').hide();
 				}
 			});
+
 		},
 		initFileUpload: function() {
 			
